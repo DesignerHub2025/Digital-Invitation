@@ -1,4051 +1,3725 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
 
 <meta
-name="viewport"
-content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
+>
 
-<meta name="theme-color" content="#251c1c">
+<meta name="theme-color" content="#171313">
 
-<title>VELORA INVITES — Digital Invitation Atelier</title>
+<title>VELORA INVITES — Digital Invitation Studio</title>
 
 <meta
-name="description"
-content="Elegant digital invitations for weddings, engagements, birthdays, celebrations and special events.">
+  name="description"
+  content="Elegant digital invitations for weddings, engagements, birthdays and special events."
+>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap"
-rel="stylesheet">
-
+  href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
 
 <style>
 
 /* =========================================================
-   VELORA INVITES
-   QUIET LUXURY DIGITAL INVITATION STUDIO
+   VELORA INVITES V3
+   IMMERSIVE DIGITAL INVITATION STUDIO
 ========================================================= */
 
 :root{
+  --bg:#f6f2ec;
+  --bg2:#ece4dc;
+  --ink:#1d1818;
+  --ink2:#2b2323;
 
-    --ivory:#F8F4ED;
-    --ivory-2:#EEE7DD;
+  --wine:#744852;
+  --wine2:#9e6571;
+  --rose:#dcb9b3;
 
-    --ink:#261F1E;
-    --ink-2:#3A302D;
+  --sage:#73816f;
+  --sage2:#9eae98;
 
-    --wine:#713F46;
-    --wine-dark:#4C2930;
+  --gold:#b99a67;
+  --gold2:#e1cfaa;
 
-    --sage:#70806B;
-    --sage-light:#DCE3D6;
+  --blue:#7992a6;
 
-    --gold:#B89A67;
-    --gold-soft:#DBC8A1;
+  --white:#fff;
+  --muted:#867b77;
 
-    --rose:#D6A6A5;
-    --blue:#73879C;
+  --line:rgba(29,24,24,.11);
 
-    --muted:#857A75;
+  --shadow:
+    0 30px 80px
+    rgba(54,39,39,.12);
 
-    --line:rgba(38,31,30,.12);
-
+  --radius:28px;
 }
-
 
 /* =========================================================
    RESET
 ========================================================= */
 
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
-    scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
+  min-height:100vh;
+  background:var(--bg);
+  color:var(--ink);
 
-    min-height:100vh;
+  font-family:"Cairo",sans-serif;
 
-    background:
-    var(--ivory);
-
-    color:
-    var(--ink);
-
-    font-family:
-    "Cairo",
-    sans-serif;
-
-    overflow-x:hidden;
-
-    -webkit-font-smoothing:
-    antialiased;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
 }
 
 body.lang-en,
 body.lang-fr{
-    font-family:
-    "DM Sans",
-    sans-serif;
+  font-family:"Manrope",sans-serif;
+}
+
+body.modal-open{
+  overflow:hidden;
 }
 
 a{
-    color:inherit;
-    text-decoration:none;
+  color:inherit;
+  text-decoration:none;
 }
 
 button,
 input,
 select,
 textarea{
-    font:inherit;
+  font:inherit;
 }
 
 button{
-    cursor:pointer;
+  cursor:pointer;
 }
 
-img{
-    display:block;
-    max-width:100%;
+img,
+svg{
+  display:block;
 }
 
-button,
-a{
-    -webkit-tap-highlight-color:
-    transparent;
+::selection{
+  background:var(--wine);
+  color:white;
 }
 
 :focus-visible{
-    outline:
-    3px solid
-    var(--gold);
-    outline-offset:4px;
+  outline:3px solid var(--gold);
+  outline-offset:4px;
 }
-
 
 /* =========================================================
-   DECORATIVE BACKGROUND
+   AMBIENT BACKGROUND
 ========================================================= */
 
-.page-grain{
+.background-grid{
+  position:fixed;
+  inset:0;
 
-    position:fixed;
+  z-index:-10;
+  pointer-events:none;
 
-    inset:0;
-
-    z-index:-8;
-
-    pointer-events:none;
-
-    opacity:.55;
-
-    background-image:
-
-    radial-gradient(
-        circle at 20% 20%,
-        rgba(113,63,70,.045) 0 1px,
-        transparent 1.5px
+  background-image:
+    linear-gradient(
+      rgba(29,24,24,.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(29,24,24,.025) 1px,
+      transparent 1px
     );
 
-    background-size:
-    19px 19px;
+  background-size:58px 58px;
 }
 
+.noise{
+  position:fixed;
+  inset:0;
 
-.glow-one,
-.glow-two{
+  z-index:-9;
+  pointer-events:none;
 
-    position:fixed;
+  opacity:.22;
 
-    border-radius:50%;
+  background-image:
+    radial-gradient(
+      rgba(29,24,24,.14) .6px,
+      transparent .7px
+    );
 
-    filter:blur(120px);
-
-    z-index:-7;
-
-    pointer-events:none;
+  background-size:11px 11px;
 }
 
-.glow-one{
+.ambient{
+  position:fixed;
 
-    width:420px;
-    height:420px;
+  width:520px;
+  height:520px;
 
-    top:-190px;
-    right:-180px;
+  border-radius:50%;
 
-    background:
-    rgba(214,166,165,.18);
+  filter:blur(130px);
+
+  pointer-events:none;
+  z-index:-8;
 }
 
-.glow-two{
+.ambient.a{
+  right:-240px;
+  top:-200px;
 
-    width:430px;
-    height:430px;
-
-    bottom:-190px;
-    left:-180px;
-
-    background:
-    rgba(112,128,107,.13);
+  background:
+    rgba(220,185,179,.22);
 }
 
+.ambient.b{
+  left:-250px;
+  bottom:-210px;
+
+  background:
+    rgba(115,129,111,.17);
+}
+
+.ambient.c{
+  left:42%;
+  top:38%;
+
+  width:300px;
+  height:300px;
+
+  background:
+    rgba(185,154,103,.08);
+}
 
 /* =========================================================
    LAYOUT
 ========================================================= */
 
 .page{
+  width:min(1380px,100%);
+  margin:auto;
 
-    width:
-    min(
-        100%,
-        1360px
-    );
-
-    margin:auto;
-
-    padding:
-    0 28px;
+  padding-inline:28px;
 }
 
+/* =========================================================
+   ICONS
+========================================================= */
+
+.icon{
+  width:21px;
+  height:21px;
+
+  fill:none;
+  stroke:currentColor;
+
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
 
 /* =========================================================
    HEADER
 ========================================================= */
 
-.header{
+.header-wrap{
+  position:sticky;
+  top:0;
 
-    min-height:94px;
+  z-index:60;
 
-    display:flex;
+  backdrop-filter:
+    blur(18px);
 
-    align-items:center;
+  background:
+    rgba(246,242,236,.77);
 
-    justify-content:space-between;
-
-    gap:20px;
-
-    border-bottom:
+  border-bottom:
     1px solid
-    var(--line);
+    rgba(29,24,24,.07);
 }
 
+.header{
+  min-height:84px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+}
 
 .brand{
+  display:flex;
+  align-items:center;
 
-    display:flex;
-
-    align-items:center;
-
-    gap:13px;
+  gap:12px;
 }
-
 
 .brand-mark{
+  width:49px;
+  height:49px;
 
-    width:50px;
-    height:50px;
+  position:relative;
 
-    border-radius:50%;
+  display:grid;
+  place-items:center;
 
-    position:relative;
+  border-radius:50%;
 
-    display:grid;
+  background:
+    linear-gradient(
+      145deg,
+      #fff,
+      #e8ddd4
+    );
 
-    place-items:center;
-
-    border:
+  border:
     1px solid
-    var(--gold-soft);
+    rgba(185,154,103,.45);
 
-    background:
-    rgba(255,255,255,.48);
+  box-shadow:
+    0 8px 25px
+    rgba(76,57,55,.09);
 
-    font-family:
+  font:
+    600 23px
     "Cormorant Garamond",
     serif;
 
-    font-size:23px;
-
-    font-style:italic;
-
-    font-weight:600;
+  font-style:italic;
 }
 
+.brand-mark::after{
+  content:"";
 
-.brand-mark::before{
+  position:absolute;
+  inset:5px;
 
-    content:"";
+  border-radius:50%;
 
-    position:absolute;
-
-    inset:5px;
-
-    border-radius:50%;
-
-    border:
+  border:
     1px solid
-    rgba(184,154,103,.35);
+    rgba(185,154,103,.32);
 }
-
-
-.brand-copy{
-    line-height:1.15;
-}
-
 
 .brand-title{
+  display:block;
 
-    font-family:
+  font:
+    600 22px
     "Cormorant Garamond",
     serif;
 
-    font-size:24px;
-
-    font-weight:600;
-
-    letter-spacing:.04em;
+  letter-spacing:.05em;
 }
-
 
 .brand-sub{
+  display:block;
 
-    display:block;
+  margin-top:2px;
 
-    margin-top:4px;
+  color:var(--muted);
 
-    color:
-    var(--muted);
+  font-size:7px;
+  font-weight:800;
 
-    font-size:8px;
-
-    font-weight:700;
-
-    letter-spacing:.12em;
-
-    text-transform:uppercase;
+  letter-spacing:.14em;
+  text-transform:uppercase;
 }
 
+.nav{
+  display:flex;
+  gap:26px;
 
-.header-nav{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:27px;
+  align-items:center;
 }
 
+.nav a{
+  font-size:9px;
+  font-weight:800;
 
-.header-nav a{
+  letter-spacing:.09em;
+  text-transform:uppercase;
 
-    font-size:10px;
-
-    font-weight:700;
-
-    letter-spacing:.08em;
-
-    text-transform:uppercase;
-
-    transition:.2s;
+  transition:.2s;
 }
 
-
-.header-nav a:hover{
-    color:var(--wine);
+.nav a:hover{
+  color:var(--wine);
 }
 
+/* =========================================================
+   LANGUAGE SWITCH
+========================================================= */
 
-.header-actions{
+.actions{
+  display:flex;
+  align-items:center;
 
-    display:flex;
-
-    gap:8px;
+  gap:8px;
 }
 
+.language-switch{
+  height:43px;
 
-.round-button{
+  padding:4px;
 
-    width:44px;
-    height:44px;
+  display:flex;
 
-    border-radius:50%;
-
-    display:grid;
-
-    place-items:center;
-
-    border:
+  border:
     1px solid
     var(--line);
 
-    background:
-    rgba(255,255,255,.55);
+  border-radius:999px;
 
-    color:
-    var(--ink);
-
-    font-size:10px;
-
-    font-weight:800;
-
-    transition:.25s;
+  background:
+    rgba(255,255,255,.5);
 }
 
+.lang-btn{
+  min-width:37px;
+  height:33px;
 
-.round-button:hover{
+  padding:0 8px;
 
-    background:
-    var(--ink);
+  border:0;
+  border-radius:999px;
 
-    color:white;
+  background:transparent;
+
+  color:var(--muted);
+
+  font-size:8px;
+  font-weight:900;
+
+  transition:.22s;
 }
 
+.lang-btn.active{
+  color:white;
+  background:var(--ink);
+
+  box-shadow:
+    0 5px 15px
+    rgba(29,24,24,.15);
+}
+
+.circle-btn{
+  width:43px;
+  height:43px;
+
+  border-radius:50%;
+
+  display:grid;
+  place-items:center;
+
+  background:
+    rgba(255,255,255,.53);
+
+  border:
+    1px solid
+    var(--line);
+
+  color:var(--ink);
+
+  transition:.2s;
+}
+
+.circle-btn:hover{
+  color:white;
+  background:var(--ink);
+}
 
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero{
+  min-height:
+    calc(100svh - 85px);
 
-    min-height:
-    calc(
-        100vh - 94px
-    );
+  display:grid;
 
-    padding:
-    55px 0 80px;
-
-    display:grid;
-
-    grid-template-columns:
+  grid-template-columns:
     minmax(0,.9fr)
-    minmax(440px,1.1fr);
+    minmax(500px,1.1fr);
 
-    gap:
-    clamp(
-        35px,
-        6vw,
-        90px
-    );
+  align-items:center;
 
-    align-items:center;
+  gap:
+    clamp(35px,5vw,80px);
+
+  padding:
+    58px 0
+    80px;
 }
-
 
 .hero-copy{
-    position:relative;
-    z-index:3;
+  position:relative;
+  z-index:4;
 }
 
+.eyebrow{
+  display:flex;
 
-.hero-kicker{
+  align-items:center;
+  gap:12px;
 
-    display:flex;
+  color:var(--wine);
 
-    align-items:center;
+  font-size:8px;
+  font-weight:900;
 
-    gap:12px;
-
-    color:
-    var(--wine);
-
-    font-size:9px;
-
-    font-weight:800;
-
-    letter-spacing:.15em;
-
-    text-transform:uppercase;
+  letter-spacing:.16em;
+  text-transform:uppercase;
 }
 
+.eyebrow::before{
+  content:"";
 
-.hero-kicker::before{
+  width:42px;
+  height:1px;
 
-    content:"";
-
-    width:42px;
-    height:1px;
-
-    background:
-    var(--gold);
+  background:var(--gold);
 }
-
 
 .hero-title{
+  margin-top:25px;
 
-    margin-top:24px;
-
-    font-family:
+  font:
+    500 clamp(67px,7.4vw,108px)/.87
     "Cormorant Garamond",
-    "Cairo",
     serif;
 
-    font-size:
-    clamp(
-        66px,
-        7.8vw,
-        112px
-    );
-
-    font-weight:500;
-
-    line-height:.88;
-
-    letter-spacing:-.045em;
+  letter-spacing:-.055em;
 }
 
+body.lang-ar .hero-title{
+  font-family:"Cairo",sans-serif;
 
-body.lang-ar
-.hero-title{
+  font-size:
+    clamp(45px,5.8vw,77px);
 
-    font-family:
-    "Cairo",
-    sans-serif;
+  font-weight:800;
+  line-height:1.34;
 
-    font-size:
-    clamp(
-        47px,
-        5.8vw,
-        77px
-    );
-
-    font-weight:800;
-
-    line-height:1.35;
+  letter-spacing:-.05em;
 }
-
 
 .hero-title span{
-    display:block;
+  display:block;
 }
 
+.hero-title em{
+  color:var(--wine);
 
-.hero-title
-.italic{
-
-    font-style:italic;
-
-    color:
-    var(--wine);
+  font-style:italic;
+  font-weight:500;
 }
 
-
-body.lang-ar
-.hero-title
-.italic{
-
-    font-style:normal;
+body.lang-ar .hero-title em{
+  font-style:normal;
 }
-
 
 .hero-description{
+  max-width:535px;
 
-    max-width:520px;
+  margin-top:27px;
 
-    margin-top:27px;
+  color:var(--muted);
 
-    color:
-    var(--muted);
-
-    font-size:14px;
-
-    line-height:2;
+  font-size:13px;
+  line-height:2;
 }
-
 
 .hero-actions{
+  display:flex;
+  flex-wrap:wrap;
 
-    display:flex;
+  gap:10px;
 
-    flex-wrap:wrap;
-
-    gap:10px;
-
-    margin-top:29px;
+  margin-top:29px;
 }
-
 
 .button{
+  min-height:56px;
 
-    min-height:56px;
+  padding:
+    12px 23px;
 
-    padding:
-    12px 22px;
+  border:0;
+  border-radius:999px;
 
-    display:inline-flex;
+  display:inline-flex;
 
-    justify-content:center;
+  align-items:center;
+  justify-content:center;
 
-    align-items:center;
+  gap:12px;
 
-    gap:12px;
+  font-size:10px;
+  font-weight:900;
 
-    border-radius:999px;
-
-    font-size:11px;
-
-    font-weight:800;
-
-    transition:.25s;
+  transition:
+    transform .25s,
+    background .25s,
+    box-shadow .25s;
 }
-
 
 .button-dark{
+  color:white;
+  background:var(--ink);
 
-    background:
-    var(--ink);
-
-    color:white;
+  box-shadow:
+    0 15px 35px
+    rgba(29,24,24,.13);
 }
-
 
 .button-dark:hover{
+  background:var(--wine-dark,#54343a);
+  transform:translateY(-3px);
+}
 
-    background:
-    var(--wine-dark);
+.button-light{
+  color:var(--wine);
 
-    transform:
+  border:
+    1px solid
+    rgba(116,72,82,.22);
+
+  background:
+    rgba(255,255,255,.47);
+}
+
+.button-light:hover{
+  background:white;
+
+  transform:
     translateY(-3px);
 }
 
+.arrow{
+  font-family:Arial,sans-serif;
 
-.button-outline{
-
-    border:
-    1px solid
-    rgba(113,63,70,.25);
-
-    color:
-    var(--wine);
-
-    background:
-    rgba(255,255,255,.28);
+  font-size:18px;
 }
 
-
-.button-outline:hover{
-
-    background:
-    white;
-
-    transform:
-    translateY(-3px);
+html[dir="rtl"] .arrow{
+  transform:scaleX(-1);
 }
-
-
-.hero-note{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:9px;
-
-    margin-top:27px;
-}
-
-
-.note-chip{
-
-    padding:
-    7px 11px;
-
-    border-radius:999px;
-
-    border:
-    1px solid
-    var(--line);
-
-    color:
-    var(--muted);
-
-    font-size:9px;
-
-    font-weight:700;
-}
-
 
 /* =========================================================
-   HERO EXPERIENCE — ENVELOPE
+   HERO MICRO STATS
 ========================================================= */
 
-.invitation-experience{
+.hero-stats{
+  margin-top:30px;
 
-    position:relative;
+  display:grid;
+  grid-template-columns:
+    repeat(3,1fr);
 
-    min-height:610px;
+  max-width:500px;
 
-    display:grid;
+  border-top:
+    1px solid
+    var(--line);
+}
 
-    place-items:center;
+.hero-stat{
+  padding:
+    17px 12px 0;
 
-    overflow:hidden;
+  border-inline-end:
+    1px solid
+    var(--line);
+}
 
-    border-radius:
-    120px
-    18px
-    120px
-    18px;
+.hero-stat:first-child{
+  padding-inline-start:0;
+}
 
-    background:
+.hero-stat:last-child{
+  border-inline-end:0;
+}
 
+.hero-stat strong{
+  display:block;
+
+  font:
+    600 24px
+    "Cormorant Garamond",
+    serif;
+}
+
+.hero-stat span{
+  display:block;
+
+  color:var(--muted);
+
+  margin-top:1px;
+
+  font-size:8px;
+  font-weight:700;
+}
+
+/* =========================================================
+   3D HERO SCENE
+========================================================= */
+
+.hero-scene{
+  min-height:610px;
+
+  position:relative;
+
+  display:grid;
+  place-items:center;
+
+  perspective:1400px;
+
+  isolation:isolate;
+}
+
+.hero-scene::before{
+  content:"";
+
+  position:absolute;
+
+  width:510px;
+  height:510px;
+
+  border-radius:50%;
+
+  background:
     radial-gradient(
-        circle at 30% 20%,
-        rgba(255,255,255,.72),
-        transparent 35%
-    ),
+      circle,
+      rgba(255,255,255,.85),
+      rgba(228,213,201,.25) 55%,
+      transparent 70%
+    );
 
+  filter:blur(1px);
+
+  z-index:-3;
+}
+
+.orbit{
+  position:absolute;
+
+  width:470px;
+  height:470px;
+
+  border-radius:50%;
+
+  border:
+    1px solid
+    rgba(116,72,82,.12);
+
+  animation:
+    orbitSpin 22s linear infinite;
+}
+
+.orbit::after{
+  content:"";
+
+  position:absolute;
+
+  width:10px;
+  height:10px;
+
+  left:40px;
+  top:75px;
+
+  border-radius:50%;
+
+  background:var(--gold);
+
+  box-shadow:
+    0 0 0 8px
+    rgba(185,154,103,.09);
+}
+
+.orbit.two{
+  width:380px;
+  height:380px;
+
+  animation:
+    orbitSpinReverse
+    17s linear infinite;
+}
+
+@keyframes orbitSpin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes orbitSpinReverse{
+  to{
+    transform:rotate(-360deg);
+  }
+}
+
+/* =========================================================
+   FLOATING PILLS
+========================================================= */
+
+.float-pill{
+  position:absolute;
+
+  z-index:9;
+
+  padding:
+    10px 15px;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,.72);
+
+  border:
+    1px solid
+    rgba(255,255,255,.9);
+
+  backdrop-filter:blur(15px);
+
+  color:var(--ink);
+
+  font-size:8px;
+  font-weight:800;
+
+  box-shadow:
+    0 12px 35px
+    rgba(52,38,38,.09);
+
+  animation:
+    floating 4s ease-in-out infinite;
+}
+
+.pill-one{
+  left:4%;
+  top:21%;
+}
+
+.pill-two{
+  right:2%;
+  top:31%;
+
+  animation-delay:-1.4s;
+}
+
+.pill-three{
+  right:10%;
+  bottom:12%;
+
+  animation-delay:-2.7s;
+}
+
+@keyframes floating{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+}
+
+/* =========================================================
+   3D DECK
+========================================================= */
+
+.deck{
+  width:min(78%,450px);
+
+  aspect-ratio:.78;
+
+  position:relative;
+
+  transform-style:
+    preserve-3d;
+
+  transform:
+    rotateX(7deg)
+    rotateY(-10deg)
+    rotateZ(-2deg);
+
+  transition:
+    transform .3s ease-out;
+
+  z-index:4;
+}
+
+.deck-layer{
+  position:absolute;
+
+  inset:0;
+
+  border-radius:27px;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 35px 75px
+    rgba(73,52,51,.17);
+}
+
+.deck-back-two{
+  background:
     linear-gradient(
-        145deg,
-        #EAE0D4,
-        #D8C4B8
+      145deg,
+      #788572,
+      #4e5d4c
     );
 
-    isolation:isolate;
-
-    box-shadow:
-    0 35px 80px
-    rgba(63,45,41,.13);
+  transform:
+    translateZ(-55px)
+    translateX(45px)
+    translateY(25px)
+    rotateZ(6deg);
 }
 
-
-.experience-ring{
-
-    position:absolute;
-
-    width:480px;
-    height:480px;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    rgba(113,63,70,.13);
-}
-
-
-.experience-ring::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:46px;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    rgba(184,154,103,.18);
-}
-
-
-.experience-copy-top{
-
-    position:absolute;
-
-    top:26px;
-    left:30px;
-
-    font-family:
-    "DM Sans",
-    sans-serif;
-
-    font-size:8px;
-
-    font-weight:700;
-
-    letter-spacing:.15em;
-
-    color:
-    rgba(38,31,30,.5);
-}
-
-
-.experience-copy-side{
-
-    position:absolute;
-
-    top:50%;
-    right:20px;
-
-    transform:
-    translateY(-50%);
-
-    writing-mode:
-    vertical-rl;
-
-    font-family:
-    "DM Sans",
-    sans-serif;
-
-    font-size:7px;
-
-    font-weight:700;
-
-    letter-spacing:.2em;
-
-    color:
-    rgba(38,31,30,.45);
-}
-
-
-/* envelope */
-
-.envelope-scene{
-
-    width:
-    min(
-        82%,
-        440px
-    );
-
-    height:420px;
-
-    position:relative;
-
-    perspective:1200px;
-
-    z-index:3;
-}
-
-
-.envelope{
-
-    position:absolute;
-
-    left:0;
-    right:0;
-
-    bottom:50px;
-
-    height:245px;
-
-    background:
-    #C9A99A;
-
-    border-radius:
-    9px;
-
-    box-shadow:
-    0 25px 45px
-    rgba(61,42,39,.16);
-
-    overflow:visible;
-}
-
-
-.envelope::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-
+.deck-back-one{
+  background:
     linear-gradient(
-        32deg,
-        #B98E80 0 49%,
-        transparent 50%
-    ),
+      140deg,
+      #d7a9a9,
+      #ead0c8
+    );
 
+  transform:
+    translateZ(-28px)
+    translateX(-32px)
+    translateY(26px)
+    rotateZ(-5deg);
+}
+
+.deck-main{
+  padding:30px;
+
+  display:flex;
+  flex-direction:column;
+
+  color:#633e47;
+
+  background:
     linear-gradient(
-        -32deg,
-        #D6B7AA 0 49%,
-        transparent 50%
+      150deg,
+      #fffaf2,
+      #eee3da
     );
 
-    border-radius:9px;
-
-    z-index:3;
+  transform:
+    translateZ(20px);
 }
 
+/* decorative circles */
 
-.envelope-flap{
+.deck-main::before,
+.deck-main::after{
+  content:"";
 
-    position:absolute;
+  position:absolute;
 
-    left:0;
-    top:0;
+  border-radius:50%;
 
-    width:100%;
-    height:145px;
-
-    background:
-    #D5B8AC;
-
-    clip-path:
-    polygon(
-        0 0,
-        100% 0,
-        50% 100%
-    );
-
-    transform-origin:
-    top center;
-
-    transform:
-    rotateX(0deg);
-
-    z-index:5;
-
-    transition:
-    transform .8s
-    cubic-bezier(.2,.7,.2,1);
-}
-
-
-.invite-paper{
-
-    position:absolute;
-
-    width:82%;
-
-    height:355px;
-
-    left:9%;
-
-    bottom:28px;
-
-    background:
-    #FAF7F1;
-
-    border-radius:
-    4px;
-
-    box-shadow:
-    0 15px 40px
-    rgba(55,40,37,.13);
-
-    z-index:2;
-
-    transform:
-    translateY(88px);
-
-    transition:
-    transform 1s
-    cubic-bezier(.2,.8,.2,1);
-
-    padding:
-    39px 26px;
-
-    text-align:center;
-
-    overflow:hidden;
-}
-
-
-.invite-paper::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:190px;
-    height:190px;
-
-    border-radius:50%;
-
-    border:
+  border:
     1px solid
-    rgba(184,154,103,.3);
-
-    top:-105px;
-    left:-70px;
+    rgba(185,154,103,.35);
 }
 
+.deck-main::before{
+  width:290px;
+  height:290px;
 
-.invite-paper::after{
+  top:-150px;
+  right:-105px;
+}
 
-    content:"";
+.deck-main::after{
+  width:180px;
+  height:180px;
 
-    position:absolute;
+  left:-80px;
+  bottom:-100px;
+}
 
-    width:150px;
-    height:150px;
+/* card top */
 
-    border-radius:50%;
+.card-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 
-    border:
+  position:relative;
+  z-index:2;
+}
+
+.card-label{
+  font-family:"Manrope",sans-serif;
+
+  font-size:7px;
+  font-weight:800;
+
+  letter-spacing:.18em;
+}
+
+.card-star{
+  width:37px;
+  height:37px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  border:
     1px solid
-    rgba(113,63,70,.13);
+    rgba(116,72,82,.22);
 
-    bottom:-90px;
-    right:-55px;
+  font-size:13px;
 }
 
+/* card center */
 
-.envelope-scene.is-open
-.envelope-flap{
+.card-center{
+  flex:1;
 
-    transform:
-    rotateX(180deg);
+  display:grid;
+  place-items:center;
 
-    z-index:1;
+  text-align:center;
+
+  position:relative;
+  z-index:2;
 }
 
+.card-center small{
+  font-family:"Manrope",sans-serif;
 
-.envelope-scene.is-open
-.invite-paper{
+  font-size:7px;
+  font-weight:800;
 
-    transform:
-    translateY(-108px);
+  letter-spacing:.18em;
 
-    z-index:6;
+  color:var(--gold);
 }
 
+.card-names{
+  margin-top:22px;
 
-.invite-mini{
-
-    color:
-    var(--gold);
-
-    font-family:
-    "DM Sans",
-    sans-serif;
-
-    font-size:8px;
-
-    font-weight:700;
-
-    letter-spacing:.22em;
-
-    text-transform:uppercase;
+  font:
+    italic 500 54px/.85
+    "Cormorant Garamond",
+    serif;
 }
 
+.card-and{
+  margin:
+    6px 0;
 
-.invite-names{
-
-    margin-top:23px;
-
-    font-family:
+  font:
+    italic 500 25px
     "Cormorant Garamond",
     serif;
 
-    font-size:45px;
-
-    line-height:.88;
-
-    font-weight:500;
-
-    font-style:italic;
-
-    color:
-    var(--wine);
+  color:var(--gold);
 }
 
+.card-line{
+  width:45px;
+  height:1px;
 
-.invite-divider{
+  margin:
+    22px auto;
 
-    width:45px;
-    height:1px;
-
-    margin:
-    25px auto;
-
-    background:
-    var(--gold);
+  background:var(--gold);
 }
 
+.card-date{
+  font-family:"Manrope",sans-serif;
 
-.invite-date{
+  font-size:9px;
+  font-weight:700;
 
-    font-family:
-    "DM Sans",
-    sans-serif;
-
-    font-size:10px;
-
-    font-weight:600;
-
-    letter-spacing:.15em;
+  letter-spacing:.13em;
 }
 
+.card-place{
+  margin-top:8px;
 
-.invite-location{
-
-    margin-top:9px;
-
-    color:
-    var(--muted);
-
-    font-size:10px;
+  font-size:8px;
+  color:var(--muted);
 }
 
+.card-bottom{
+  position:relative;
+  z-index:2;
 
-.wax-seal{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
 
-    position:absolute;
+  font-size:7px;
+  font-weight:700;
 
-    left:50%;
-    bottom:-27px;
+  color:var(--muted);
+}
 
-    transform:
+.card-rsvp{
+  color:var(--wine);
+
+  padding:
+    7px 11px;
+
+  border-radius:999px;
+
+  border:
+    1px solid
+    rgba(116,72,82,.22);
+}
+
+/* =========================================================
+   SCROLL HINT
+========================================================= */
+
+.scroll-hint{
+  position:absolute;
+
+  bottom:0;
+  left:50%;
+
+  transform:
     translateX(-50%);
 
-    width:61px;
-    height:61px;
+  font-size:7px;
+  font-weight:800;
 
-    border-radius:50%;
+  letter-spacing:.15em;
 
-    background:
+  color:var(--muted);
+}
 
-    radial-gradient(
-        circle at 35% 30%,
-        #8F5860,
-        #60343B
+.scroll-hint::after{
+  content:"";
+
+  display:block;
+
+  width:1px;
+  height:38px;
+
+  margin:
+    9px auto 0;
+
+  background:
+    linear-gradient(
+      var(--wine),
+      transparent
     );
-
-    color:
-    #E6D0B0;
-
-    display:grid;
-
-    place-items:center;
-
-    font-family:
-    "Cormorant Garamond",
-    serif;
-
-    font-size:22px;
-
-    z-index:8;
-
-    border:
-    4px solid
-    rgba(255,255,255,.16);
-
-    box-shadow:
-    0 9px 20px
-    rgba(55,30,35,.25);
 }
-
-
-.open-invite{
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:20px;
-
-    transform:
-    translateX(-50%);
-
-    border:0;
-
-    background:none;
-
-    color:
-    var(--ink);
-
-    font-size:9px;
-
-    font-weight:800;
-
-    letter-spacing:.1em;
-
-    z-index:12;
-}
-
-
-.open-invite::after{
-
-    content:"";
-
-    display:block;
-
-    width:35px;
-    height:1px;
-
-    margin:
-    7px auto 0;
-
-    background:
-    var(--wine);
-}
-
 
 /* =========================================================
    MARQUEE
 ========================================================= */
 
+.marquee-wrap{
+  overflow:hidden;
+
+  border-top:
+    1px solid
+    var(--line);
+
+  border-bottom:
+    1px solid
+    var(--line);
+
+  background:
+    rgba(255,255,255,.28);
+}
+
 .marquee{
+  display:flex;
+  align-items:center;
 
-    margin-inline:
-    calc(
-        (100vw - 100%) / -2
-    );
+  gap:27px;
 
-    overflow:hidden;
+  width:max-content;
 
-    border-top:
-    1px solid
-    var(--line);
+  padding:
+    13px 0;
 
-    border-bottom:
-    1px solid
-    var(--line);
-
-    background:
-    rgba(255,255,255,.25);
+  animation:
+    marquee 26s linear infinite;
 }
 
-
-.marquee-track{
-
-    width:max-content;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:29px;
-
-    padding:
-    14px 0;
-
-    animation:
-    marqueeMove
-    28s linear
-    infinite;
-}
-
-
-.marquee-track span{
-
-    font-family:
+.marquee span{
+  font:
+    italic 600 18px
     "Cormorant Garamond",
     serif;
 
-    font-size:18px;
-
-    font-weight:600;
-
-    font-style:italic;
-
-    white-space:nowrap;
+  white-space:nowrap;
 }
 
+.marquee i{
+  width:5px;
+  height:5px;
 
-.marquee-track i{
+  background:var(--gold);
 
-    width:5px;
-    height:5px;
+  transform:rotate(45deg);
+}
 
-    background:
-    var(--gold);
-
+@keyframes marquee{
+  to{
     transform:
-    rotate(45deg);
+      translateX(-50%);
+  }
 }
-
-
-@keyframes marqueeMove{
-
-    to{
-        transform:
-        translateX(-50%);
-    }
-}
-
 
 /* =========================================================
-   GENERAL SECTION
+   SECTIONS
 ========================================================= */
 
 .section{
-
-    padding:
-    100px 0;
+  padding:
+    105px 0;
 }
 
+.section-top{
+  display:grid;
 
-.section-intro{
+  grid-template-columns:
+    .58fr
+    1.42fr;
 
-    display:grid;
-
-    grid-template-columns:
-    .55fr
-    1.45fr;
-
-    gap:45px;
-
-    align-items:start;
+  gap:40px;
 }
 
+.section-index{
+  color:var(--wine);
 
-.section-number{
+  font-family:"Manrope",sans-serif;
 
-    color:
-    var(--wine);
+  font-size:8px;
+  font-weight:900;
 
-    font-family:
-    "DM Sans",
-    sans-serif;
-
-    font-size:9px;
-
-    font-weight:800;
-
-    letter-spacing:.15em;
+  letter-spacing:.14em;
 }
-
 
 .section-title{
-
-    font-family:
+  font:
+    500 clamp(47px,5.4vw,76px)/.96
     "Cormorant Garamond",
-    "Cairo",
     serif;
 
-    font-size:
-    clamp(
-        46px,
-        5.5vw,
-        75px
-    );
-
-    font-weight:500;
-
-    line-height:.95;
-
-    letter-spacing:-.035em;
+  letter-spacing:-.04em;
 }
 
+body.lang-ar .section-title{
+  font-family:"Cairo",sans-serif;
 
-body.lang-ar
-.section-title{
+  font-size:
+    clamp(35px,4.5vw,57px);
 
-    font-family:
-    "Cairo",
-    sans-serif;
+  font-weight:800;
 
-    font-weight:800;
-
-    font-size:
-    clamp(
-        35px,
-        4.8vw,
-        59px
-    );
-
-    line-height:1.4;
+  line-height:1.4;
 }
-
 
 /* =========================================================
-   PORTFOLIO
+   PORTFOLIO HEADER
 ========================================================= */
 
-.portfolio-header{
+.portfolio-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:end;
-
-    gap:30px;
+  gap:35px;
 }
 
+.portfolio-text{
+  max-width:380px;
 
-.portfolio-header-copy{
+  color:var(--muted);
 
-    max-width:380px;
-
-    color:
-    var(--muted);
-
-    font-size:12px;
-
-    line-height:1.9;
+  font-size:11px;
+  line-height:1.9;
 }
 
+/* =========================================================
+   FILTERS
+========================================================= */
 
 .filters{
+  display:flex;
+  flex-wrap:wrap;
 
-    display:flex;
+  gap:7px;
 
-    flex-wrap:wrap;
-
-    gap:7px;
-
-    margin-top:34px;
+  margin-top:34px;
 }
 
+.filter{
+  min-height:39px;
 
-.filter-button{
-
-    min-height:38px;
-
-    padding:
+  padding:
     8px 15px;
 
-    border-radius:999px;
-
-    border:
+  border:
     1px solid
     var(--line);
 
-    background:
-    rgba(255,255,255,.45);
+  border-radius:999px;
 
-    color:
-    var(--muted);
+  color:var(--muted);
 
-    font-size:9px;
+  background:
+    rgba(255,255,255,.47);
 
-    font-weight:800;
+  font-size:8px;
+  font-weight:900;
 
-    transition:.2s;
+  transition:.2s;
 }
 
+.filter:hover,
+.filter.active{
+  color:white;
+  background:var(--ink);
 
-.filter-button.active,
-.filter-button:hover{
-
-    background:
-    var(--ink);
-
-    color:white;
-
-    border-color:
-    var(--ink);
+  border-color:var(--ink);
 }
 
+/* =========================================================
+   PORTFOLIO GRID
+========================================================= */
 
 .portfolio-grid{
+  display:grid;
 
-    display:grid;
+  grid-template-columns:
+    repeat(12,1fr);
 
-    grid-template-columns:
-    repeat(
-        12,
-        1fr
-    );
+  gap:15px;
 
-    gap:14px;
+  margin-top:27px;
 
-    margin-top:29px;
+  perspective:1200px;
 }
 
-
-.work-card{
-
-    grid-column:
+.project{
+  grid-column:
     span 4;
 
-    min-height:470px;
+  min-height:470px;
 
-    position:relative;
+  border-radius:26px;
 
-    overflow:hidden;
+  overflow:hidden;
 
-    border-radius:23px;
+  position:relative;
 
-    cursor:pointer;
+  cursor:pointer;
 
-    transition:
-    transform .3s,
-    opacity .3s;
+  transform-style:
+    preserve-3d;
 
-    isolation:isolate;
+  transition:
+    transform .22s ease-out,
+    opacity .25s;
+
+  box-shadow:
+    0 20px 55px
+    rgba(64,46,46,.08);
 }
 
-
-.work-card:hover{
-
-    transform:
-    translateY(-7px);
-}
-
-
-.work-card.hidden{
-
-    display:none;
-}
-
-
-.work-card.large{
-
-    grid-column:
+.project.large{
+  grid-column:
     span 8;
 }
 
-
-.work-content{
-
-    position:absolute;
-
-    inset:0;
-
-    padding:27px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
+.project.hidden{
+  display:none;
 }
 
+.project-inner{
+  position:absolute;
+  inset:0;
 
-.work-meta{
+  padding:26px;
 
-    display:flex;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 
-    justify-content:space-between;
+  transform:
+    translateZ(20px);
 
-    gap:15px;
-
-    font-family:
-    "DM Sans",
-    sans-serif;
-
-    font-size:8px;
-
-    font-weight:800;
-
-    letter-spacing:.1em;
+  pointer-events:none;
 }
 
+.project-head{
+  display:flex;
+  justify-content:space-between;
 
-.work-bottom{
+  gap:15px;
 
-    display:flex;
+  font-family:"Manrope",sans-serif;
 
-    justify-content:space-between;
+  font-size:7px;
+  font-weight:900;
 
-    align-items:end;
-
-    gap:20px;
+  letter-spacing:.11em;
 }
 
+.project-bottom{
+  display:flex;
 
-.work-bottom h3{
+  justify-content:space-between;
+  align-items:end;
 
-    font-family:
+  gap:20px;
+}
+
+.project h3{
+  font:
+    500 clamp(32px,3.5vw,49px)/.92
     "Cormorant Garamond",
     serif;
-
-    font-size:
-    clamp(
-        29px,
-        3vw,
-        43px
-    );
-
-    font-weight:500;
-
-    line-height:.95;
 }
 
+.project p{
+  margin-top:7px;
 
-.work-bottom p{
-
-    margin-top:7px;
-
-    font-size:9px;
-
-    opacity:.68;
+  font-size:8px;
+  opacity:.66;
 }
 
+.project-arrow{
+  width:49px;
+  height:49px;
 
-.work-open{
+  border-radius:50%;
 
-    width:48px;
-    height:48px;
+  flex:0 0 49px;
 
-    border-radius:50%;
+  display:grid;
+  place-items:center;
 
-    border:
+  border:
     1px solid
     currentColor;
 
-    display:grid;
-
-    place-items:center;
-
-    flex:0 0 48px;
-
-    font-size:19px;
+  font-size:19px;
 }
-
-
-/* work 1 */
-
-.work-pearl{
-
-    color:
-    #594D47;
-
-    background:
-
-    radial-gradient(
-        circle at 80% 15%,
-        rgba(255,255,255,.9),
-        transparent 22%
-    ),
-
-    linear-gradient(
-        145deg,
-        #E9DDD0,
-        #F8F4ED
-    );
-}
-
-
-.work-pearl::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:310px;
-    height:310px;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    rgba(184,154,103,.28);
-
-    top:65px;
-    left:50%;
-
-    transform:
-    translateX(-50%);
-}
-
-
-.work-pearl::after{
-
-    content:"A & L";
-
-    position:absolute;
-
-    left:50%;
-    top:40%;
-
-    transform:
-    translate(-50%,-50%);
-
-    font-family:
-    "Cormorant Garamond",
-    serif;
-
-    font-size:68px;
-
-    font-style:italic;
-
-    color:
-    var(--wine);
-}
-
-
-/* work botanical */
-
-.work-botanical{
-
-    color:white;
-
-    background:
-
-    radial-gradient(
-        circle at 80% 30%,
-        #73846D,
-        transparent 45%
-    ),
-
-    linear-gradient(
-        145deg,
-        #36463A,
-        #62705D
-    );
-}
-
-
-.work-botanical::before,
-.work-botanical::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-    height:330px;
-
-    border:
-    1px solid
-    rgba(255,255,255,.24);
-
-    border-radius:
-    100% 0 100% 0;
-
-    transform:
-    rotate(33deg);
-}
-
-
-.work-botanical::before{
-
-    top:-90px;
-    right:-20px;
-}
-
-
-.work-botanical::after{
-
-    bottom:-120px;
-    left:-10px;
-
-    transform:
-    rotate(-27deg);
-}
-
-
-/* work midnight */
-
-.work-midnight{
-
-    color:
-    #F7E9C7;
-
-    background:
-
-    radial-gradient(
-        circle at 30% 20%,
-        rgba(184,154,103,.17),
-        transparent 35%
-    ),
-
-    #171A20;
-}
-
-
-.work-midnight::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:50px;
-
-    border:
-    1px solid
-    rgba(219,200,161,.35);
-}
-
-
-.work-midnight::after{
-
-    content:"SAVE THE DATE";
-
-    position:absolute;
-
-    left:50%;
-    top:48%;
-
-    transform:
-    translate(-50%,-50%);
-
-    text-align:center;
-
-    font-family:
-    "Cormorant Garamond",
-    serif;
-
-    font-size:45px;
-
-    letter-spacing:.07em;
-}
-
-
-/* Rose */
-
-.work-rose{
-
-    color:
-    #5E3942;
-
-    background:
-
-    radial-gradient(
-        circle at 50% -10%,
-        #F6D7D4,
-        transparent 45%
-    ),
-
-    linear-gradient(
-        160deg,
-        #E8C4C1,
-        #F5E4DE
-    );
-}
-
-
-.work-rose::before{
-
-    content:"18";
-
-    position:absolute;
-
-    left:50%;
-    top:45%;
-
-    transform:
-    translate(-50%,-50%);
-
-    font-family:
-    "Cormorant Garamond",
-    serif;
-
-    font-size:150px;
-
-    color:
-    rgba(113,63,70,.16);
-}
-
-
-/* sky */
-
-.work-sky{
-
-    color:
-    #35516C;
-
-    background:
-
-    linear-gradient(
-        180deg,
-        #D8E7F0,
-        #F4F0E7
-    );
-}
-
-
-.work-sky::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:220px;
-    height:220px;
-
-    border-radius:50%;
-
-    background:
-    rgba(255,255,255,.7);
-
-    top:80px;
-    left:50%;
-
-    transform:
-    translateX(-50%);
-}
-
-
-.work-sky::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    top:155px;
-    left:50%;
-
-    transform:
-    translateX(-50%);
-
-    font-size:50px;
-
-    color:
-    var(--blue);
-}
-
-
-/* corporate */
-
-.work-minimal{
-
-    color:white;
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #282826,
-        #43433D
-    );
-}
-
-
-.work-minimal::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:300px;
-    height:300px;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    rgba(255,255,255,.14);
-
-    right:-100px;
-    top:-90px;
-}
-
-
-.work-minimal::after{
-
-    content:"EVENT 26";
-
-    position:absolute;
-
-    top:42%;
-    left:30px;
-
-    font-family:
-    "DM Sans",
-    sans-serif;
-
-    font-size:46px;
-
-    font-weight:700;
-
-    letter-spacing:-.05em;
-}
-
 
 /* =========================================================
-   SERVICES
+   PROJECT DESIGNS
 ========================================================= */
 
-.services-area{
+/* Pearl */
 
-    margin-inline:
-    calc(
-        (100vw - 100%) / -2
-    );
+.project-pearl{
+  color:#664049;
 
-    background:
-    var(--ink);
-
-    color:white;
-
-    padding:
-    105px
-    max(
-        28px,
-        calc(
-            (100vw - 1304px) / 2
-        )
+  background:
+    radial-gradient(
+      circle at 75% 15%,
+      rgba(255,255,255,.88),
+      transparent 25%
+    ),
+    linear-gradient(
+      145deg,
+      #eaded2,
+      #f8f3ec
     );
 }
 
+.project-pearl::before{
+  content:"";
 
-.services-area
-.section-number{
+  position:absolute;
 
-    color:
-    var(--gold-soft);
+  width:330px;
+  height:330px;
+
+  left:50%;
+  top:50%;
+
+  transform:
+    translate(-50%,-52%);
+
+  border-radius:50%;
+
+  border:
+    1px solid
+    rgba(185,154,103,.34);
 }
 
+.project-pearl::after{
+  content:"L & A";
 
-.services-grid{
+  position:absolute;
 
-    display:grid;
+  left:50%;
+  top:47%;
 
-    grid-template-columns:
-    repeat(
-        3,
-        1fr
+  transform:
+    translate(-50%,-50%);
+
+  font:
+    italic 500 80px
+    "Cormorant Garamond",
+    serif;
+}
+
+/* Botanical */
+
+.project-sage{
+  color:#f8f3e8;
+
+  background:
+    radial-gradient(
+      circle at 70% 10%,
+      #7e9078,
+      transparent 45%
+    ),
+    linear-gradient(
+      145deg,
+      #3f5142,
+      #687661
     );
-
-    margin-top:58px;
-
-    border-top:
-    1px solid
-    rgba(255,255,255,.13);
 }
 
+.leaf{
+  position:absolute;
 
-.service{
+  width:210px;
+  height:360px;
 
-    min-height:285px;
-
-    padding:29px 25px;
-
-    border-inline-end:
-    1px solid
-    rgba(255,255,255,.11);
-
-    transition:.25s;
-}
-
-
-.service:nth-child(3n){
-    border-inline-end:0;
-}
-
-
-.service:nth-child(n+4){
-
-    border-top:
-    1px solid
-    rgba(255,255,255,.11);
-}
-
-
-.service:hover{
-
-    background:
-    rgba(255,255,255,.035);
-}
-
-
-.service-index{
-
-    color:
-    var(--gold-soft);
-
-    font-family:
-    "DM Sans",
-    sans-serif;
-
-    font-size:9px;
-
-    font-weight:800;
-}
-
-
-.service-symbol{
-
-    margin-top:34px;
-
-    width:45px;
-    height:45px;
-
-    border-radius:50%;
-
-    border:
+  border:
     1px solid
     rgba(255,255,255,.2);
 
-    display:grid;
+  border-radius:
+    100% 0
+    100% 0;
 
-    place-items:center;
-
-    color:
-    var(--gold-soft);
-
-    font-size:18px;
+  transform:
+    rotate(28deg);
 }
 
-
-.service h3{
-
-    margin-top:20px;
-
-    font-size:17px;
+.leaf.a{
+  right:-45px;
+  top:-120px;
 }
 
+.leaf.b{
+  left:-45px;
+  bottom:-135px;
 
-.service p{
-
-    margin-top:9px;
-
-    color:
-    #A79F9A;
-
-    font-size:11px;
-
-    line-height:1.9;
+  transform:
+    rotate(-28deg);
 }
 
+/* Midnight */
+
+.project-midnight{
+  color:#e9d8b0;
+
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(185,154,103,.17),
+      transparent 35%
+    ),
+    #181a1f;
+}
+
+.project-midnight::before{
+  content:"";
+
+  position:absolute;
+  inset:48px;
+
+  border:
+    1px solid
+    rgba(233,216,176,.25);
+}
+
+.mid-title{
+  position:absolute;
+
+  left:50%;
+  top:46%;
+
+  transform:
+    translate(-50%,-50%);
+
+  text-align:center;
+
+  font:
+    500 47px/.95
+    "Cormorant Garamond",
+    serif;
+
+  letter-spacing:.04em;
+}
+
+/* Rose */
+
+.project-rose{
+  color:#713f49;
+
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      #f8dcd9,
+      transparent 45%
+    ),
+    linear-gradient(
+      165deg,
+      #e3b9b7,
+      #f4e0dc
+    );
+}
+
+.project-rose::before{
+  content:"18";
+
+  position:absolute;
+
+  left:50%;
+  top:46%;
+
+  transform:
+    translate(-50%,-50%);
+
+  font:
+    500 175px/.8
+    "Cormorant Garamond",
+    serif;
+
+  color:
+    rgba(113,63,73,.12);
+}
+
+/* Sky */
+
+.project-sky{
+  color:#476277;
+
+  background:
+    linear-gradient(
+      180deg,
+      #d9e7ef,
+      #f6f1e9
+    );
+}
+
+.project-sky::before{
+  content:"";
+
+  width:220px;
+  height:220px;
+
+  position:absolute;
+
+  left:50%;
+  top:90px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.7);
+
+  box-shadow:
+    0 20px 40px
+    rgba(77,102,120,.07);
+}
+
+.project-sky::after{
+  content:"✦";
+
+  position:absolute;
+
+  left:50%;
+  top:157px;
+
+  transform:
+    translateX(-50%);
+
+  color:var(--blue);
+
+  font-size:58px;
+}
+
+/* Mono */
+
+.project-mono{
+  color:white;
+
+  background:
+    linear-gradient(
+      145deg,
+      #222322,
+      #44463f
+    );
+}
+
+.project-mono::before{
+  content:"";
+
+  position:absolute;
+
+  width:330px;
+  height:330px;
+
+  right:-130px;
+  top:-130px;
+
+  border-radius:50%;
+
+  border:
+    1px solid
+    rgba(255,255,255,.14);
+}
+
+.project-mono::after{
+  content:"EVENT / 26";
+
+  position:absolute;
+
+  left:30px;
+  top:43%;
+
+  font:
+    700 49px/.9
+    "Manrope",
+    sans-serif;
+
+  letter-spacing:-.06em;
+}
+
+/* =========================================================
+   EXPERIENCE SECTION
+========================================================= */
+
+.experience{
+  margin-inline:
+    calc(
+      (100vw - 100%) / -2
+    );
+
+  padding:
+    110px
+    max(
+      28px,
+      calc(
+        (100vw - 1324px)/2
+      )
+    );
+
+  color:white;
+
+  background:
+    linear-gradient(
+      150deg,
+      #211b1b,
+      #342529
+    );
+}
+
+.experience .section-index{
+  color:var(--gold2);
+}
+
+.experience-grid{
+  display:grid;
+
+  grid-template-columns:
+    .8fr
+    1.2fr;
+
+  gap:70px;
+
+  margin-top:60px;
+}
+
+/* phone */
+
+.phone-stage{
+  position:sticky;
+
+  top:125px;
+
+  min-height:560px;
+
+  display:grid;
+  place-items:center;
+
+  perspective:1000px;
+}
+
+.phone{
+  width:280px;
+
+  aspect-ratio:.49;
+
+  border-radius:39px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  padding:
+    12px;
+
+  color:#5e3942;
+
+  background:#111;
+
+  border:
+    1px solid
+    rgba(255,255,255,.18);
+
+  box-shadow:
+    0 35px 90px
+    rgba(0,0,0,.3);
+
+  transform:
+    rotateY(-9deg)
+    rotateX(4deg);
+}
+
+.phone-screen{
+  height:100%;
+
+  border-radius:30px;
+
+  overflow:hidden;
+
+  padding:
+    27px 18px;
+
+  text-align:center;
+
+  background:
+    linear-gradient(
+      165deg,
+      #f7eee5,
+      #ead8ce
+    );
+
+  position:relative;
+}
+
+.phone-screen::before{
+  content:"";
+
+  position:absolute;
+
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+
+  border:
+    1px solid
+    rgba(185,154,103,.35);
+
+  top:-120px;
+  right:-95px;
+}
+
+.phone-pill{
+  width:72px;
+  height:19px;
+
+  border-radius:999px;
+
+  background:#151515;
+
+  margin:
+    -18px auto 23px;
+
+  position:relative;
+  z-index:2;
+}
+
+.phone-small{
+  font-family:"Manrope",sans-serif;
+
+  font-size:6px;
+  font-weight:800;
+
+  letter-spacing:.17em;
+
+  color:var(--gold);
+}
+
+.phone-names{
+  margin-top:36px;
+
+  font:
+    italic 500 38px/.9
+    "Cormorant Garamond",
+    serif;
+}
+
+.phone-line{
+  width:35px;
+  height:1px;
+
+  margin:
+    20px auto;
+
+  background:var(--gold);
+}
+
+.phone-date{
+  font-family:"Manrope",sans-serif;
+
+  font-size:8px;
+  font-weight:700;
+
+  letter-spacing:.1em;
+}
+
+.phone-countdown{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:5px;
+
+  margin-top:32px;
+}
+
+.phone-countdown div{
+  padding:
+    10px 3px;
+
+  border-radius:9px;
+
+  background:
+    rgba(255,255,255,.55);
+}
+
+.phone-countdown strong{
+  display:block;
+
+  font-family:"Manrope",sans-serif;
+
+  font-size:12px;
+}
+
+.phone-countdown span{
+  display:block;
+
+  color:var(--muted);
+
+  margin-top:1px;
+
+  font-size:5px;
+}
+
+.phone-location{
+  margin-top:24px;
+
+  padding:
+    11px;
+
+  border-radius:999px;
+
+  color:white;
+  background:var(--wine);
+
+  font-size:7px;
+  font-weight:800;
+}
+
+.phone-rsvp{
+  margin-top:8px;
+
+  padding:
+    10px;
+
+  border-radius:999px;
+
+  border:
+    1px solid
+    rgba(116,72,82,.22);
+
+  font-size:7px;
+  font-weight:800;
+}
+
+/* Feature list */
+
+.features{
+  border-top:
+    1px solid
+    rgba(255,255,255,.14);
+}
+
+.feature{
+  display:grid;
+
+  grid-template-columns:
+    50px 1fr;
+
+  gap:22px;
+
+  padding:
+    28px 0;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.12);
+}
+
+.feature-number{
+  color:var(--gold2);
+
+  font-family:"Manrope",sans-serif;
+
+  font-size:8px;
+  font-weight:800;
+}
+
+.feature h3{
+  font-size:18px;
+}
+
+.feature p{
+  max-width:480px;
+
+  margin-top:7px;
+
+  color:#aaa09d;
+
+  font-size:10px;
+  line-height:1.9;
+}
 
 /* =========================================================
    PROCESS
 ========================================================= */
 
-.process-header{
+.process-head{
+  display:flex;
 
-    display:flex;
+  align-items:end;
+  justify-content:space-between;
 
-    justify-content:space-between;
+  gap:35px;
 
-    align-items:end;
-
-    gap:40px;
-
-    margin-bottom:42px;
+  margin-bottom:43px;
 }
 
+.process-description{
+  max-width:410px;
 
-.process-header p{
+  color:var(--muted);
 
-    max-width:400px;
-
-    color:
-    var(--muted);
-
-    font-size:12px;
-
-    line-height:1.9;
+  font-size:11px;
+  line-height:1.9;
 }
-
 
 .process-grid{
+  display:grid;
 
-    display:grid;
+  grid-template-columns:
+    repeat(4,1fr);
 
-    grid-template-columns:
-    repeat(
-        4,
-        1fr
-    );
-
-    gap:10px;
+  gap:10px;
 }
 
+.process-card{
+  min-height:220px;
 
-.process-step{
+  padding:23px;
 
-    position:relative;
+  position:relative;
 
-    min-height:215px;
+  overflow:hidden;
 
-    border:
+  border-radius:18px;
+
+  border:
     1px solid
     var(--line);
 
-    padding:23px;
+  background:
+    rgba(255,255,255,.48);
 
-    border-radius:17px;
-
-    background:
-    rgba(255,255,255,.42);
-
-    overflow:hidden;
+  transition:.25s;
 }
 
+.process-card:hover{
+  transform:
+    translateY(-5px);
 
-.process-step::after{
+  background:white;
+}
 
-    content:"";
+.process-card::after{
+  content:"";
 
-    position:absolute;
+  position:absolute;
 
-    width:100px;
-    height:100px;
+  width:105px;
+  height:105px;
 
-    border-radius:50%;
+  border-radius:50%;
 
-    border:
+  right:-45px;
+  bottom:-48px;
+
+  border:
     1px solid
-    rgba(113,63,70,.12);
-
-    bottom:-45px;
-    right:-40px;
+    rgba(116,72,82,.12);
 }
 
+.process-card small{
+  color:var(--wine);
 
-.process-step small{
+  font-family:"Manrope",sans-serif;
 
-    color:
-    var(--wine);
-
-    font-family:
-    "DM Sans",
-    sans-serif;
-
-    font-size:9px;
-
-    font-weight:800;
-
-    letter-spacing:.08em;
+  font-size:8px;
+  font-weight:800;
 }
 
+.process-card h3{
+  margin-top:47px;
 
-.process-step h3{
-
-    margin-top:47px;
-
-    font-size:17px;
+  font-size:17px;
 }
 
+.process-card p{
+  margin-top:8px;
 
-.process-step p{
+  color:var(--muted);
 
-    margin-top:8px;
-
-    color:
-    var(--muted);
-
-    font-size:10px;
-
-    line-height:1.85;
+  font-size:9px;
+  line-height:1.85;
 }
-
 
 /* =========================================================
-   CTA
+   FINAL CTA
 ========================================================= */
 
-.cta{
+.final-cta{
+  min-height:390px;
 
-    margin:
-    25px 0
-    85px;
+  margin:
+    20px 0
+    80px;
 
-    min-height:330px;
+  padding:
+    47px;
 
-    padding:45px;
+  position:relative;
 
-    border-radius:28px;
+  overflow:hidden;
 
-    position:relative;
+  display:grid;
 
-    overflow:hidden;
-
-    color:white;
-
-    background:
-
-    radial-gradient(
-        circle at 90% 15%,
-        rgba(219,200,161,.22),
-        transparent 30%
-    ),
-
-    var(--wine-dark);
-
-    display:grid;
-
-    grid-template-columns:
+  grid-template-columns:
     1fr auto;
 
-    gap:40px;
+  align-items:center;
 
-    align-items:center;
+  gap:40px;
+
+  border-radius:30px;
+
+  color:white;
+
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      rgba(225,207,170,.21),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #613b44,
+      #3a252a
+    );
+
+  box-shadow:
+    0 30px 80px
+    rgba(84,55,60,.13);
 }
 
+.final-cta::before,
+.final-cta::after{
+  content:"";
 
-.cta::before{
+  position:absolute;
 
-    content:"";
+  border-radius:50%;
 
-    position:absolute;
-
-    width:300px;
-    height:300px;
-
-    border-radius:50%;
-
-    border:
+  border:
     1px solid
-    rgba(255,255,255,.13);
-
-    right:-90px;
-    top:-100px;
+    rgba(255,255,255,.14);
 }
 
+.final-cta::before{
+  width:350px;
+  height:350px;
 
-.cta::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:190px;
-    height:190px;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    rgba(255,255,255,.13);
-
-    right:-10px;
-    top:-40px;
+  right:-130px;
+  top:-135px;
 }
 
+.final-cta::after{
+  width:220px;
+  height:220px;
 
-.cta-copy{
-    position:relative;
-    z-index:2;
+  right:-20px;
+  top:-70px;
 }
 
+.final-copy{
+  position:relative;
+  z-index:3;
+}
 
-.cta h2{
+.final-copy h2{
+  max-width:760px;
 
-    max-width:690px;
-
-    font-family:
+  font:
+    500 clamp(48px,5.7vw,78px)/.94
     "Cormorant Garamond",
-    "Cairo",
     serif;
-
-    font-size:
-    clamp(
-        43px,
-        5.5vw,
-        75px
-    );
-
-    font-weight:500;
-
-    line-height:.95;
 }
 
+body.lang-ar .final-copy h2{
+  font-family:"Cairo",sans-serif;
 
-body.lang-ar
-.cta h2{
+  font-size:
+    clamp(34px,4.7vw,59px);
 
-    font-family:
-    "Cairo",
-    sans-serif;
-
-    font-size:
-    clamp(
-        33px,
-        4.8vw,
-        58px
-    );
-
-    font-weight:800;
-
-    line-height:1.4;
+  font-weight:800;
+  line-height:1.42;
 }
 
+.final-copy p{
+  max-width:550px;
 
-.cta p{
+  margin-top:15px;
 
-    margin-top:15px;
-
-    max-width:540px;
-
-    color:
+  color:
     rgba(255,255,255,.67);
 
-    font-size:11px;
-
-    line-height:1.9;
+  font-size:10px;
+  line-height:1.9;
 }
 
+.round-cta{
+  width:175px;
+  height:175px;
 
-.cta-button{
+  position:relative;
+  z-index:4;
 
-    position:relative;
+  display:grid;
+  place-items:center;
 
-    z-index:3;
+  padding:25px;
 
-    width:170px;
-    height:170px;
+  border:0;
+  border-radius:50%;
 
-    border-radius:50%;
+  color:var(--wine);
 
-    background:
-    var(--ivory);
+  background:var(--bg);
 
-    color:
-    var(--wine-dark);
+  text-align:center;
 
-    display:grid;
+  font-size:10px;
+  font-weight:900;
 
-    place-items:center;
-
-    text-align:center;
-
-    padding:23px;
-
-    border:0;
-
-    font-size:11px;
-
-    font-weight:800;
-
-    transition:.3s;
+  transition:.3s;
 }
 
-
-.cta-button:hover{
-
-    transform:
+.round-cta:hover{
+  transform:
     rotate(5deg)
     scale(1.04);
 }
-
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 .footer{
+  min-height:105px;
 
-    min-height:110px;
+  padding:
+    23px 0
+    31px;
 
-    border-top:
+  border-top:
     1px solid
     var(--line);
 
-    display:flex;
+  display:flex;
 
-    justify-content:space-between;
+  align-items:center;
+  justify-content:space-between;
 
-    align-items:center;
-
-    gap:20px;
-
-    padding:
-    24px 0
-    33px;
+  gap:20px;
 }
 
-
-.footer-brand{
-
-    font-family:
+.footer-logo{
+  font:
+    600 23px
     "Cormorant Garamond",
     serif;
-
-    font-size:24px;
 }
-
 
 .footer p{
+  margin-top:3px;
 
-    color:
-    var(--muted);
+  color:var(--muted);
 
-    font-size:8px;
-
-    margin-top:3px;
+  font-size:7px;
 }
-
 
 .footer-meta{
+  display:flex;
+  flex-wrap:wrap;
 
-    display:flex;
+  gap:16px;
 
-    flex-wrap:wrap;
+  color:var(--muted);
 
-    gap:17px;
-
-    color:
-    var(--muted);
-
-    font-size:8px;
-
-    font-weight:700;
+  font-size:7px;
+  font-weight:800;
 }
-
 
 /* =========================================================
-   PORTFOLIO PREVIEW MODAL
+   PROJECT MODAL
 ========================================================= */
 
-.preview-modal{
+.modal{
+  position:fixed;
+  inset:0;
 
-    position:fixed;
+  z-index:100;
 
-    inset:0;
+  padding:18px;
 
-    z-index:100;
+  overflow:auto;
 
-    display:none;
+  display:none;
 
-    background:
-    rgba(25,19,19,.88);
+  background:
+    rgba(25,20,20,.87);
 
-    backdrop-filter:
-    blur(12px);
-
-    padding:
-    20px;
-
-    overflow:auto;
+  backdrop-filter:
+    blur(14px);
 }
 
-
-.preview-modal.open{
-
-    display:grid;
-
-    place-items:center;
+.modal.open{
+  display:grid;
+  place-items:center;
 }
 
+.modal-shell{
+  width:min(1100px,100%);
 
-.preview-shell{
-
-    width:
+  min-height:
     min(
-        100%,
-        1040px
+      740px,
+      calc(100svh - 36px)
     );
 
-    min-height:
-    min(
-        720px,
-        calc(100vh - 40px)
-    );
+  overflow:hidden;
 
-    border-radius:27px;
+  position:relative;
 
-    background:
-    var(--ivory);
+  border-radius:30px;
 
-    overflow:hidden;
+  background:var(--bg);
 
-    position:relative;
-
-    box-shadow:
+  box-shadow:
     0 40px 100px
-    rgba(0,0,0,.35);
+    rgba(0,0,0,.32);
 }
 
+.modal-close{
+  width:45px;
+  height:45px;
 
-.preview-close{
+  position:absolute;
 
-    position:absolute;
+  right:18px;
+  top:18px;
 
-    top:17px;
-    right:17px;
+  z-index:15;
 
-    z-index:10;
+  display:grid;
+  place-items:center;
 
-    width:43px;
-    height:43px;
+  border-radius:50%;
 
-    border-radius:50%;
-
-    border:
+  border:
     1px solid
-    rgba(38,31,30,.15);
+    rgba(29,24,24,.14);
 
-    background:
-    rgba(248,244,237,.85);
+  background:
+    rgba(255,255,255,.8);
 
-    color:
-    var(--ink);
-
-    font-size:19px;
+  font-size:19px;
 }
 
-
-.preview-stage{
-
-    min-height:720px;
-
-    display:grid;
-
-    place-items:center;
-
-    text-align:center;
-
-    padding:60px 25px;
-
-    position:relative;
-
-    overflow:hidden;
+html[dir="rtl"] .modal-close{
+  right:auto;
+  left:18px;
 }
 
+/* =========================================================
+   MODAL INVITATION
+========================================================= */
 
-.preview-inner{
+.demo-invite{
+  min-height:740px;
 
-    width:
-    min(
-        100%,
-        550px
-    );
+  position:relative;
+  overflow:hidden;
 
-    position:relative;
+  display:grid;
+  place-items:center;
 
-    z-index:2;
+  padding:
+    65px 25px;
+
+  text-align:center;
 }
 
+.demo-inner{
+  width:min(560px,100%);
 
-.preview-category{
-
-    font-family:
-    "DM Sans",
-    sans-serif;
-
-    font-size:8px;
-
-    font-weight:800;
-
-    letter-spacing:.2em;
-
-    text-transform:uppercase;
+  position:relative;
+  z-index:3;
 }
 
+.demo-kicker{
+  font-family:"Manrope",sans-serif;
 
-.preview-title{
+  font-size:7px;
+  font-weight:900;
 
-    margin-top:35px;
+  letter-spacing:.2em;
+}
 
-    font-family:
+.demo-title{
+  margin-top:35px;
+
+  font:
+    italic 500 clamp(67px,8vw,105px)/.8
     "Cormorant Garamond",
     serif;
-
-    font-size:
-    clamp(
-        62px,
-        8vw,
-        100px
-    );
-
-    font-weight:500;
-
-    font-style:italic;
-
-    line-height:.83;
 }
 
+.demo-date{
+  margin-top:38px;
 
-.preview-date{
+  font-family:"Manrope",sans-serif;
 
-    margin-top:35px;
+  font-size:10px;
+  font-weight:800;
 
-    font-family:
-    "DM Sans",
-    sans-serif;
-
-    font-size:11px;
-
-    font-weight:700;
-
-    letter-spacing:.16em;
+  letter-spacing:.15em;
 }
 
+.demo-divider{
+  width:48px;
+  height:1px;
 
-.preview-line{
+  margin:
+    26px auto;
 
-    width:50px;
-    height:1px;
+  background:currentColor;
 
-    margin:
-    27px auto;
-
-    background:
-    currentColor;
-
-    opacity:.45;
+  opacity:.4;
 }
 
+.demo-copy{
+  max-width:390px;
 
-.preview-description{
+  margin:auto;
 
-    max-width:380px;
+  font-size:11px;
+  line-height:1.9;
 
-    margin:auto;
-
-    font-size:12px;
-
-    line-height:1.9;
-
-    opacity:.68;
+  opacity:.65;
 }
 
+.demo-actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
 
-.preview-rsvp{
+  gap:8px;
 
-    display:inline-flex;
+  margin-top:28px;
+}
 
-    margin-top:30px;
+.demo-action{
+  padding:
+    10px 15px;
 
-    padding:
-    11px 18px;
+  border-radius:999px;
 
-    border:
+  border:
     1px solid
     currentColor;
 
-    border-radius:999px;
+  background:transparent;
 
-    font-size:9px;
+  color:inherit;
 
-    font-weight:800;
+  font-size:7px;
+  font-weight:900;
 }
-
 
 /* modal themes */
 
-.preview-stage.pearl{
+.demo-invite.pearl{
+  color:#70454d;
 
-    background:
-    #F6EFE6;
-
-    color:
-    #6B4347;
-}
-
-
-.preview-stage.pearl::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:500px;
-    height:500px;
-
-    border-radius:50%;
-
-    border:
-    1px solid
-    rgba(184,154,103,.35);
-}
-
-
-.preview-stage.botanical{
-
-    background:
-    #445342;
-
-    color:
-    #F4EEE3;
-}
-
-
-.preview-stage.botanical::before,
-.preview-stage.botanical::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:290px;
-    height:520px;
-
-    border:
-    1px solid
-    rgba(255,255,255,.19);
-
-    border-radius:
-    100% 0 100% 0;
-}
-
-
-.preview-stage.botanical::before{
-
-    top:-180px;
-    right:-20px;
-
-    transform:
-    rotate(32deg);
-}
-
-
-.preview-stage.botanical::after{
-
-    left:-30px;
-    bottom:-210px;
-
-    transform:
-    rotate(-28deg);
-}
-
-
-.preview-stage.midnight{
-
-    background:
-    #171A20;
-
-    color:
-    #E8D7AD;
-}
-
-
-.preview-stage.midnight::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:55px;
-
-    border:
-    1px solid
-    rgba(232,215,173,.28);
-}
-
-
-.preview-stage.rose{
-
-    background:
+  background:
     linear-gradient(
-        160deg,
-        #E6BBB9,
-        #F5E5DF
+      145deg,
+      #f9f4ec,
+      #eaded2
     );
-
-    color:
-    #713F46;
 }
 
+.demo-invite.pearl::before{
+  content:"";
 
-.preview-stage.sky{
+  position:absolute;
 
-    background:
+  width:520px;
+  height:520px;
+
+  border-radius:50%;
+
+  border:
+    1px solid
+    rgba(185,154,103,.33);
+}
+
+.demo-invite.sage{
+  color:#f6efe4;
+
+  background:
     linear-gradient(
-        180deg,
-        #D8E7F0,
-        #F5F1EA
+      145deg,
+      #42523f,
+      #6e7c67
     );
-
-    color:
-    #435C70;
 }
 
+.demo-invite.sage::before,
+.demo-invite.sage::after{
+  content:"";
 
-.preview-stage.minimal{
+  position:absolute;
 
-    background:
-    #282826;
+  width:310px;
+  height:560px;
 
-    color:white;
+  border:
+    1px solid
+    rgba(255,255,255,.17);
+
+  border-radius:
+    100% 0
+    100% 0;
 }
 
+.demo-invite.sage::before{
+  top:-200px;
+  right:-20px;
+
+  transform:
+    rotate(31deg);
+}
+
+.demo-invite.sage::after{
+  bottom:-230px;
+  left:-20px;
+
+  transform:
+    rotate(-27deg);
+}
+
+.demo-invite.midnight{
+  color:#ead8ad;
+  background:#17191f;
+}
+
+.demo-invite.midnight::before{
+  content:"";
+
+  position:absolute;
+  inset:55px;
+
+  border:
+    1px solid
+    rgba(234,216,173,.26);
+}
+
+.demo-invite.rose{
+  color:#723f49;
+
+  background:
+    linear-gradient(
+      160deg,
+      #e4b8b6,
+      #f6e5df
+    );
+}
+
+.demo-invite.sky{
+  color:#476176;
+
+  background:
+    linear-gradient(
+      180deg,
+      #d8e7f0,
+      #f6f1e9
+    );
+}
+
+.demo-invite.mono{
+  color:white;
+
+  background:
+    linear-gradient(
+      140deg,
+      #202120,
+      #484a43
+    );
+}
 
 /* =========================================================
-   ORDER MODAL
+   ORDER DRAWER / MODAL
 ========================================================= */
 
 .order-modal{
+  position:fixed;
+  inset:0;
 
-    position:fixed;
+  z-index:120;
 
-    inset:0;
+  display:none;
 
-    z-index:110;
+  background:
+    rgba(25,20,20,.82);
 
-    display:none;
-
-    padding:20px;
-
-    background:
-    rgba(25,19,19,.88);
-
-    backdrop-filter:
+  backdrop-filter:
     blur(12px);
 
-    overflow:auto;
-}
+  padding:18px;
 
+  overflow:auto;
+}
 
 .order-modal.open{
-
-    display:grid;
-
-    place-items:center;
+  display:grid;
+  place-items:center;
 }
-
 
 .order-panel{
+  width:min(680px,100%);
 
-    width:
-    min(
-        100%,
-        650px
-    );
+  position:relative;
 
-    background:
-    var(--ivory);
+  padding:33px;
 
-    border-radius:27px;
+  border-radius:29px;
 
-    padding:
-    31px;
+  background:var(--bg);
 
-    position:relative;
+  box-shadow:
+    0 40px 100px
+    rgba(0,0,0,.3);
 }
 
-
 .order-close{
+  width:42px;
+  height:42px;
 
-    position:absolute;
+  position:absolute;
 
-    top:18px;
-    right:18px;
+  top:18px;
+  right:18px;
 
-    width:42px;
-    height:42px;
+  display:grid;
+  place-items:center;
 
-    border-radius:50%;
+  border-radius:50%;
 
-    border:
+  border:
     1px solid
     var(--line);
 
-    background:white;
+  background:white;
 
-    font-size:18px;
+  font-size:18px;
 }
 
-
-.order-kicker{
-
-    color:
-    var(--wine);
-
-    font-family:
-    "DM Sans",
-    sans-serif;
-
-    font-size:8px;
-
-    font-weight:800;
-
-    letter-spacing:.15em;
+html[dir="rtl"] .order-close{
+  right:auto;
+  left:18px;
 }
 
+.order-label{
+  color:var(--wine);
+
+  font-family:"Manrope",sans-serif;
+
+  font-size:7px;
+  font-weight:900;
+
+  letter-spacing:.18em;
+}
 
 .order-panel h2{
+  margin-top:10px;
 
-    margin-top:9px;
-
-    font-family:
+  font:
+    500 45px/.95
     "Cormorant Garamond",
-    "Cairo",
     serif;
-
-    font-size:43px;
-
-    font-weight:500;
 }
 
+body.lang-ar .order-panel h2{
+  font-family:"Cairo",sans-serif;
 
-body.lang-ar
-.order-panel h2{
+  font-size:30px;
+  font-weight:800;
 
-    font-family:
-    "Cairo",
-    sans-serif;
-
-    font-size:31px;
-
-    font-weight:800;
+  line-height:1.4;
 }
 
+.order-description{
+  max-width:520px;
 
-.order-intro{
+  margin-top:10px;
 
-    margin-top:8px;
+  color:var(--muted);
 
-    color:
-    var(--muted);
-
-    font-size:11px;
-
-    line-height:1.8;
-
-    max-width:500px;
+  font-size:10px;
+  line-height:1.9;
 }
-
 
 .form-grid{
+  display:grid;
 
-    display:grid;
-
-    grid-template-columns:
+  grid-template-columns:
     1fr 1fr;
 
-    gap:13px;
+  gap:12px;
 
-    margin-top:26px;
+  margin-top:25px;
 }
-
 
 .field.full{
-    grid-column:1/-1;
+  grid-column:
+    1 / -1;
 }
-
 
 .field label{
+  display:block;
 
-    display:block;
+  margin-bottom:6px;
 
-    margin-bottom:6px;
+  color:var(--muted);
 
-    font-size:9px;
-
-    font-weight:800;
-
-    color:
-    var(--muted);
+  font-size:8px;
+  font-weight:800;
 }
-
 
 .field input,
 .field select,
 .field textarea{
+  width:100%;
 
-    width:100%;
+  padding:
+    12px 13px;
 
-    border:
+  border:
     1px solid
     var(--line);
 
-    background:white;
+  border-radius:12px;
 
-    color:
-    var(--ink);
+  background:white;
+  color:var(--ink);
 
-    border-radius:12px;
-
-    padding:
-    12px 13px;
-
-    outline:0;
+  outline:0;
 }
-
 
 .field textarea{
-
-    min-height:105px;
-
-    resize:vertical;
+  min-height:105px;
+  resize:vertical;
 }
-
 
 .order-actions{
+  display:flex;
 
-    display:flex;
+  gap:8px;
 
-    gap:9px;
-
-    margin-top:20px;
+  margin-top:19px;
 }
 
+.order-button{
+  flex:1;
 
-.order-actions button{
+  min-height:51px;
 
-    flex:1;
+  border:0;
+  border-radius:999px;
 
-    min-height:50px;
-
-    border-radius:999px;
-
-    border:0;
-
-    font-size:10px;
-
-    font-weight:800;
+  font-size:9px;
+  font-weight:900;
 }
 
-
-.prepare-order{
-
-    background:
-    var(--ink);
-
-    color:white;
+.order-primary{
+  color:white;
+  background:var(--ink);
 }
 
-
-.copy-order{
-
-    background:
-    var(--ivory-2);
-
-    color:
-    var(--ink);
+.order-secondary{
+  color:var(--ink);
+  background:var(--bg2);
 }
-
 
 /* =========================================================
    TOAST
 ========================================================= */
 
 .toast{
+  position:fixed;
 
-    position:fixed;
+  left:50%;
+  bottom:
+    calc(
+      25px +
+      env(safe-area-inset-bottom)
+    );
 
-    z-index:150;
+  z-index:200;
 
-    left:50%;
-
-    bottom:28px;
-
-    transform:
+  transform:
     translate(-50%,15px);
 
-    background:
-    var(--ink);
+  opacity:0;
 
-    color:white;
+  pointer-events:none;
 
-    padding:
+  padding:
     11px 17px;
 
-    border-radius:999px;
+  border-radius:999px;
 
-    font-size:10px;
+  color:white;
+  background:var(--ink);
 
-    font-weight:700;
+  font-size:9px;
+  font-weight:800;
 
-    opacity:0;
-
-    pointer-events:none;
-
-    transition:.25s;
+  transition:.25s;
 }
-
 
 .toast.show{
+  opacity:1;
 
-    opacity:1;
-
-    transform:
+  transform:
     translate(-50%,0);
 }
-
 
 /* =========================================================
    REVEAL
 ========================================================= */
 
 .reveal{
+  opacity:0;
 
-    opacity:0;
+  transform:
+    translateY(22px);
 
-    transform:
-    translateY(20px);
-
-    transition:
-    .65s ease;
+  transition:
+    opacity .65s,
+    transform .65s;
 }
-
 
 .reveal.visible{
-
-    opacity:1;
-
-    transform:none;
+  opacity:1;
+  transform:none;
 }
-
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media(max-width:1000px){
+@media(max-width:1050px){
 
-    .header-nav{
-        display:none;
-    }
+  .nav{
+    display:none;
+  }
 
+  .hero{
+    grid-template-columns:1fr;
 
-    .hero{
+    min-height:auto;
+  }
 
-        grid-template-columns:
-        1fr;
+  .hero-copy{
+    text-align:center;
+  }
 
-        min-height:auto;
-    }
+  .eyebrow,
+  .hero-actions{
+    justify-content:center;
+  }
 
+  .hero-description{
+    margin-inline:auto;
+  }
 
-    .hero-copy{
+  .hero-stats{
+    margin-inline:auto;
+  }
 
-        text-align:center;
-    }
+  .hero-scene{
+    min-height:600px;
+  }
 
+  .experience-grid{
+    grid-template-columns:1fr;
+  }
 
-    .hero-kicker,
-    .hero-actions,
-    .hero-note{
+  .phone-stage{
+    position:relative;
 
-        justify-content:center;
-    }
+    top:auto;
+  }
 
-
-    .hero-description{
-
-        margin-inline:auto;
-    }
-
-
-    .section-intro{
-
-        grid-template-columns:
-        1fr;
-
-        gap:14px;
-    }
-
-
-    .services-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-
-    .service:nth-child(3n){
-
-        border-inline-end:
-        1px solid
-        rgba(255,255,255,.11);
-    }
-
-
-    .service:nth-child(2n){
-
-        border-inline-end:0;
-    }
-
-
-    .process-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
+  .process-grid{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
 }
-
 
 @media(max-width:760px){
 
-    .page{
-        padding:0 14px;
-    }
+  .page{
+    padding-inline:14px;
+  }
+
+  .header{
+    min-height:76px;
+  }
+
+  .brand-mark{
+    width:42px;
+    height:42px;
+  }
+
+  .brand-title{
+    font-size:19px;
+  }
+
+  .brand-sub{
+    font-size:6px;
+  }
+
+  .circle-btn{
+    width:39px;
+    height:39px;
+  }
+
+  .language-switch{
+    height:39px;
+  }
+
+  .lang-btn{
+    min-width:31px;
+    height:29px;
+
+    padding:0 6px;
+
+    font-size:7px;
+  }
+
+  .hero{
+    padding:
+      39px 0
+      55px;
+
+    gap:25px;
+  }
+
+  .hero-title{
+    font-size:
+      clamp(
+        58px,
+        18vw,
+        88px
+      );
+  }
+
+  body.lang-ar .hero-title{
+    font-size:
+      clamp(
+        39px,
+        11vw,
+        57px
+      );
+  }
+
+  .hero-description{
+    font-size:11px;
+  }
+
+  .hero-actions{
+    width:100%;
+  }
+
+  .hero-actions .button{
+    flex:1;
+
+    min-width:135px;
+
+    padding:
+      10px 8px;
+  }
+
+  .hero-stats{
+    max-width:100%;
+  }
+
+  .hero-scene{
+    min-height:470px;
+  }
+
+  .orbit{
+    width:350px;
+    height:350px;
+  }
+
+  .orbit.two{
+    width:280px;
+    height:280px;
+  }
+
+  .deck{
+    width:
+      min(
+        72%,
+        310px
+      );
+  }
 
+  .deck-main{
+    padding:22px;
+  }
 
-    .header{
-        min-height:80px;
-    }
+  .card-names{
+    font-size:39px;
+  }
 
+  .float-pill{
+    padding:
+      8px 11px;
 
-    .brand-mark{
+    font-size:6px;
+  }
 
-        width:42px;
-        height:42px;
-    }
+  .pill-one{
+    left:0;
+  }
 
+  .pill-two{
+    right:0;
+  }
 
-    .brand-title{
-        font-size:20px;
-    }
+  .scroll-hint{
+    display:none;
+  }
 
+  /* Portfolio */
 
-    .brand-sub{
-        font-size:6px;
-    }
+  .portfolio-head{
+    display:block;
+  }
 
+  .portfolio-text{
+    margin-top:13px;
+  }
 
-    .round-button{
+  .project,
+  .project.large{
+    grid-column:
+      span 6;
 
-        width:40px;
-        height:40px;
-    }
+    min-height:410px;
+  }
 
+  /* experience */
 
-    .hero{
+  .experience{
+    padding-top:75px;
+    padding-bottom:75px;
+  }
 
-        padding:
-        40px 0
-        55px;
+  .experience-grid{
+    gap:45px;
+  }
 
-        gap:35px;
-    }
+  /* Process */
 
+  .process-head{
+    display:block;
+  }
 
-    .hero-title{
+  .process-description{
+    margin-top:12px;
+  }
 
-        font-size:
-        clamp(
-            58px,
-            18vw,
-            90px
-        );
-    }
+  .section{
+    padding:
+      75px 0;
+  }
 
+  .section-top{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
 
-    body.lang-ar
-    .hero-title{
+  /* CTA */
 
-        font-size:
-        clamp(
-            39px,
-            11vw,
-            58px
-        );
-    }
+  .final-cta{
+    min-height:auto;
 
+    grid-template-columns:1fr;
 
-    .hero-description{
+    padding:30px;
+  }
 
-        font-size:12px;
-    }
+  .round-cta{
+    width:138px;
+    height:138px;
+  }
 
+  .footer{
+    padding-bottom:40px;
 
-    .hero-actions{
+    align-items:flex-start;
+  }
 
-        width:100%;
-    }
+  .footer-meta{
+    flex-direction:column;
 
+    gap:3px;
 
-    .hero-actions
-    .button{
-
-        flex:1;
-
-        min-width:135px;
-
-        padding:
-        10px;
-    }
-
-
-    .invitation-experience{
-
-        min-height:510px;
-
-        border-radius:
-        70px 15px
-        70px 15px;
-    }
-
-
-    .envelope-scene{
-
-        width:88%;
-
-        transform:
-        scale(.87);
-    }
-
-
-    .experience-ring{
-
-        width:340px;
-        height:340px;
-    }
-
-
-    .portfolio-header{
-
-        display:block;
-    }
-
-
-    .portfolio-header-copy{
-
-        margin-top:13px;
-    }
-
-
-    .work-card,
-    .work-card.large{
-
-        grid-column:
-        span 6;
-
-        min-height:410px;
-    }
-
-
-    .services-grid{
-
-        grid-template-columns:
-        1fr;
-    }
-
-
-    .service{
-
-        min-height:auto;
-
-        padding:
-        25px 8px;
-
-        border-inline-end:0 !important;
-
-        border-bottom:
-        1px solid
-        rgba(255,255,255,.11);
-    }
-
-
-    .service:nth-child(n+4){
-
-        border-top:0;
-    }
-
-
-    .process-header{
-
-        display:block;
-    }
-
-
-    .process-header p{
-
-        margin-top:12px;
-    }
-
-
-    .cta{
-
-        grid-template-columns:
-        1fr;
-
-        padding:30px;
-    }
-
-
-    .cta-button{
-
-        width:135px;
-        height:135px;
-    }
-
-
-    .footer{
-
-        padding-bottom:45px;
-
-        align-items:flex-start;
-    }
-
-
-    .footer-meta{
-
-        flex-direction:column;
-
-        gap:3px;
-
-        text-align:end;
-    }
+    text-align:end;
+  }
 
 }
 
+@media(max-width:520px){
 
-@media(max-width:500px){
+  .brand-sub{
+    display:none;
+  }
 
-    .brand-sub{
-        display:none;
-    }
+  .actions{
+    gap:4px;
+  }
 
+  .project,
+  .project.large{
+    grid-column:
+      span 12;
 
-    .work-card,
-    .work-card.large{
+    min-height:430px;
+  }
 
-        grid-column:
-        span 12;
+  .process-grid{
+    grid-template-columns:1fr;
+  }
 
-        min-height:430px;
-    }
+  .process-card{
+    min-height:150px;
+  }
 
+  .form-grid{
+    grid-template-columns:1fr;
+  }
 
-    .process-grid{
+  .field.full{
+    grid-column:auto;
+  }
 
-        grid-template-columns:
-        1fr;
-    }
+  .order-actions{
+    flex-direction:column;
+  }
 
-
-    .process-step{
-
-        min-height:150px;
-    }
-
-
-    .form-grid{
-
-        grid-template-columns:
-        1fr;
-    }
-
-
-    .field.full{
-
-        grid-column:auto;
-    }
-
-
-    .order-actions{
-
-        flex-direction:column;
-    }
+  .phone{
+    width:250px;
+  }
 
 }
 
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
 @media(prefers-reduced-motion:reduce){
 
-    *{
+  *{
+    animation:none !important;
+    transition:none !important;
+  }
 
-        animation:none !important;
-        transition:none !important;
-    }
+  html{
+    scroll-behavior:auto;
+  }
 
-
-    html{
-        scroll-behavior:auto;
-    }
-
-
-    .reveal{
-
-        opacity:1;
-        transform:none;
-    }
+  .reveal{
+    opacity:1;
+    transform:none;
+  }
 
 }
 
 </style>
-
 </head>
-
 
 <body class="lang-ar">
 
+<!-- ======================================================
+ICONS
+====================================================== -->
 
-<div class="page-grain"></div>
-<div class="glow-one"></div>
-<div class="glow-two"></div>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+
+    <symbol id="share-icon" viewBox="0 0 24 24">
+      <circle cx="18" cy="5" r="3"/>
+      <circle cx="6" cy="12" r="3"/>
+      <circle cx="18" cy="19" r="3"/>
+      <path d="m8.7 10.5 6.6-4"/>
+      <path d="m8.7 13.5 6.6 4"/>
+    </symbol>
+
+  </defs>
+</svg>
 
 
-<div class="page">
+<div class="background-grid"></div>
+<div class="noise"></div>
+
+<div class="ambient a"></div>
+<div class="ambient b"></div>
+<div class="ambient c"></div>
 
 
-<!-- =====================================================
+<!-- ======================================================
 HEADER
-===================================================== -->
+====================================================== -->
 
-<header class="header">
+<div class="header-wrap">
 
+  <header class="header page">
 
-<a
-class="brand"
-href="#top"
->
+    <a class="brand" href="#top">
 
+      <span class="brand-mark">
+        V
+      </span>
 
-<span class="brand-mark">
+      <span>
 
-V
+        <span class="brand-title" data-brand>
+          VELORA INVITES
+        </span>
 
-</span>
+        <span
+          class="brand-sub"
+          data-ar="دعوات رقمية للمناسبات"
+          data-en="DIGITAL INVITATION STUDIO"
+          data-fr="STUDIO D'INVITATIONS DIGITALES"
+        >
+          دعوات رقمية للمناسبات
+        </span>
 
+      </span>
 
-<span class="brand-copy">
-
-
-<span
-class="brand-title"
-data-brand
->
-
-VELORA INVITES
-
-</span>
-
-
-<span
-class="brand-sub"
-
-data-ar="دعوات رقمية للمناسبات"
-
-data-en="DIGITAL INVITATION ATELIER"
-
-data-fr="ATELIER D'INVITATIONS DIGITALES"
->
-
-دعوات رقمية للمناسبات
-
-</span>
+    </a>
 
 
-</span>
+    <nav class="nav">
+
+      <a
+        href="#portfolio"
+        data-ar="الأعمال"
+        data-en="Portfolio"
+        data-fr="Réalisations"
+      >
+        الأعمال
+      </a>
+
+      <a
+        href="#experience"
+        data-ar="التجربة"
+        data-en="Experience"
+        data-fr="Expérience"
+      >
+        التجربة
+      </a>
+
+      <a
+        href="#process"
+        data-ar="طريقة العمل"
+        data-en="Process"
+        data-fr="Méthode"
+      >
+        طريقة العمل
+      </a>
+
+    </nav>
 
 
-</a>
+    <div class="actions">
+
+      <div
+        class="language-switch"
+        aria-label="Language"
+      >
+
+        <button
+          class="lang-btn active"
+          data-lang="ar"
+          type="button"
+        >
+          AR
+        </button>
+
+        <button
+          class="lang-btn"
+          data-lang="en"
+          type="button"
+        >
+          EN
+        </button>
+
+        <button
+          class="lang-btn"
+          data-lang="fr"
+          type="button"
+        >
+          FR
+        </button>
+
+      </div>
 
 
+      <button
+        class="circle-btn"
+        id="shareButton"
+        type="button"
+        aria-label="Share"
+      >
 
-<nav class="header-nav">
+        <svg class="icon">
+          <use href="#share-icon"/>
+        </svg>
 
+      </button>
 
-<a
-href="#work"
+    </div>
 
-data-ar="الأعمال"
-data-en="Portfolio"
-data-fr="Réalisations"
->
-
-الأعمال
-
-</a>
-
-
-<a
-href="#services"
-
-data-ar="الخدمات"
-data-en="Services"
-data-fr="Services"
->
-
-الخدمات
-
-</a>
-
-
-<a
-href="#process"
-
-data-ar="طريقة العمل"
-data-en="Process"
-data-fr="Méthode"
->
-
-طريقة العمل
-
-</a>
-
-
-</nav>
-
-
-
-<div class="header-actions">
-
-
-<button
-class="round-button"
-id="languageButton"
-type="button"
->
-
-AR
-
-</button>
-
-
-<button
-class="round-button"
-id="shareButton"
-type="button"
-aria-label="Share"
->
-
-↗
-
-</button>
-
+  </header>
 
 </div>
 
 
-</header>
+<!-- ======================================================
+MAIN
+====================================================== -->
+
+<main class="page">
 
 
-
-<!-- =====================================================
+<!-- ======================================================
 HERO
-===================================================== -->
+====================================================== -->
 
-<section
-class="hero"
-id="top"
->
+<section class="hero" id="top">
 
+  <div class="hero-copy">
 
-<div class="hero-copy">
+    <div
+      class="eyebrow"
 
+      data-ar="DIGITAL INVITATION EXPERIENCE"
 
-<div
-class="hero-kicker"
+      data-en="DIGITAL INVITATION EXPERIENCE"
 
-data-ar="THE FIRST MOMENT OF YOUR EVENT"
+      data-fr="EXPÉRIENCE D'INVITATION DIGITALE"
+    >
+      DIGITAL INVITATION EXPERIENCE
+    </div>
 
-data-en="THE FIRST MOMENT OF YOUR EVENT"
 
-data-fr="LE PREMIER MOMENT DE VOTRE ÉVÉNEMENT"
->
+    <h1 class="hero-title">
 
-THE FIRST MOMENT OF YOUR EVENT
+      <span
+        data-ar="دعوتك"
+        data-en="NOT A CARD."
+        data-fr="PLUS QU'UNE CARTE."
+      >
+        دعوتك
+      </span>
 
-</div>
+      <span>
 
+        <em
+          data-ar="ليست صورة."
+          data-en="A MOMENT."
+          data-fr="UN MOMENT."
+        >
+          ليست صورة.
+        </em>
 
+      </span>
 
-<h1 class="hero-title">
+      <span
+        data-ar="إنها تجربة."
+        data-en="AN EXPERIENCE."
+        data-fr="UNE EXPÉRIENCE."
+      >
+        إنها تجربة.
+      </span>
 
+    </h1>
 
-<span
-data-ar="دعوتك ليست"
-data-en="NOT JUST"
-data-fr="BIEN PLUS"
->
 
-دعوتك ليست
+    <p
+      class="hero-description"
 
-</span>
+      data-ar="نصنع دعوات رقمية ثلاثية الأبعاد وتفاعلية للزفاف والخطوبة وأعياد الميلاد والمناسبات الخاصة. تصميم، صور، عد تنازلي، موقع المناسبة وRSVP داخل تجربة واحدة مريحة على الهاتف."
 
+      data-en="Immersive digital invitations for weddings, engagements, birthdays and special events — combining design, motion, photos, countdown, location and RSVP in one refined mobile experience."
 
-<span
-class="italic"
+      data-fr="Des invitations digitales immersives pour mariages, fiançailles, anniversaires et événements — design, animation, photos, compte à rebours, localisation et RSVP."
+    >
 
-data-ar="مجرد رابط."
-data-en="AN INVITATION."
-data-fr="QU'UNE INVITATION."
->
+      نصنع دعوات رقمية ثلاثية الأبعاد وتفاعلية
+      للزفاف والخطوبة وأعياد الميلاد والمناسبات الخاصة.
+      تصميم، صور، عد تنازلي، موقع المناسبة
+      وRSVP داخل تجربة واحدة مريحة على الهاتف.
 
-مجرد رابط.
+    </p>
 
-</span>
 
+    <div class="hero-actions">
 
-<span
-data-ar="إنها أول انطباع."
-data-en="AN EXPERIENCE."
-data-fr="UNE EXPÉRIENCE."
->
+      <button
+        class="button button-dark open-order"
+        type="button"
+      >
 
-إنها أول انطباع.
+        <span
+          data-ar="ابدأ تصميم دعوتك"
+          data-en="CREATE YOUR INVITATION"
+          data-fr="CRÉER VOTRE INVITATION"
+        >
+          ابدأ تصميم دعوتك
+        </span>
 
-</span>
+        <span class="arrow">
+          →
+        </span>
 
+      </button>
 
-</h1>
 
+      <a
+        class="button button-light"
+        href="#portfolio"
+      >
 
+        <span
+          data-ar="شاهد الأعمال"
+          data-en="EXPLORE THE COLLECTION"
+          data-fr="VOIR LA COLLECTION"
+        >
+          شاهد الأعمال
+        </span>
 
-<p
-class="hero-description"
+        <span>
+          ↓
+        </span>
 
-data-ar="نصمم دعوات رقمية راقية للزفاف، الخطوبة، أعياد الميلاد والحفلات والمناسبات الخاصة. تجربة تفتح على الهاتف وتجمع التصميم، التفاصيل، الموقع، العد التنازلي وRSVP في مساحة واحدة."
+      </a>
 
-data-en="Elegant digital invitations for weddings, engagements, birthdays, celebrations and special events — combining design, event details, location, countdown and RSVP in one refined experience."
+    </div>
 
-data-fr="Des invitations digitales élégantes pour mariages, fiançailles, anniversaires et événements — réunissant design, informations, localisation, compte à rebours et RSVP."
->
 
-نصمم دعوات رقمية راقية للزفاف،
-الخطوبة، أعياد الميلاد والحفلات والمناسبات الخاصة.
-تجربة تفتح على الهاتف وتجمع التصميم،
-التفاصيل، الموقع، العد التنازلي وRSVP
-في مساحة واحدة.
+    <div class="hero-stats">
 
-</p>
+      <div class="hero-stat">
 
+        <strong>
+          3D
+        </strong>
 
+        <span
+          data-ar="حركة وتفاعل"
+          data-en="Motion & depth"
+          data-fr="Mouvement & profondeur"
+        >
+          حركة وتفاعل
+        </span>
 
-<div class="hero-actions">
+      </div>
 
 
-<button
-class="button button-dark open-order"
-type="button"
->
+      <div class="hero-stat">
 
+        <strong>
+          RSVP
+        </strong>
 
-<span
-data-ar="صمّم دعوتك"
-data-en="CREATE YOUR INVITATION"
-data-fr="CRÉER VOTRE INVITATION"
->
+        <span
+          data-ar="تأكيد الحضور"
+          data-en="Guest confirmation"
+          data-fr="Confirmation"
+        >
+          تأكيد الحضور
+        </span>
 
-صمّم دعوتك
+      </div>
 
-</span>
 
+      <div class="hero-stat">
 
-<span>
+        <strong>
+          01
+        </strong>
 
-→
+        <span
+          data-ar="رابط لكل المناسبة"
+          data-en="One event link"
+          data-fr="Un lien unique"
+        >
+          رابط لكل المناسبة
+        </span>
 
-</span>
+      </div>
 
+    </div>
 
-</button>
+  </div>
 
 
+  <!-- ====================================================
+  3D INVITATION SCENE
+  ==================================================== -->
 
-<a
-class="button button-outline"
-href="#work"
->
+  <div
+    class="hero-scene"
+    id="heroScene"
+  >
 
+    <div class="orbit"></div>
+    <div class="orbit two"></div>
 
-<span
-data-ar="شاهد الأعمال"
-data-en="VIEW THE COLLECTION"
-data-fr="VOIR LA COLLECTION"
->
 
-شاهد الأعمال
+    <span
+      class="float-pill pill-one"
+      data-ar="✦ تصميم مخصص"
+      data-en="✦ Bespoke design"
+      data-fr="✦ Design sur mesure"
+    >
+      ✦ تصميم مخصص
+    </span>
 
-</span>
 
+    <span
+      class="float-pill pill-two"
+      data-ar="◷ عد تنازلي"
+      data-en="◷ Countdown"
+      data-fr="◷ Compte à rebours"
+    >
+      ◷ عد تنازلي
+    </span>
 
-<span>
 
-↓
+    <span
+      class="float-pill pill-three"
+      data-ar="✓ RSVP"
+      data-en="✓ RSVP"
+      data-fr="✓ RSVP"
+    >
+      ✓ RSVP
+    </span>
 
-</span>
 
+    <div
+      class="deck"
+      id="heroDeck"
+    >
 
-</a>
+      <div class="deck-layer deck-back-two"></div>
 
+      <div class="deck-layer deck-back-one"></div>
 
-</div>
 
+      <article class="deck-layer deck-main">
 
+        <div class="card-top">
 
-<div class="hero-note">
+          <span class="card-label">
+            WEDDING INVITATION
+          </span>
 
+          <span class="card-star">
+            ✦
+          </span>
 
-<span
-class="note-chip"
-data-ar="زفاف"
-data-en="Weddings"
-data-fr="Mariages"
->
+        </div>
 
-زفاف
 
-</span>
+        <div class="card-center">
 
+          <div>
 
-<span
-class="note-chip"
-data-ar="خطوبة"
-data-en="Engagements"
-data-fr="Fiançailles"
->
+            <small>
+              YOU ARE INVITED
+            </small>
 
-خطوبة
+            <div class="card-names">
+              Lina
+            </div>
 
-</span>
+            <div class="card-and">
+              &
+            </div>
 
+            <div class="card-names">
+              Adam
+            </div>
 
-<span
-class="note-chip"
-data-ar="أعياد ميلاد"
-data-en="Birthdays"
-data-fr="Anniversaires"
->
+            <div class="card-line"></div>
 
-أعياد ميلاد
+            <div class="card-date">
+              18 · 06 · 2027
+            </div>
 
-</span>
+            <div class="card-place">
+              An evening to remember
+            </div>
 
+          </div>
 
-<span
-class="note-chip"
-data-ar="حفلات ومناسبات"
-data-en="Events"
-data-fr="Événements"
->
+        </div>
 
-حفلات ومناسبات
 
-</span>
+        <div class="card-bottom">
 
+          <span>
+            DIGITAL / 001
+          </span>
 
-</div>
+          <span class="card-rsvp">
+            RSVP
+          </span>
 
+        </div>
 
-</div>
+      </article>
 
+    </div>
 
 
-<!-- =====================================================
-INTERACTIVE ENVELOPE
-===================================================== -->
+    <div class="scroll-hint">
+      SCROLL
+    </div>
 
-<div class="invitation-experience">
-
-
-<div class="experience-ring"></div>
-
-
-<div
-class="experience-copy-top"
-dir="ltr"
->
-
-DIGITAL INVITATION / 001
-
-</div>
-
-
-<div
-class="experience-copy-side"
-dir="ltr"
->
-
-DESIGNED TO BE REMEMBERED
-
-</div>
-
-
-<div
-class="envelope-scene"
-id="envelopeScene"
->
-
-
-<div class="envelope">
-
-
-<div class="envelope-flap"></div>
-
-
-<div class="invite-paper">
-
-
-<div class="invite-mini">
-
-YOU ARE INVITED
-
-</div>
-
-
-<div class="invite-names">
-
-Lina
-<br>
-&
-<br>
-Adam
-
-</div>
-
-
-<div class="invite-divider"></div>
-
-
-<div class="invite-date">
-
-18 · 10 · 2026
-
-</div>
-
-
-<div class="invite-location">
-
-An evening to remember
-
-</div>
-
-
-</div>
-
-
-<div class="wax-seal">
-
-V
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-<button
-class="open-invite"
-id="openEnvelope"
-type="button"
-
-data-ar="افتح الدعوة"
-
-data-en="OPEN THE INVITATION"
-
-data-fr="OUVRIR L'INVITATION"
->
-
-افتح الدعوة
-
-</button>
-
-
-</div>
-
+  </div>
 
 </section>
 
+</main>
 
-<!-- =====================================================
+
+<!-- ======================================================
 MARQUEE
-===================================================== -->
+====================================================== -->
 
-</div>
+<div class="marquee-wrap">
 
+  <div class="marquee">
 
-<div class="marquee">
+    <span>WEDDINGS</span><i></i>
+    <span>ENGAGEMENTS</span><i></i>
+    <span>BIRTHDAYS</span><i></i>
+    <span>SAVE THE DATE</span><i></i>
+    <span>RSVP</span><i></i>
+    <span>PRIVATE EVENTS</span><i></i>
+    <span>DIGITAL EXPERIENCE</span><i></i>
 
+    <span>WEDDINGS</span><i></i>
+    <span>ENGAGEMENTS</span><i></i>
+    <span>BIRTHDAYS</span><i></i>
+    <span>SAVE THE DATE</span><i></i>
+    <span>RSVP</span><i></i>
+    <span>PRIVATE EVENTS</span><i></i>
+    <span>DIGITAL EXPERIENCE</span><i></i>
 
-<div class="marquee-track">
-
-
-<span>WEDDINGS</span><i></i>
-
-<span>ENGAGEMENTS</span><i></i>
-
-<span>BIRTHDAYS</span><i></i>
-
-<span>BABY EVENTS</span><i></i>
-
-<span>SPECIAL OCCASIONS</span><i></i>
-
-<span>DIGITAL RSVP</span><i></i>
-
-<span>SAVE THE DATE</span><i></i>
-
-
-<span>WEDDINGS</span><i></i>
-
-<span>ENGAGEMENTS</span><i></i>
-
-<span>BIRTHDAYS</span><i></i>
-
-<span>BABY EVENTS</span><i></i>
-
-<span>SPECIAL OCCASIONS</span><i></i>
-
-<span>DIGITAL RSVP</span><i></i>
-
-<span>SAVE THE DATE</span><i></i>
-
-
-</div>
-
+  </div>
 
 </div>
 
@@ -4053,1303 +3727,997 @@ MARQUEE
 <div class="page">
 
 
-<!-- =====================================================
+<!-- ======================================================
 PORTFOLIO
-===================================================== -->
+====================================================== -->
 
 <section
-class="section"
-id="work"
+  class="section"
+  id="portfolio"
 >
 
+  <div class="portfolio-head reveal">
+
+    <div>
+
+      <div
+        class="section-index"
+        dir="ltr"
+      >
+        01 / COLLECTION
+      </div>
+
+
+      <h2
+        class="section-title"
 
-<div class="portfolio-header reveal">
+        data-ar="كل مناسبة تستحق عالمًا خاصًا بها."
 
+        data-en="EVERY EVENT DESERVES ITS OWN WORLD."
 
-<div>
+        data-fr="CHAQUE ÉVÉNEMENT MÉRITE SON UNIVERS."
+      >
+        كل مناسبة تستحق
+        عالمًا خاصًا بها.
+      </h2>
 
+    </div>
 
-<div
-class="section-number"
-dir="ltr"
->
 
-01 / SELECTED WORK
+    <p
+      class="portfolio-text"
 
-</div>
+      data-ar="هذه نماذج تجريبية لأساليب مختلفة يمكن تخصيصها بالكامل. اضغط على أي عمل لفتح تجربة الدعوة."
 
+      data-en="Concept invitations showing different visual directions. Every design can be fully customized. Tap any project to open the experience."
 
-<h2
-class="section-title"
+      data-fr="Des concepts présentant différents univers visuels. Chaque création est personnalisable. Ouvrez un projet pour découvrir l'expérience."
+    >
 
-data-ar="كل مناسبة لها شخصيتها."
+      هذه نماذج تجريبية لأساليب مختلفة يمكن تخصيصها بالكامل.
+      اضغط على أي عمل لفتح تجربة الدعوة.
 
-data-en="EVERY EVENT HAS A PERSONALITY."
+    </p>
 
-data-fr="CHAQUE ÉVÉNEMENT A SON UNIVERS."
->
+  </div>
 
-كل مناسبة
-لها شخصيتها.
 
-</h2>
+  <!-- FILTERS -->
 
+  <div class="filters">
 
-</div>
+    <button
+      class="filter active"
+      data-filter="all"
+      type="button"
+      data-ar="الكل"
+      data-en="All"
+      data-fr="Tout"
+    >
+      الكل
+    </button>
 
+    <button
+      class="filter"
+      data-filter="wedding"
+      type="button"
+      data-ar="زفاف"
+      data-en="Wedding"
+      data-fr="Mariage"
+    >
+      زفاف
+    </button>
 
+    <button
+      class="filter"
+      data-filter="engagement"
+      type="button"
+      data-ar="خطوبة"
+      data-en="Engagement"
+      data-fr="Fiançailles"
+    >
+      خطوبة
+    </button>
 
-<p
-class="portfolio-header-copy"
+    <button
+      class="filter"
+      data-filter="birthday"
+      type="button"
+      data-ar="عيد ميلاد"
+      data-en="Birthday"
+      data-fr="Anniversaire"
+    >
+      عيد ميلاد
+    </button>
 
-data-ar="اضغط على أي نموذج لفتحه ومعاينته كما يمكن أن يراه ضيوف المناسبة."
+    <button
+      class="filter"
+      data-filter="event"
+      type="button"
+      data-ar="مناسبات"
+      data-en="Events"
+      data-fr="Événements"
+    >
+      مناسبات
+    </button>
 
-data-en="Open any concept to experience the invitation as your guests could see it."
+  </div>
 
-data-fr="Ouvrez chaque concept pour découvrir l'expérience telle que vos invités pourraient la voir."
->
 
-اضغط على أي نموذج لفتحه
-ومعاينته كما يمكن أن يراه ضيوف المناسبة.
+  <!-- ====================================================
+  WORK GRID
+  ==================================================== -->
 
-</p>
+  <div class="portfolio-grid">
 
 
-</div>
+    <!-- PEARL -->
 
+    <article
+      class="project large project-pearl reveal"
+      data-category="wedding"
+      data-project="pearl"
+      data-tilt
+    >
 
+      <div class="project-inner">
 
-<div class="filters">
+        <div class="project-head">
 
+          <span>
+            01 / WEDDING
+          </span>
 
-<button
-class="filter-button active"
-data-filter="all"
-type="button"
+          <span>
+            PEARL
+          </span>
 
-data-ar="الكل"
-data-en="All"
-data-fr="Tout"
->
+        </div>
 
-الكل
 
-</button>
+        <div class="project-bottom">
 
+          <div>
 
-<button
-class="filter-button"
-data-filter="wedding"
-type="button"
+            <h3>
+              Lina & Adam
+            </h3>
 
-data-ar="زفاف"
-data-en="Wedding"
-data-fr="Mariage"
->
+            <p
+              data-ar="زفاف · Quiet Luxury"
+              data-en="Wedding · Quiet Luxury"
+              data-fr="Mariage · Quiet Luxury"
+            >
+              زفاف · Quiet Luxury
+            </p>
 
-زفاف
+          </div>
 
-</button>
 
+          <span class="project-arrow">
+            ↗
+          </span>
 
-<button
-class="filter-button"
-data-filter="engagement"
-type="button"
+        </div>
 
-data-ar="خطوبة"
-data-en="Engagement"
-data-fr="Fiançailles"
->
+      </div>
 
-خطوبة
+    </article>
 
-</button>
 
+    <!-- SAGE -->
 
-<button
-class="filter-button"
-data-filter="birthday"
-type="button"
+    <article
+      class="project project-sage reveal"
+      data-category="engagement"
+      data-project="sage"
+      data-tilt
+    >
 
-data-ar="عيد ميلاد"
-data-en="Birthday"
-data-fr="Anniversaire"
->
+      <span class="leaf a"></span>
+      <span class="leaf b"></span>
 
-عيد ميلاد
 
-</button>
+      <div class="project-inner">
 
+        <div class="project-head">
 
-<button
-class="filter-button"
-data-filter="event"
-type="button"
+          <span>
+            02 / ENGAGEMENT
+          </span>
 
-data-ar="مناسبات"
-data-en="Events"
-data-fr="Événements"
->
+          <span>
+            SAGE
+          </span>
 
-مناسبات
+        </div>
 
-</button>
 
+        <div class="project-bottom">
 
-</div>
+          <div>
 
+            <h3>
+              Yasmine
+              <br>
+              & Rayane
+            </h3>
 
+            <p
+              data-ar="خطوبة · Botanical"
+              data-en="Engagement · Botanical"
+              data-fr="Fiançailles · Botanique"
+            >
+              خطوبة · Botanical
+            </p>
 
-<div class="portfolio-grid">
+          </div>
 
 
-<!-- 1 -->
+          <span class="project-arrow">
+            ↗
+          </span>
 
-<article
-class="work-card large work-pearl reveal"
-data-category="wedding"
-data-preview="pearl"
->
+        </div>
 
+      </div>
 
-<div class="work-content">
+    </article>
 
 
-<div class="work-meta">
+    <!-- MIDNIGHT -->
 
-<span>
+    <article
+      class="project project-midnight reveal"
+      data-category="event"
+      data-project="midnight"
+      data-tilt
+    >
 
-01 / WEDDING
+      <span class="mid-title">
+        SAVE
+        <br>
+        THE DATE
+      </span>
 
-</span>
 
-<span>
+      <div class="project-inner">
 
-PEARL
+        <div class="project-head">
 
-</span>
+          <span>
+            03 / DINNER
+          </span>
 
-</div>
+          <span>
+            MIDNIGHT
+          </span>
 
+        </div>
 
-<div class="work-bottom">
 
+        <div class="project-bottom">
 
-<div>
+          <div>
 
+            <h3>
+              The Evening
+            </h3>
 
-<h3>
+            <p
+              data-ar="حفل خاص · أسود وذهبي"
+              data-en="Private Event · Midnight Gold"
+              data-fr="Soirée privée · Noir & Or"
+            >
+              حفل خاص · أسود وذهبي
+            </p>
 
-Lina & Adam
+          </div>
 
-</h3>
 
+          <span class="project-arrow">
+            ↗
+          </span>
 
-<p
-data-ar="زفاف · أناقة هادئة"
-data-en="Wedding · Quiet luxury"
-data-fr="Mariage · Élégance intemporelle"
->
+        </div>
 
-زفاف · أناقة هادئة
+      </div>
 
-</p>
+    </article>
 
 
-</div>
+    <!-- ROSE -->
 
+    <article
+      class="project project-rose reveal"
+      data-category="birthday"
+      data-project="rose"
+      data-tilt
+    >
 
-<span class="work-open">
+      <div class="project-inner">
 
-↗
+        <div class="project-head">
 
-</span>
+          <span>
+            04 / BIRTHDAY
+          </span>
 
+          <span>
+            ROSE
+          </span>
 
-</div>
+        </div>
 
 
-</div>
+        <div class="project-bottom">
 
+          <div>
 
-</article>
+            <h3>
+              Inès Turns 18
+            </h3>
 
+            <p
+              data-ar="عيد ميلاد · Soft Rose"
+              data-en="Birthday · Soft Rose"
+              data-fr="Anniversaire · Rose Poudré"
+            >
+              عيد ميلاد · Soft Rose
+            </p>
 
+          </div>
 
-<!-- 2 -->
 
-<article
-class="work-card work-botanical reveal"
-data-category="engagement"
-data-preview="botanical"
->
+          <span class="project-arrow">
+            ↗
+          </span>
 
+        </div>
 
-<div class="work-content">
+      </div>
 
+    </article>
 
-<div class="work-meta">
 
-<span>
+    <!-- SKY -->
 
-02 / ENGAGEMENT
+    <article
+      class="project project-sky reveal"
+      data-category="event"
+      data-project="sky"
+      data-tilt
+    >
 
-</span>
+      <div class="project-inner">
 
-<span>
+        <div class="project-head">
 
-SAGE
+          <span>
+            05 / BABY EVENT
+          </span>
 
-</span>
+          <span>
+            SKY
+          </span>
 
-</div>
+        </div>
 
 
-<div class="work-bottom">
+        <div class="project-bottom">
 
+          <div>
 
-<div>
+            <h3>
+              A Little Star
+            </h3>
 
+            <p
+              data-ar="مناسبة عائلية · Sky"
+              data-en="Baby Event · Sky"
+              data-fr="Baby Event · Ciel"
+            >
+              مناسبة عائلية · Sky
+            </p>
 
-<h3>
+          </div>
 
-Yasmine
-<br>
-& Rayane
 
-</h3>
+          <span class="project-arrow">
+            ↗
+          </span>
 
+        </div>
 
-<p
-data-ar="خطوبة · نباتي"
-data-en="Engagement · Botanical"
-data-fr="Fiançailles · Botanique"
->
+      </div>
 
-خطوبة · نباتي
+    </article>
 
-</p>
 
+    <!-- MONO -->
 
-</div>
+    <article
+      class="project large project-mono reveal"
+      data-category="event"
+      data-project="mono"
+      data-tilt
+    >
 
+      <div class="project-inner">
 
-<span class="work-open">
+        <div class="project-head">
 
-↗
+          <span>
+            06 / EVENT
+          </span>
 
-</span>
+          <span>
+            MONO
+          </span>
 
+        </div>
 
-</div>
 
+        <div class="project-bottom">
 
-</div>
+          <div>
 
+            <h3>
+              Private Gathering
+            </h3>
 
-</article>
+            <p
+              data-ar="مناسبة خاصة · Modern Minimal"
+              data-en="Private Event · Modern Minimal"
+              data-fr="Événement · Minimal Moderne"
+            >
+              مناسبة خاصة · Modern Minimal
+            </p>
 
+          </div>
 
 
-<!-- 3 -->
+          <span class="project-arrow">
+            ↗
+          </span>
 
-<article
-class="work-card work-midnight reveal"
-data-category="event"
-data-preview="midnight"
->
+        </div>
 
+      </div>
 
-<div class="work-content">
+    </article>
 
 
-<div class="work-meta">
-
-<span>
-
-03 / DINNER
-
-</span>
-
-<span>
-
-MIDNIGHT
-
-</span>
-
-</div>
-
-
-<div class="work-bottom">
-
-
-<div>
-
-
-<h3>
-
-The
-Evening
-
-</h3>
-
-
-<p
-data-ar="حفل خاص · أسود وذهبي"
-data-en="Private event · Midnight gold"
-data-fr="Soirée privée · Noir & or"
->
-
-حفل خاص · أسود وذهبي
-
-</p>
-
-
-</div>
-
-
-<span class="work-open">
-
-↗
-
-</span>
-
-
-</div>
-
-
-</div>
-
-
-</article>
-
-
-
-<!-- 4 -->
-
-<article
-class="work-card work-rose reveal"
-data-category="birthday"
-data-preview="rose"
->
-
-
-<div class="work-content">
-
-
-<div class="work-meta">
-
-<span>
-
-04 / BIRTHDAY
-
-</span>
-
-<span>
-
-ROSE
-
-</span>
-
-</div>
-
-
-<div class="work-bottom">
-
-
-<div>
-
-
-<h3>
-
-Inès
-Turns 18
-
-</h3>
-
-
-<p
-data-ar="عيد ميلاد · Rose"
-data-en="Birthday · Soft rose"
-data-fr="Anniversaire · Rose poudré"
->
-
-عيد ميلاد · Rose
-
-</p>
-
-
-</div>
-
-
-<span class="work-open">
-
-↗
-
-</span>
-
-
-</div>
-
-
-</div>
-
-
-</article>
-
-
-
-<!-- 5 -->
-
-<article
-class="work-card work-sky reveal"
-data-category="event"
-data-preview="sky"
->
-
-
-<div class="work-content">
-
-
-<div class="work-meta">
-
-<span>
-
-05 / BABY EVENT
-
-</span>
-
-<span>
-
-SKY
-
-</span>
-
-</div>
-
-
-<div class="work-bottom">
-
-
-<div>
-
-
-<h3>
-
-A Little
-Star
-
-</h3>
-
-
-<p
-data-ar="مناسبة عائلية · سمائي"
-data-en="Baby event · Sky"
-data-fr="Baby event · Ciel"
->
-
-مناسبة عائلية · سمائي
-
-</p>
-
-
-</div>
-
-
-<span class="work-open">
-
-↗
-
-</span>
-
-
-</div>
-
-
-</div>
-
-
-</article>
-
-
-
-<!-- 6 -->
-
-<article
-class="work-card large work-minimal reveal"
-data-category="event"
-data-preview="minimal"
->
-
-
-<div class="work-content">
-
-
-<div class="work-meta">
-
-<span>
-
-06 / EVENT
-
-</span>
-
-<span>
-
-MONO
-
-</span>
-
-</div>
-
-
-<div class="work-bottom">
-
-
-<div>
-
-
-<h3>
-
-Private
-Gathering
-
-</h3>
-
-
-<p
-data-ar="مناسبة خاصة · Minimal"
-data-en="Special event · Minimal"
-data-fr="Événement · Minimal"
->
-
-مناسبة خاصة · Minimal
-
-</p>
-
-
-</div>
-
-
-<span class="work-open">
-
-↗
-
-</span>
-
-
-</div>
-
-
-</div>
-
-
-</article>
-
-
-</div>
-
+  </div>
 
 </section>
 
 
-
-<!-- =====================================================
-SERVICES
-===================================================== -->
+<!-- ======================================================
+EXPERIENCE
+====================================================== -->
 
 <section
-class="services-area"
-id="services"
+  class="experience"
+  id="experience"
 >
 
+  <div class="section-top reveal">
 
-<div class="section-intro reveal">
+    <div
+      class="section-index"
+      dir="ltr"
+    >
+      02 / EXPERIENCE
+    </div>
 
 
-<div
-class="section-number"
-dir="ltr"
->
+    <h2
+      class="section-title"
 
-02 / EXPERIENCE
+      data-ar="ليس تصميمًا يُشاهد فقط. بل تجربة يستخدمها ضيوفك."
 
-</div>
+      data-en="NOT JUST SOMETHING THEY SEE. SOMETHING THEY USE."
 
+      data-fr="PAS SEULEMENT À REGARDER. UNE EXPÉRIENCE À UTILISER."
+    >
+      ليس تصميمًا يُشاهد فقط.
+      بل تجربة يستخدمها ضيوفك.
+    </h2>
 
-<h2
-class="section-title"
+  </div>
 
-data-ar="أكثر من تصميم جميل."
 
-data-en="MORE THAN A BEAUTIFUL INVITATION."
+  <div class="experience-grid">
 
-data-fr="PLUS QU'UNE BELLE INVITATION."
->
+    <!-- Phone Demo -->
 
-أكثر من
-تصميم جميل.
+    <div class="phone-stage reveal">
 
-</h2>
+      <div class="phone">
 
+        <div class="phone-screen">
 
-</div>
+          <div class="phone-pill"></div>
 
 
+          <div class="phone-small">
+            THE WEDDING OF
+          </div>
 
-<div class="services-grid">
 
+          <div class="phone-names">
+            Lina
+            <br>
+            &
+            <br>
+            Adam
+          </div>
 
-<article class="service reveal">
 
+          <div class="phone-line"></div>
 
-<span class="service-index">
 
-01
+          <div class="phone-date">
+            18 · 06 · 2027
+          </div>
 
-</span>
 
+          <div class="phone-countdown">
 
-<div class="service-symbol">
+            <div>
+              <strong id="days">
+                00
+              </strong>
+              <span>DAYS</span>
+            </div>
 
-✦
+            <div>
+              <strong id="hours">
+                00
+              </strong>
+              <span>HRS</span>
+            </div>
 
-</div>
+            <div>
+              <strong id="minutes">
+                00
+              </strong>
+              <span>MIN</span>
+            </div>
 
+            <div>
+              <strong id="seconds">
+                00
+              </strong>
+              <span>SEC</span>
+            </div>
 
-<h3
-data-ar="تصميم حسب هوية المناسبة"
-data-en="Bespoke Design"
-data-fr="Design sur mesure"
->
+          </div>
 
-تصميم حسب هوية المناسبة
 
-</h3>
+          <div
+            class="phone-location demo-control"
+            data-ar="⌖ موقع المناسبة"
+            data-en="⌖ EVENT LOCATION"
+            data-fr="⌖ LOCALISATION"
+          >
+            ⌖ موقع المناسبة
+          </div>
 
 
-<p
-data-ar="ألوان، خطوط وتكوين بصري مخصص لنوع المناسبة والأسلوب الذي تختارونه."
+          <div
+            class="phone-rsvp demo-control"
+          >
+            RSVP
+          </div>
 
-data-en="A visual direction built around the event, its mood, colors and desired style."
+        </div>
 
-data-fr="Une direction visuelle adaptée à l'événement, son ambiance, ses couleurs et votre style."
->
+      </div>
 
-ألوان، خطوط وتكوين بصري
-مخصص لنوع المناسبة
-والأسلوب الذي تختارونه.
+    </div>
 
-</p>
 
+    <!-- Features -->
 
-</article>
+    <div class="features reveal">
 
+      <article class="feature">
 
+        <span class="feature-number">
+          01
+        </span>
 
-<article class="service reveal">
+        <div>
 
+          <h3
+            data-ar="تصميم مخصص"
+            data-en="Bespoke art direction"
+            data-fr="Direction artistique sur mesure"
+          >
+            تصميم مخصص
+          </h3>
 
-<span class="service-index">
+          <p
+            data-ar="لا نضع اسم العميل داخل قالب جاهز فقط. يمكن بناء الألوان والخطوط والحركة وطريقة عرض المحتوى حسب شخصية المناسبة."
 
-02
+            data-en="Not simply names inserted into a template. Color, typography, motion and presentation can be shaped around the personality of the event."
 
-</span>
+            data-fr="Pas simplement des noms ajoutés à un modèle. Couleurs, typographie, mouvement et mise en scène peuvent être adaptés à l'événement."
+          >
+            لا نضع اسم العميل داخل قالب جاهز فقط.
+            يمكن بناء الألوان والخطوط والحركة وطريقة عرض
+            المحتوى حسب شخصية المناسبة.
+          </p>
 
+        </div>
 
-<div class="service-symbol">
+      </article>
 
-⌖
 
-</div>
+      <article class="feature">
 
+        <span class="feature-number">
+          02
+        </span>
 
-<h3
-data-ar="الموقع على الخريطة"
-data-en="Location & Maps"
-data-fr="Localisation & Maps"
->
+        <div>
 
-الموقع على الخريطة
+          <h3
+            data-ar="موقع القاعة"
+            data-en="Venue location"
+            data-fr="Localisation"
+          >
+            موقع القاعة
+          </h3>
 
-</h3>
+          <p
+            data-ar="يمكن وضع زر مباشر لفتح موقع قاعة الحفل أو مكان المناسبة في تطبيق الخرائط."
 
+            data-en="Guests can open the venue location directly from the invitation in their maps application."
 
-<p
-data-ar="زر مباشر يمكن للضيف من خلاله فتح موقع القاعة أو مكان المناسبة."
+            data-fr="Les invités peuvent ouvrir directement le lieu de l'événement dans leur application de cartes."
+          >
+            يمكن وضع زر مباشر لفتح موقع قاعة الحفل
+            أو مكان المناسبة في تطبيق الخرائط.
+          </p>
 
-data-en="Guests can open the venue location directly from the invitation."
+        </div>
 
-data-fr="Vos invités peuvent ouvrir directement la localisation du lieu."
->
+      </article>
 
-زر مباشر يمكن للضيف
-من خلاله فتح موقع القاعة
-أو مكان المناسبة.
 
-</p>
+      <article class="feature">
 
+        <span class="feature-number">
+          03
+        </span>
 
-</article>
+        <div>
 
+          <h3
+            data-ar="Countdown و RSVP"
+            data-en="Countdown & RSVP"
+            data-fr="Compte à rebours & RSVP"
+          >
+            Countdown و RSVP
+          </h3>
 
+          <p
+            data-ar="عرض الوقت المتبقي للمناسبة وإضافة تجربة لتأكيد حضور الضيف بطريقة مرتبة."
 
-<article class="service reveal">
+            data-en="Build anticipation with a live countdown and provide guests with a clear attendance-confirmation experience."
 
+            data-fr="Un compte à rebours crée l'attente, tandis que le RSVP permet une confirmation claire de présence."
+          >
+            عرض الوقت المتبقي للمناسبة
+            وإضافة تجربة لتأكيد حضور الضيف بطريقة مرتبة.
+          </p>
 
-<span class="service-index">
+        </div>
 
-03
+      </article>
 
-</span>
 
+      <article class="feature">
 
-<div class="service-symbol">
+        <span class="feature-number">
+          04
+        </span>
 
-◷
+        <div>
 
-</div>
+          <h3
+            data-ar="صور، قصة وبرنامج المناسبة"
+            data-en="Gallery, story & schedule"
+            data-fr="Galerie, histoire & programme"
+          >
+            صور، قصة وبرنامج المناسبة
+          </h3>
 
+          <p
+            data-ar="يمكن إضافة الصور، قصة قصيرة، برنامج الحفل، اللباس المقترح أو أي معلومات يحتاجها الضيف."
 
-<h3
-data-ar="عد تنازلي"
-data-en="Countdown"
-data-fr="Compte à rebours"
->
+            data-en="The invitation can include photographs, a short story, event schedule, dress code or any information guests may need."
 
-عد تنازلي
+            data-fr="L'invitation peut intégrer photos, histoire, programme, dress code ou toute information utile."
+          >
+            يمكن إضافة الصور، قصة قصيرة، برنامج الحفل،
+            اللباس المقترح أو أي معلومات يحتاجها الضيف.
+          </p>
 
-</h3>
+        </div>
 
+      </article>
 
-<p
-data-ar="تجربة ديناميكية تعرض الوقت المتبقي حتى موعد المناسبة."
+    </div>
 
-data-en="A dynamic countdown leading guests toward the event date."
-
-data-fr="Un compte à rebours dynamique jusqu'au jour de l'événement."
->
-
-تجربة ديناميكية
-تعرض الوقت المتبقي
-حتى موعد المناسبة.
-
-</p>
-
-
-</article>
-
-
-
-<article class="service reveal">
-
-
-<span class="service-index">
-
-04
-
-</span>
-
-
-<div class="service-symbol">
-
-✓
-
-</div>
-
-
-<h3>
-
-RSVP
-
-</h3>
-
-
-<p
-data-ar="إضافة خيار تأكيد الحضور بطريقة مرتبة وسهلة للضيف."
-
-data-en="A clean and easy way for guests to confirm attendance."
-
-data-fr="Une manière simple et élégante de confirmer la présence."
->
-
-إضافة خيار تأكيد الحضور
-بطريقة مرتبة وسهلة للضيف.
-
-</p>
-
-
-</article>
-
-
-
-<article class="service reveal">
-
-
-<span class="service-index">
-
-05
-
-</span>
-
-
-<div class="service-symbol">
-
-▦
-
-</div>
-
-
-<h3
-data-ar="صور وقصة المناسبة"
-data-en="Story & Gallery"
-data-fr="Histoire & Galerie"
->
-
-صور وقصة المناسبة
-
-</h3>
-
-
-<p
-data-ar="يمكن إضافة الصور، قصة قصيرة، برنامج الحفل أو أي تفاصيل ترغبون في مشاركتها."
-
-data-en="Add photographs, a short story, event schedule or any details you want guests to discover."
-
-data-fr="Ajoutez photos, histoire, programme ou informations utiles à vos invités."
->
-
-يمكن إضافة الصور،
-قصة قصيرة، برنامج الحفل
-أو أي تفاصيل ترغبون
-في مشاركتها.
-
-</p>
-
-
-</article>
-
-
-
-<article class="service reveal">
-
-
-<span class="service-index">
-
-06
-
-</span>
-
-
-<div class="service-symbol">
-
-↗
-
-</div>
-
-
-<h3
-data-ar="رابط خاص بالمناسبة"
-data-en="Personal Event Link"
-data-fr="Lien personnalisé"
->
-
-رابط خاص بالمناسبة
-
-</h3>
-
-
-<p
-data-ar="دعوة رقمية سهلة المشاركة عبر WhatsApp وInstagram وQR Code."
-
-data-en="A shareable digital experience for WhatsApp, Instagram and QR codes."
-
-data-fr="Une expérience digitale facile à partager via WhatsApp, Instagram et QR Code."
->
-
-دعوة رقمية سهلة المشاركة
-عبر WhatsApp وInstagram
-وQR Code.
-
-</p>
-
-
-</article>
-
-
-</div>
-
+  </div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- ======================================================
 PROCESS
-===================================================== -->
+====================================================== -->
 
 <section
-class="section"
-id="process"
+  class="section"
+  id="process"
 >
 
+  <div class="process-head reveal">
 
-<div class="process-header reveal">
+    <div>
 
+      <div
+        class="section-index"
+        dir="ltr"
+      >
+        03 / PROCESS
+      </div>
 
-<div>
 
+      <h2
+        class="section-title"
 
-<div
-class="section-number"
-dir="ltr"
->
+        data-ar="من فكرتكم إلى رابط يفتح عالم المناسبة."
 
-03 / PROCESS
+        data-en="FROM YOUR IDEA TO THEIR SCREEN."
 
-</div>
+        data-fr="DE VOTRE IDÉE À LEUR ÉCRAN."
+      >
+        من فكرتكم
+        إلى رابط يفتح عالم المناسبة.
+      </h2>
 
+    </div>
 
-<h2
-class="section-title"
 
-data-ar="من فكرتكم إلى دعوة جاهزة للمشاركة."
+    <p
+      class="process-description"
 
-data-en="FROM YOUR IDEA TO THEIR SCREEN."
+      data-ar="أنتم تعطوننا تفاصيل المناسبة والاتجاه الذي تحبونه. ونحن نحوّلها إلى تجربة رقمية جاهزة للمشاركة."
 
-data-fr="DE VOTRE IDÉE À LEUR ÉCRAN."
->
+      data-en="You share the event details and the visual direction you love. We transform them into a polished digital experience ready to share."
 
-من فكرتكم
-إلى دعوة جاهزة للمشاركة.
+      data-fr="Vous partagez les informations et l'univers souhaité. Nous les transformons en expérience digitale prête à être partagée."
+    >
+      أنتم تعطوننا تفاصيل المناسبة والاتجاه الذي تحبونه.
+      ونحن نحوّلها إلى تجربة رقمية جاهزة للمشاركة.
+    </p>
 
-</h2>
+  </div>
 
 
-</div>
+  <div class="process-grid">
 
+    <article class="process-card reveal">
 
+      <small>
+        01 / BRIEF
+      </small>
 
-<p
-data-ar="عملية بسيطة ومباشرة؛ أنتم تعطوننا تفاصيل المناسبة والاتجاه الذي تحبونه، ونحن نبني التجربة الرقمية."
+      <h3
+        data-ar="نستقبل التفاصيل"
+        data-en="Tell us the story"
+        data-fr="Les informations"
+      >
+        نستقبل التفاصيل
+      </h3>
 
-data-en="A simple process: you share the event details and desired mood, and we build the digital experience."
+      <p
+        data-ar="نوع المناسبة، الأسماء، التاريخ، المكان وما الذي تريدونه داخل الدعوة."
 
-data-fr="Un processus simple : vous partagez les informations et l'ambiance souhaitée, puis nous créons l'expérience digitale."
->
+        data-en="Event type, names, date, venue and what the experience should contain."
 
-عملية بسيطة ومباشرة؛
-أنتم تعطوننا تفاصيل المناسبة
-والاتجاه الذي تحبونه،
-ونحن نبني التجربة الرقمية.
+        data-fr="Type d'événement, noms, date, lieu et contenu souhaité."
+      >
+        نوع المناسبة، الأسماء، التاريخ،
+        المكان وما الذي تريدونه داخل الدعوة.
+      </p>
 
-</p>
+    </article>
 
 
-</div>
+    <article class="process-card reveal">
 
+      <small>
+        02 / DIRECTION
+      </small>
 
+      <h3
+        data-ar="نبني الهوية"
+        data-en="Shape the mood"
+        data-fr="Créer l'univers"
+      >
+        نبني الهوية
+      </h3>
 
-<div class="process-grid">
+      <p
+        data-ar="نحدد الأسلوب والألوان والخطوط والحركة التي تناسب شخصية المناسبة."
 
+        data-en="We define the visual language, colors, typography and motion."
 
-<article class="process-step reveal">
+        data-fr="Nous définissons le style, les couleurs, la typographie et le mouvement."
+      >
+        نحدد الأسلوب والألوان والخطوط
+        والحركة التي تناسب شخصية المناسبة.
+      </p>
 
+    </article>
 
-<small>
 
-01 / BRIEF
+    <article class="process-card reveal">
 
-</small>
+      <small>
+        03 / BUILD
+      </small>
 
+      <h3
+        data-ar="نبني التجربة"
+        data-en="Build the experience"
+        data-fr="Créer l'expérience"
+      >
+        نبني التجربة
+      </h3>
 
-<h3
-data-ar="نستقبل التفاصيل"
-data-en="Tell us the story"
-data-fr="Partagez les détails"
->
+      <p
+        data-ar="نحوّل المحتوى إلى دعوة ديناميكية ومريحة على الهاتف."
 
-نستقبل التفاصيل
+        data-en="Your content becomes an elegant, interactive mobile-first invitation."
 
-</h3>
+        data-fr="Votre contenu devient une invitation interactive élégante pensée pour mobile."
+      >
+        نحوّل المحتوى إلى دعوة ديناميكية
+        ومريحة على الهاتف.
+      </p>
 
+    </article>
 
-<p
-data-ar="نوع المناسبة، الأسماء، التاريخ، المكان والأسلوب المطلوب."
 
-data-en="Event type, names, date, venue and desired visual direction."
+    <article class="process-card reveal">
 
-data-fr="Type d'événement, noms, date, lieu et style souhaité."
->
+      <small>
+        04 / SHARE
+      </small>
 
-نوع المناسبة، الأسماء،
-التاريخ، المكان
-والأسلوب المطلوب.
+      <h3
+        data-ar="تصبح جاهزة"
+        data-en="Ready to share"
+        data-fr="Prête à partager"
+      >
+        تصبح جاهزة
+      </h3>
 
-</p>
+      <p
+        data-ar="تحصلون على الرابط النهائي لإرساله للضيوف عبر WhatsApp أو QR."
 
+        data-en="Receive the final link and share it via WhatsApp, QR or social media."
 
-</article>
+        data-fr="Recevez le lien final à partager via WhatsApp, QR ou réseaux sociaux."
+      >
+        تحصلون على الرابط النهائي
+        لإرساله للضيوف عبر WhatsApp أو QR.
+      </p>
 
+    </article>
 
-
-<article class="process-step reveal">
-
-
-<small>
-
-02 / ART DIRECTION
-
-</small>
-
-
-<h3
-data-ar="نبني الهوية"
-data-en="Set the mood"
-data-fr="Définir l'univers"
->
-
-نبني الهوية
-
-</h3>
-
-
-<p
-data-ar="نحدد الألوان والخطوط والعناصر التي ستعطي المناسبة طابعها الخاص."
-
-data-en="Colors, typography and details are shaped around the event."
-
-data-fr="Couleurs, typographie et détails sont définis selon l'univers choisi."
->
-
-نحدد الألوان والخطوط
-والعناصر التي ستعطي
-المناسبة طابعها الخاص.
-
-</p>
-
-
-</article>
-
-
-
-<article class="process-step reveal">
-
-
-<small>
-
-03 / DESIGN
-
-</small>
-
-
-<h3
-data-ar="نصمم التجربة"
-data-en="Build the invitation"
-data-fr="Créer l'invitation"
->
-
-نصمم التجربة
-
-</h3>
-
-
-<p
-data-ar="نحوّل المحتوى إلى صفحة دعوة رقمية جذابة وسهلة الاستخدام على الهاتف."
-
-data-en="The content becomes an elegant mobile-first digital invitation."
-
-data-fr="Le contenu devient une invitation digitale élégante pensée pour mobile."
->
-
-نحوّل المحتوى إلى صفحة
-دعوة رقمية جذابة
-وسهلة الاستخدام على الهاتف.
-
-</p>
-
-
-</article>
-
-
-
-<article class="process-step reveal">
-
-
-<small>
-
-04 / SHARE
-
-</small>
-
-
-<h3
-data-ar="تصبح جاهزة"
-data-en="Ready to share"
-data-fr="Prête à partager"
->
-
-تصبح جاهزة
-
-</h3>
-
-
-<p
-data-ar="تحصلون على الرابط النهائي لمشاركته مباشرة مع ضيوفكم."
-
-data-en="Receive the final link and share the experience with your guests."
-
-data-fr="Recevez le lien final et partagez-le directement avec vos invités."
->
-
-تحصلون على الرابط النهائي
-لمشاركته مباشرة
-مع ضيوفكم.
-
-</p>
-
-
-</article>
-
-
-</div>
-
+  </div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- ======================================================
 CTA
-===================================================== -->
+====================================================== -->
 
-<section class="cta reveal">
+<section class="final-cta reveal">
 
+  <div class="final-copy">
 
-<div class="cta-copy">
+    <h2
+      data-ar="دعونا نصنع أول لحظة من مناسبتكم."
 
+      data-en="LET'S DESIGN THE FIRST MOMENT OF YOUR EVENT."
 
-<h2
-data-ar="لنجعل أول لحظة من مناسبتكم تستحق أن تُتذكّر."
-
-data-en="MAKE THE FIRST MOMENT WORTH REMEMBERING."
-
-data-fr="FAITES DU PREMIER MOMENT UN SOUVENIR."
->
-
-لنجعل أول لحظة
-من مناسبتكم
-تستحق أن تُتذكّر.
-
-</h2>
+      data-fr="CRÉONS LE PREMIER MOMENT DE VOTRE ÉVÉNEMENT."
+    >
+      دعونا نصنع
+      أول لحظة من مناسبتكم.
+    </h2>
 
 
-<p
-data-ar="ابدؤوا بإرسال نوع المناسبة والتاريخ والأسلوب الذي تحبونه، وسنحوّل الفكرة إلى تجربة رقمية خاصة بكم."
+    <p
+      data-ar="ابدأ بإرسال نوع المناسبة والتاريخ والأسلوب الذي تحبه. ويمكن تخصيص التصميم والوظائف بالكامل."
 
-data-en="Start with the event type, date and style you love. We will turn the idea into a digital experience made for your occasion."
+      data-en="Start with the event type, date and style you love. Both the visual direction and the functionality can be customized."
 
-data-fr="Commencez par le type d'événement, la date et le style souhaité. Nous transformerons l'idée en expérience digitale."
->
+      data-fr="Commencez par le type d'événement, la date et le style souhaité. Le design et les fonctionnalités sont personnalisables."
+    >
+      ابدأ بإرسال نوع المناسبة والتاريخ والأسلوب الذي تحبه.
+      ويمكن تخصيص التصميم والوظائف بالكامل.
+    </p>
 
-ابدؤوا بإرسال نوع المناسبة،
-التاريخ والأسلوب الذي تحبونه،
-وسنحوّل الفكرة
-إلى تجربة رقمية خاصة بكم.
-
-</p>
+  </div>
 
 
-</div>
+  <button
+    class="round-cta open-order"
+    type="button"
 
+    data-ar="ابدأ مشروع دعوتك ↗"
 
+    data-en="START YOUR INVITATION ↗"
 
-<button
-class="cta-button open-order"
-type="button"
-
-data-ar="ابدأ طلبك"
-data-en="START YOUR PROJECT"
-data-fr="DÉMARRER LE PROJET"
->
-
-ابدأ طلبك
-
-</button>
-
+    data-fr="CRÉER VOTRE INVITATION ↗"
+  >
+    ابدأ مشروع دعوتك ↗
+  </button>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- ======================================================
 FOOTER
-===================================================== -->
+====================================================== -->
 
 <footer class="footer">
 
+  <div>
 
-<div>
+    <div class="footer-logo" data-brand>
+      VELORA INVITES
+    </div>
 
+    <p
+      data-ar="Digital Invitations · Weddings · Events"
 
-<div
-class="footer-brand"
-data-brand
->
+      data-en="Digital Invitations · Weddings · Events"
 
-VELORA INVITES
+      data-fr="Invitations digitales · Mariages · Événements"
+    >
+      Digital Invitations · Weddings · Events
+    </p>
 
-</div>
-
-
-<p
-data-ar="Digital Invitations · Weddings · Events"
-data-en="Digital Invitations · Weddings · Events"
-data-fr="Invitations digitales · Mariages · Événements"
->
-
-Digital Invitations · Weddings · Events
-
-</p>
+  </div>
 
 
-</div>
+  <div class="footer-meta">
 
+    <span>WEDDINGS</span>
+    <span>EVENTS</span>
+    <span>RSVP</span>
 
+    <span>
+      ©
+      <b id="currentYear">
+        2026
+      </b>
+    </span>
 
-<div class="footer-meta">
-
-
-<span>
-
-WEDDINGS
-
-</span>
-
-
-<span>
-
-EVENTS
-
-</span>
-
-
-<span>
-
-RSVP
-
-</span>
-
-
-<span>
-
-© <b id="year">2026</b>
-
-</span>
-
-
-</div>
-
+  </div>
 
 </footer>
 
@@ -5357,512 +4725,403 @@ RSVP
 </div>
 
 
-
-<!-- =====================================================
-PORTFOLIO PREVIEW
-===================================================== -->
-
-<div
-class="preview-modal"
-id="previewModal"
->
-
-
-<div class="preview-shell">
-
-
-<button
-class="preview-close"
-id="previewClose"
-type="button"
->
-
-×
-
-
-</button>
-
-
+<!-- ======================================================
+PROJECT PREVIEW MODAL
+====================================================== -->
 
 <div
-class="preview-stage pearl"
-id="previewStage"
+  class="modal"
+  id="projectModal"
 >
 
+  <div class="modal-shell">
 
-<div class="preview-inner">
+    <button
+      class="modal-close"
+      id="projectClose"
+      type="button"
+    >
+      ×
+    </button>
 
 
-<div
-class="preview-category"
-id="previewCategory"
->
+    <div
+      class="demo-invite pearl"
+      id="demoInvite"
+    >
 
-WEDDING INVITATION
+      <div class="demo-inner">
+
+        <div
+          class="demo-kicker"
+          id="demoCategory"
+        >
+          WEDDING INVITATION
+        </div>
+
+
+        <div
+          class="demo-title"
+          id="demoTitle"
+        >
+          Lina & Adam
+        </div>
+
+
+        <div
+          class="demo-date"
+          id="demoDate"
+        >
+          18 · 06 · 2027
+        </div>
+
+
+        <div class="demo-divider"></div>
+
+
+        <p
+          class="demo-copy"
+          id="demoCopy"
+        >
+          Together with their families,
+          Lina and Adam invite you
+          to celebrate an evening of love.
+        </p>
+
+
+        <div class="demo-actions">
+
+          <button
+            class="demo-action demo-control"
+            type="button"
+          >
+            RSVP
+          </button>
+
+          <button
+            class="demo-action demo-control"
+            type="button"
+
+            data-ar="الموقع"
+            data-en="LOCATION"
+            data-fr="LOCALISATION"
+          >
+            الموقع
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
 
 
-<div
-class="preview-title"
-id="previewTitle"
->
-
-Lina & Adam
-
-</div>
-
-
-<div
-class="preview-date"
-id="previewDate"
->
-
-18 · 10 · 2026
-
-</div>
-
-
-<div class="preview-line"></div>
-
-
-<p
-class="preview-description"
-id="previewDescription"
->
-
-Together with their families,
-Lina and Adam invite you
-to celebrate their wedding.
-
-</p>
-
-
-<div
-class="preview-rsvp"
->
-
-RSVP
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-<!-- =====================================================
+<!-- ======================================================
 ORDER MODAL
-===================================================== -->
+====================================================== -->
 
 <div
-class="order-modal"
-id="orderModal"
+  class="order-modal"
+  id="orderModal"
 >
 
+  <div class="order-panel">
 
-<div class="order-panel">
+    <button
+      class="order-close"
+      id="orderClose"
+      type="button"
+    >
+      ×
+    </button>
 
 
-<button
-class="order-close"
-id="orderClose"
-type="button"
->
+    <div
+      class="order-label"
+      dir="ltr"
+    >
+      START YOUR INVITATION
+    </div>
 
-×
 
-</button>
+    <h2
+      data-ar="أخبرنا عن مناسبتك."
 
+      data-en="Tell us about your event."
+
+      data-fr="Parlez-nous de votre événement."
+    >
+      أخبرنا عن مناسبتك.
+    </h2>
+
+
+    <p
+      class="order-description"
+
+      data-ar="أدخل المعلومات الأساسية وسيتم تجهيز رسالة مرتبة بالطلب."
+
+      data-en="Add the essential information and we'll prepare a clear project request."
+
+      data-fr="Ajoutez les informations essentielles pour préparer votre demande."
+    >
+      أدخل المعلومات الأساسية
+      وسيتم تجهيز رسالة مرتبة بالطلب.
+    </p>
+
+
+    <div class="form-grid">
+
+
+      <div class="field">
+
+        <label
+          for="eventType"
+
+          data-ar="نوع المناسبة"
+
+          data-en="Event type"
+
+          data-fr="Type d'événement"
+        >
+          نوع المناسبة
+        </label>
+
+
+        <select id="eventType">
+
+          <option
+            data-ar-option="زفاف"
+            data-en-option="Wedding"
+            data-fr-option="Mariage"
+          >
+            زفاف
+          </option>
+
+          <option
+            data-ar-option="خطوبة"
+            data-en-option="Engagement"
+            data-fr-option="Fiançailles"
+          >
+            خطوبة
+          </option>
+
+          <option
+            data-ar-option="عيد ميلاد"
+            data-en-option="Birthday"
+            data-fr-option="Anniversaire"
+          >
+            عيد ميلاد
+          </option>
+
+          <option
+            data-ar-option="مناسبة أو حفل"
+            data-en-option="Special event"
+            data-fr-option="Événement"
+          >
+            مناسبة أو حفل
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label
+          for="eventDate"
+
+          data-ar="التاريخ"
+
+          data-en="Date"
+
+          data-fr="Date"
+        >
+          التاريخ
+        </label>
+
+        <input
+          id="eventDate"
+          type="date"
+        >
+
+      </div>
+
+
+      <div class="field full">
+
+        <label
+          for="eventNames"
+
+          data-ar="الأسماء أو عنوان المناسبة"
+
+          data-en="Names / Event title"
+
+          data-fr="Noms / Titre"
+        >
+          الأسماء أو عنوان المناسبة
+        </label>
+
+        <input
+          id="eventNames"
+          type="text"
+          placeholder="Lina & Adam"
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label
+          for="eventStyle"
+
+          data-ar="الأسلوب"
+
+          data-en="Style"
+
+          data-fr="Style"
+        >
+          الأسلوب
+        </label>
+
+
+        <select id="eventStyle">
+
+          <option>Quiet Luxury</option>
+          <option>Romantic</option>
+          <option>Botanical</option>
+          <option>Classic</option>
+          <option>Minimal</option>
+          <option>Modern 3D</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label
+          for="eventGuests"
+
+          data-ar="عدد الضيوف التقريبي"
+
+          data-en="Approx. guests"
+
+          data-fr="Nombre d'invités"
+        >
+          عدد الضيوف التقريبي
+        </label>
+
+
+        <input
+          id="eventGuests"
+          type="number"
+          min="1"
+          placeholder="100"
+        >
+
+      </div>
+
+
+      <div class="field full">
+
+        <label
+          for="eventNotes"
+
+          data-ar="ما الذي تريد إضافته؟"
+
+          data-en="What would you like to include?"
+
+          data-fr="Que souhaitez-vous ajouter ?"
+        >
+          ما الذي تريد إضافته؟
+        </label>
+
+
+        <textarea
+          id="eventNotes"
+          data-ar-placeholder="مثلاً: RSVP، موقع القاعة، عد تنازلي، صور..."
+          data-en-placeholder="For example: RSVP, location, countdown, gallery..."
+          data-fr-placeholder="Ex. RSVP, localisation, compte à rebours, galerie..."
+        ></textarea>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="order-actions">
+
+      <button
+        class="order-button order-primary"
+        id="prepareOrder"
+        type="button"
+
+        data-ar="جهّز الطلب"
+
+        data-en="PREPARE REQUEST"
+
+        data-fr="PRÉPARER"
+      >
+        جهّز الطلب
+      </button>
+
+
+      <button
+        class="order-button order-secondary"
+        id="copyOrder"
+        type="button"
+
+        data-ar="نسخ الطلب"
+
+        data-en="COPY REQUEST"
+
+        data-fr="COPIER"
+      >
+        نسخ الطلب
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
 
 
 <div
-class="order-kicker"
-dir="ltr"
+  class="toast"
+  id="toast"
+  role="status"
 >
-
-START YOUR INVITATION
-
+  تم النسخ
 </div>
-
-
-
-<h2
-data-ar="أخبرنا عن مناسبتك."
-data-en="Tell us about your event."
-data-fr="Parlez-nous de votre événement."
->
-
-أخبرنا عن مناسبتك.
-
-</h2>
-
-
-<p
-class="order-intro"
-
-data-ar="أدخل المعلومات الأساسية وسنجهز لك رسالة مرتبة يمكنك إرسالها لنا مباشرة."
-
-data-en="Add the essential details and we will prepare a clear project request."
-
-data-fr="Ajoutez les informations principales et nous préparerons une demande claire."
->
-
-أدخل المعلومات الأساسية
-وسنجهز لك رسالة مرتبة
-يمكنك إرسالها لنا مباشرة.
-
-</p>
-
-
-
-<div class="form-grid">
-
-
-<div class="field">
-
-
-<label
-for="eventType"
-
-data-ar="نوع المناسبة"
-data-en="Event type"
-data-fr="Type d'événement"
->
-
-نوع المناسبة
-
-</label>
-
-
-<select id="eventType">
-
-
-<option
-value="wedding"
-
-data-ar-option="زفاف"
-data-en-option="Wedding"
-data-fr-option="Mariage"
->
-
-زفاف
-
-</option>
-
-
-<option
-value="engagement"
-
-data-ar-option="خطوبة"
-data-en-option="Engagement"
-data-fr-option="Fiançailles"
->
-
-خطوبة
-
-</option>
-
-
-<option
-value="birthday"
-
-data-ar-option="عيد ميلاد"
-data-en-option="Birthday"
-data-fr-option="Anniversaire"
->
-
-عيد ميلاد
-
-</option>
-
-
-<option
-value="event"
-
-data-ar-option="مناسبة أو حفل"
-data-en-option="Special event"
-data-fr-option="Événement"
->
-
-مناسبة أو حفل
-
-</option>
-
-
-</select>
-
-
-</div>
-
-
-
-<div class="field">
-
-
-<label
-for="eventDate"
-
-data-ar="التاريخ"
-data-en="Date"
-data-fr="Date"
->
-
-التاريخ
-
-</label>
-
-
-<input
-type="date"
-id="eventDate"
->
-
-
-</div>
-
-
-
-<div class="field full">
-
-
-<label
-for="eventNames"
-
-data-ar="الأسماء أو عنوان المناسبة"
-data-en="Names / Event title"
-data-fr="Noms / Titre"
->
-
-الأسماء أو عنوان المناسبة
-
-</label>
-
-
-<input
-type="text"
-id="eventNames"
-placeholder="Lina & Adam"
->
-
-
-</div>
-
-
-
-<div class="field">
-
-
-<label
-for="eventStyle"
-
-data-ar="الأسلوب"
-data-en="Style"
-data-fr="Style"
->
-
-الأسلوب
-
-</label>
-
-
-<select id="eventStyle">
-
-
-<option>
-
-Quiet Luxury
-
-</option>
-
-
-<option>
-
-Classic
-
-</option>
-
-
-<option>
-
-Botanical
-
-</option>
-
-
-<option>
-
-Romantic
-
-</option>
-
-
-<option>
-
-Minimal
-
-</option>
-
-
-<option>
-
-Modern
-
-</option>
-
-
-</select>
-
-
-</div>
-
-
-
-<div class="field">
-
-
-<label
-for="eventGuests"
-
-data-ar="عدد الضيوف التقريبي"
-data-en="Approx. guests"
-data-fr="Nombre d'invités"
->
-
-عدد الضيوف التقريبي
-
-</label>
-
-
-<input
-type="number"
-min="1"
-id="eventGuests"
-placeholder="100"
->
-
-
-</div>
-
-
-
-<div class="field full">
-
-
-<label
-for="eventNotes"
-
-data-ar="تفاصيل إضافية"
-data-en="Additional details"
-data-fr="Détails supplémentaires"
->
-
-تفاصيل إضافية
-
-</label>
-
-
-<textarea
-id="eventNotes"
-
-data-ar-placeholder="مثلاً: نريد خريطة للمكان، RSVP، عد تنازلي..."
-
-data-en-placeholder="For example: location map, RSVP, countdown..."
-
-data-fr-placeholder="Ex. localisation, RSVP, compte à rebours..."
-></textarea>
-
-
-</div>
-
-
-</div>
-
-
-
-<div class="order-actions">
-
-
-<button
-class="prepare-order"
-id="prepareOrder"
-type="button"
-
-data-ar="جهّز الطلب"
-data-en="PREPARE REQUEST"
-data-fr="PRÉPARER LA DEMANDE"
->
-
-جهّز الطلب
-
-</button>
-
-
-<button
-class="copy-order"
-id="copyOrder"
-type="button"
-
-data-ar="نسخ الطلب"
-data-en="COPY REQUEST"
-data-fr="COPIER"
->
-
-نسخ الطلب
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-<!-- TOAST -->
-
-<div
-class="toast"
-id="toast"
->
-
-تم النسخ ✓
-
-</div>
-
 
 
 <script>
 
 /* =========================================================
-   BASIC CONFIGURATION
-
-   ضع رقم WhatsApp لاحقاً بهذه الصيغة:
-   "213XXXXXXXXX"
-
-   إذا تركته فارغاً، زر الطلب سيقوم بنسخ
-   الرسالة بدلاً من فتح WhatsApp.
+   CONFIG
 ========================================================= */
 
 const CONFIG = {
 
-    brand:
+  brand:
     "VELORA INVITES",
 
-    whatsapp:
+  /*
+    ضع رقم WhatsApp لاحقاً بدون + أو مسافات.
+    مثال:
+    213555123456
+  */
+
+  whatsapp:
     ""
 
 };
@@ -5874,61 +5133,54 @@ const CONFIG = {
 
 document
 .querySelectorAll(
-    "[data-brand]"
+  "[data-brand]"
 )
 .forEach(
-    element=>{
+  element => {
 
-        element.textContent =
-        CONFIG.brand;
+    element.textContent =
+      CONFIG.brand;
 
-    }
+  }
 );
 
 
 /* =========================================================
    LANGUAGE SYSTEM
-
-   Button shows CURRENT language:
-   AR -> EN -> FR -> AR
+   واضح هذه المرة:
+   AR / EN / FR تظهر دائماً
+   واللغة الحالية فقط تصبح Active
 ========================================================= */
 
-const languages = [
-    "ar",
-    "en",
-    "fr"
-];
-
-
 let currentLanguage =
-"ar";
+  "ar";
 
 
-const languageButton =
-document.getElementById(
-    "languageButton"
-);
+const langButtons =
+  document.querySelectorAll(
+    ".lang-btn"
+  );
 
 
-const translated =
-document.querySelectorAll(
+const translatedElements =
+  document.querySelectorAll(
     "[data-ar]"
-);
+  );
 
 
-function setLanguage(
-    language
+function applyLanguage(
+  language
 ){
 
-    currentLanguage =
+  currentLanguage =
     language;
 
 
-    document.documentElement.lang =
+  document.documentElement.lang =
     language;
 
 
-    document.documentElement.dir =
+  document.documentElement.dir =
     language === "ar"
     ?
     "rtl"
@@ -5936,391 +5188,470 @@ function setLanguage(
     "ltr";
 
 
-    document.body.classList.remove(
-        "lang-ar",
-        "lang-en",
-        "lang-fr"
-    );
+  document.body.classList.remove(
+    "lang-ar",
+    "lang-en",
+    "lang-fr"
+  );
 
 
-    document.body.classList.add(
-        "lang-" + language
-    );
+  document.body.classList.add(
+    "lang-" + language
+  );
 
 
-    translated.forEach(
-        element=>{
+  translatedElements.forEach(
+    element => {
 
-            const text =
-            element.dataset[
-                language
-            ];
-
-
-            if(text){
-
-                element.textContent =
-                text;
-
-            }
-
-        }
-    );
+      const text =
+        element.dataset[
+          language
+        ];
 
 
-    /* translate select options */
+      if(text){
 
-    document
-    .querySelectorAll(
-        "#eventType option"
-    )
-    .forEach(
-        option=>{
+        element.textContent =
+          text;
 
-            const text =
-            option.dataset[
-                language + "Option"
-            ];
+      }
+
+    }
+  );
 
 
-            if(text){
+  document
+  .querySelectorAll(
+    "#eventType option"
+  )
+  .forEach(
+    option => {
 
-                option.textContent =
-                text;
-
-            }
-
-        }
-    );
+      const key =
+        language +
+        "Option";
 
 
-    /* textarea placeholder */
+      if(
+        option.dataset[key]
+      ){
 
-    const notes =
+        option.textContent =
+          option.dataset[key];
+
+      }
+
+    }
+  );
+
+
+  const notes =
     document.getElementById(
-        "eventNotes"
+      "eventNotes"
     );
 
 
-    const placeholder =
-    notes.dataset[
-        language + "Placeholder"
-    ];
+  if(notes){
+
+    const placeholderKey =
+      language +
+      "Placeholder";
 
 
-    if(placeholder){
+    if(
+      notes.dataset[
+        placeholderKey
+      ]
+    ){
 
-        notes.placeholder =
-        placeholder;
-
-    }
-
-
-    languageButton.textContent =
-    language.toUpperCase();
-
-
-    try{
-
-        localStorage.setItem(
-            "velora-language",
-            language
-        );
+      notes.placeholder =
+        notes.dataset[
+          placeholderKey
+        ];
 
     }
 
-    catch(error){}
+  }
+
+
+  langButtons.forEach(
+    button => {
+
+      button.classList.toggle(
+        "active",
+        button.dataset.lang ===
+        language
+      );
+
+    }
+  );
+
+
+  try{
+
+    localStorage.setItem(
+      "velora_v3_language",
+      language
+    );
+
+  }
+
+  catch(error){}
 
 }
 
 
-languageButton.addEventListener(
-    "click",
-    ()=>{
+/* Language click */
 
-        const index =
-        languages.indexOf(
-            currentLanguage
+langButtons.forEach(
+  button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        applyLanguage(
+          button.dataset.lang
         );
 
+      }
+    );
 
-        const next =
-        languages[
-            (
-                index + 1
-            )
-            %
-            languages.length
-        ];
-
-
-        setLanguage(
-            next
-        );
-
-    }
+  }
 );
 
 
-/* restore language */
+/* Restore */
 
-let storedLanguage =
-"ar";
+let savedLanguage =
+  "ar";
 
 
 try{
 
-    const stored =
+  const stored =
     localStorage.getItem(
-        "velora-language"
+      "velora_v3_language"
     );
 
 
-    if(
-        languages.includes(
-            stored
-        )
-    ){
+  if(
+    [
+      "ar",
+      "en",
+      "fr"
+    ].includes(stored)
+  ){
 
-        storedLanguage =
-        stored;
+    savedLanguage =
+      stored;
 
-    }
+  }
 
 }
 
 catch(error){}
 
 
-setLanguage(
-    storedLanguage
+applyLanguage(
+  savedLanguage
 );
 
 
 /* =========================================================
-   ENVELOPE
+   3D HERO PARALLAX
 ========================================================= */
 
-const envelopeScene =
-document.getElementById(
-    "envelopeScene"
-);
+const heroScene =
+  document.getElementById(
+    "heroScene"
+  );
 
 
-const openEnvelope =
-document.getElementById(
-    "openEnvelope"
-);
+const heroDeck =
+  document.getElementById(
+    "heroDeck"
+  );
 
 
-openEnvelope.addEventListener(
-    "click",
-    ()=>{
+if(
+  window.matchMedia(
+    "(pointer:fine)"
+  ).matches
+){
 
-        envelopeScene
-        .classList
-        .toggle(
-            "is-open"
-        );
+  heroScene.addEventListener(
+    "pointermove",
+    event => {
+
+      const rect =
+        heroScene
+        .getBoundingClientRect();
+
+
+      const x =
+        (
+          event.clientX -
+          rect.left
+        )
+        /
+        rect.width
+        -
+        .5;
+
+
+      const y =
+        (
+          event.clientY -
+          rect.top
+        )
+        /
+        rect.height
+        -
+        .5;
+
+
+      heroDeck.style.transform =
+        `
+        rotateX(
+          ${7 - y * 10}deg
+        )
+        rotateY(
+          ${-10 + x * 15}deg
+        )
+        rotateZ(
+          ${x * 2}deg
+        )
+        `;
 
     }
-);
+  );
+
+
+  heroScene.addEventListener(
+    "pointerleave",
+    () => {
+
+      heroDeck.style.transform =
+        `
+        rotateX(7deg)
+        rotateY(-10deg)
+        rotateZ(-2deg)
+        `;
+
+    }
+  );
+
+}
 
 
 /* =========================================================
-   PORTFOLIO FILTERS
+   PORTFOLIO 3D TILT
+========================================================= */
+
+if(
+  window.matchMedia(
+    "(pointer:fine)"
+  ).matches
+){
+
+  document
+  .querySelectorAll(
+    "[data-tilt]"
+  )
+  .forEach(
+    card => {
+
+      card.addEventListener(
+        "pointermove",
+        event => {
+
+          const rect =
+            card
+            .getBoundingClientRect();
+
+
+          const x =
+            (
+              event.clientX -
+              rect.left
+            )
+            /
+            rect.width
+            -
+            .5;
+
+
+          const y =
+            (
+              event.clientY -
+              rect.top
+            )
+            /
+            rect.height
+            -
+            .5;
+
+
+          card.style.transform =
+            `
+            rotateX(
+              ${-y * 6}deg
+            )
+            rotateY(
+              ${x * 7}deg
+            )
+            translateY(-5px)
+            `;
+
+        }
+      );
+
+
+      card.addEventListener(
+        "pointerleave",
+        () => {
+
+          card.style.transform =
+            "";
+
+        }
+      );
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   FILTERS
 ========================================================= */
 
 const filterButtons =
-document.querySelectorAll(
-    ".filter-button"
-);
+  document.querySelectorAll(
+    ".filter"
+  );
 
 
-const workCards =
-document.querySelectorAll(
-    ".work-card"
-);
+const projects =
+  document.querySelectorAll(
+    ".project"
+  );
 
 
 filterButtons.forEach(
-    button=>{
+  button => {
 
-        button.addEventListener(
-            "click",
-            ()=>{
+    button.addEventListener(
+      "click",
+      () => {
 
-                filterButtons
-                .forEach(
-                    item=>{
+        filterButtons
+        .forEach(
+          item => {
 
-                        item.classList.remove(
-                            "active"
-                        );
+            item.classList.remove(
+              "active"
+            );
 
-                    }
-                );
-
-
-                button
-                .classList
-                .add(
-                    "active"
-                );
-
-
-                const filter =
-                button.dataset.filter;
-
-
-                workCards.forEach(
-                    card=>{
-
-                        const show =
-                        filter === "all"
-                        ||
-                        card.dataset.category === filter;
-
-
-                        card.classList.toggle(
-                            "hidden",
-                            !show
-                        );
-
-                    }
-                );
-
-            }
+          }
         );
 
-    }
+
+        button.classList.add(
+          "active"
+        );
+
+
+        const filter =
+          button.dataset.filter;
+
+
+        projects.forEach(
+          project => {
+
+            const show =
+              filter === "all"
+              ||
+              project.dataset.category ===
+              filter;
+
+
+            project.classList.toggle(
+              "hidden",
+              !show
+            );
+
+          }
+        );
+
+      }
+    );
+
+  }
 );
 
 
 /* =========================================================
-   PORTFOLIO PREVIEW DATA
+   PROJECT DEMOS
 ========================================================= */
 
-const previewData = {
+const projectData = {
 
-    pearl:{
+  pearl:{
+    theme:"pearl",
+    category:"WEDDING INVITATION",
+    title:"Lina & Adam",
+    date:"18 · 06 · 2027",
+    copy:
+      "Together with their families, Lina and Adam invite you to celebrate an evening of love, joy and unforgettable memories."
+  },
 
-        theme:
-        "pearl",
+  sage:{
+    theme:"sage",
+    category:"ENGAGEMENT",
+    title:"Yasmine & Rayane",
+    date:"05 · 03 · 2027",
+    copy:
+      "An intimate engagement experience inspired by natural textures, soft greens and timeless elegance."
+  },
 
-        category:
-        "WEDDING INVITATION",
+  midnight:{
+    theme:"midnight",
+    category:"PRIVATE EVENT",
+    title:"The Evening",
+    date:"SATURDAY · 20:00",
+    copy:
+      "A refined private event defined by deep tones, warm gold details and understated luxury."
+  },
 
-        title:
-        "Lina & Adam",
+  rose:{
+    theme:"rose",
+    category:"BIRTHDAY",
+    title:"Inès Turns 18",
+    date:"21 · 11 · 2027",
+    copy:
+      "A soft, modern birthday experience designed around joy, movement and youthful elegance."
+  },
 
-        date:
-        "18 · 10 · 2026",
+  sky:{
+    theme:"sky",
+    category:"BABY EVENT",
+    title:"A Little Star",
+    date:"COMING SOON",
+    copy:
+      "A gentle digital invitation inspired by light, softness and a beautiful new beginning."
+  },
 
-        description:
-        "Together with their families, Lina and Adam invite you to celebrate an evening of love, joy and unforgettable memories."
-
-    },
-
-
-    botanical:{
-
-        theme:
-        "botanical",
-
-        category:
-        "ENGAGEMENT",
-
-        title:
-        "Yasmine & Rayane",
-
-        date:
-        "05 · 06 · 2026",
-
-        description:
-        "A botanical invitation inspired by natural textures, soft details and an intimate celebration."
-
-    },
-
-
-    midnight:{
-
-        theme:
-        "midnight",
-
-        category:
-        "PRIVATE EVENT",
-
-        title:
-        "The Evening",
-
-        date:
-        "SATURDAY · 8 PM",
-
-        description:
-        "An elegant night designed around deep tones, warm gold accents and refined simplicity."
-
-    },
-
-
-    rose:{
-
-        theme:
-        "rose",
-
-        category:
-        "BIRTHDAY",
-
-        title:
-        "Inès Turns 18",
-
-        date:
-        "21 · 11 · 2026",
-
-        description:
-        "A soft and youthful digital experience created for an unforgettable birthday celebration."
-
-    },
-
-
-    sky:{
-
-        theme:
-        "sky",
-
-        category:
-        "BABY EVENT",
-
-        title:
-        "A Little Star",
-
-        date:
-        "COMING SOON",
-
-        description:
-        "A gentle invitation experience filled with light, softness and little moments of joy."
-
-    },
-
-
-    minimal:{
-
-        theme:
-        "minimal",
-
-        category:
-        "SPECIAL EVENT",
-
-        title:
-        "Private Gathering",
-
-        date:
-        "BY INVITATION",
-
-        description:
-        "A bold minimal invitation designed for private dinners, launches and modern celebrations."
-
-    }
+  mono:{
+    theme:"mono",
+    category:"SPECIAL EVENT",
+    title:"Private Gathering",
+    date:"BY INVITATION",
+    copy:
+      "A bold minimal experience designed for dinners, launches and modern private events."
+  }
 
 };
 
@@ -6329,132 +5660,175 @@ const previewData = {
    PREVIEW MODAL
 ========================================================= */
 
-const previewModal =
-document.getElementById(
-    "previewModal"
-);
+const projectModal =
+  document.getElementById(
+    "projectModal"
+  );
 
 
-const previewStage =
-document.getElementById(
-    "previewStage"
-);
+const demoInvite =
+  document.getElementById(
+    "demoInvite"
+  );
 
 
-const previewCategory =
-document.getElementById(
-    "previewCategory"
-);
+const demoCategory =
+  document.getElementById(
+    "demoCategory"
+  );
 
 
-const previewTitle =
-document.getElementById(
-    "previewTitle"
-);
+const demoTitle =
+  document.getElementById(
+    "demoTitle"
+  );
 
 
-const previewDate =
-document.getElementById(
-    "previewDate"
-);
+const demoDate =
+  document.getElementById(
+    "demoDate"
+  );
 
 
-const previewDescription =
-document.getElementById(
-    "previewDescription"
-);
+const demoCopy =
+  document.getElementById(
+    "demoCopy"
+  );
 
 
-workCards.forEach(
-    card=>{
+function openProject(
+  key
+){
 
-        card.addEventListener(
-            "click",
-            ()=>{
-
-                const data =
-                previewData[
-                    card.dataset.preview
-                ];
+  const data =
+    projectData[key];
 
 
-                previewStage.className =
-                "preview-stage " +
-                data.theme;
+  demoInvite.className =
+    "demo-invite " +
+    data.theme;
 
 
-                previewCategory.textContent =
-                data.category;
+  demoCategory.textContent =
+    data.category;
 
 
-                previewTitle.textContent =
-                data.title;
+  demoTitle.textContent =
+    data.title;
 
 
-                previewDate.textContent =
-                data.date;
+  demoDate.textContent =
+    data.date;
 
 
-                previewDescription.textContent =
-                data.description;
+  demoCopy.textContent =
+    data.copy;
 
 
-                previewModal
-                .classList
-                .add(
-                    "open"
-                );
+  projectModal.classList.add(
+    "open"
+  );
 
 
-                document.body.style.overflow =
-                "hidden";
+  document.body.classList.add(
+    "modal-open"
+  );
 
-            }
+}
+
+
+projects.forEach(
+  project => {
+
+    project.addEventListener(
+      "click",
+      () => {
+
+        openProject(
+          project.dataset.project
         );
 
-    }
+      }
+    );
+
+  }
 );
 
 
-function closePreview(){
+function closeProject(){
 
-    previewModal
-    .classList
-    .remove(
-        "open"
-    );
+  projectModal.classList.remove(
+    "open"
+  );
 
 
-    document.body.style.overflow =
-    "";
+  document.body.classList.remove(
+    "modal-open"
+  );
 
 }
 
 
 document
 .getElementById(
-    "previewClose"
+  "projectClose"
 )
 .addEventListener(
-    "click",
-    closePreview
+  "click",
+  closeProject
 );
 
 
-previewModal.addEventListener(
-    "click",
-    event=>{
+projectModal.addEventListener(
+  "click",
+  event => {
 
-        if(
-            event.target ===
-            previewModal
-        ){
+    if(
+      event.target ===
+      projectModal
+    ){
 
-            closePreview();
-
-        }
+      closeProject();
 
     }
+
+  }
+);
+
+
+/* =========================================================
+   DEMO ACTIONS
+========================================================= */
+
+document
+.querySelectorAll(
+  ".demo-control"
+)
+.forEach(
+  control => {
+
+    control.addEventListener(
+      "click",
+      () => {
+
+        showToast(
+
+          currentLanguage === "ar"
+          ?
+          "هذه وظيفة تجريبية ويمكن ربطها بالموقع أو RSVP الحقيقي"
+          :
+          currentLanguage === "fr"
+          ?
+          "Fonction de démonstration — elle peut être reliée au vrai RSVP ou à la localisation."
+          :
+          "Demo feature — it can be linked to the real RSVP or venue location."
+
+        );
+
+      }
+    );
+
+  }
 );
 
 
@@ -6463,134 +5837,135 @@ previewModal.addEventListener(
 ========================================================= */
 
 const orderModal =
-document.getElementById(
+  document.getElementById(
     "orderModal"
-);
+  );
 
 
-document
-.querySelectorAll(
-    ".open-order"
-)
-.forEach(
-    button=>{
+function openOrder(){
 
-        button.addEventListener(
-            "click",
-            ()=>{
-
-                orderModal
-                .classList
-                .add(
-                    "open"
-                );
+  orderModal.classList.add(
+    "open"
+  );
 
 
-                document.body.style.overflow =
-                "hidden";
+  document.body.classList.add(
+    "modal-open"
+  );
 
-            }
-        );
-
-    }
-);
+}
 
 
 function closeOrder(){
 
-    orderModal
-    .classList
-    .remove(
-        "open"
-    );
+  orderModal.classList.remove(
+    "open"
+  );
 
 
-    document.body.style.overflow =
-    "";
+  document.body.classList.remove(
+    "modal-open"
+  );
 
 }
 
 
 document
+.querySelectorAll(
+  ".open-order"
+)
+.forEach(
+  button => {
+
+    button.addEventListener(
+      "click",
+      openOrder
+    );
+
+  }
+);
+
+
+document
 .getElementById(
-    "orderClose"
+  "orderClose"
 )
 .addEventListener(
-    "click",
-    closeOrder
+  "click",
+  closeOrder
 );
 
 
 orderModal.addEventListener(
-    "click",
-    event=>{
+  "click",
+  event => {
 
-        if(
-            event.target ===
-            orderModal
-        ){
+    if(
+      event.target ===
+      orderModal
+    ){
 
-            closeOrder();
-
-        }
+      closeOrder();
 
     }
+
+  }
 );
 
 
 /* =========================================================
-   BUILD CLIENT REQUEST
+   BUILD ORDER
 ========================================================= */
 
 function buildRequest(){
 
-    const typeSelect =
+  const eventType =
     document.getElementById(
-        "eventType"
+      "eventType"
     );
 
 
-    const typeText =
-    typeSelect.options[
-        typeSelect.selectedIndex
+  const typeText =
+    eventType.options[
+      eventType.selectedIndex
     ].text;
 
 
-    const date =
+  const date =
     document.getElementById(
-        "eventDate"
+      "eventDate"
     ).value;
 
 
-    const names =
+  const names =
     document.getElementById(
-        "eventNames"
+      "eventNames"
     ).value.trim();
 
 
-    const style =
+  const style =
     document.getElementById(
-        "eventStyle"
+      "eventStyle"
     ).value;
 
 
-    const guests =
+  const guests =
     document.getElementById(
-        "eventGuests"
+      "eventGuests"
     ).value;
 
 
-    const notes =
+  const notes =
     document.getElementById(
-        "eventNotes"
+      "eventNotes"
     ).value.trim();
 
 
-    if(
-        currentLanguage === "ar"
-    ){
+  if(
+    currentLanguage === "ar"
+  ){
 
-        return `
+    return `
 مرحباً، أود طلب تصميم دعوة رقمية.
 
 المناسبة: ${typeText}
@@ -6598,19 +5973,19 @@ function buildRequest(){
 التاريخ: ${date || "غير محدد"}
 الأسلوب: ${style}
 عدد الضيوف التقريبي: ${guests || "غير محدد"}
-تفاصيل إضافية: ${notes || "لا توجد"}
+الوظائف أو التفاصيل المطلوبة: ${notes || "غير محدد"}
 
 شكراً.
-        `.trim();
+    `.trim();
 
-    }
+  }
 
 
-    if(
-        currentLanguage === "fr"
-    ){
+  if(
+    currentLanguage === "fr"
+  ){
 
-        return `
+    return `
 Bonjour, je souhaite demander la création d'une invitation digitale.
 
 Événement : ${typeText}
@@ -6618,26 +5993,26 @@ Noms / titre : ${names || "Non précisé"}
 Date : ${date || "Non précisée"}
 Style : ${style}
 Nombre approximatif d'invités : ${guests || "Non précisé"}
-Détails : ${notes || "Aucun"}
+Fonctionnalités / détails : ${notes || "Non précisé"}
 
 Merci.
-        `.trim();
+    `.trim();
 
-    }
+  }
 
 
-    return `
-Hello, I would like to request a digital invitation design.
+  return `
+Hello, I would like to request a digital invitation.
 
 Event: ${typeText}
 Names / Event title: ${names || "Not specified"}
 Date: ${date || "Not specified"}
 Style: ${style}
 Approx. guests: ${guests || "Not specified"}
-Additional details: ${notes || "None"}
+Features / details: ${notes || "Not specified"}
 
 Thank you.
-    `.trim();
+  `.trim();
 
 }
 
@@ -6647,170 +6022,166 @@ Thank you.
 ========================================================= */
 
 const toast =
-document.getElementById(
+  document.getElementById(
     "toast"
-);
+  );
 
 
-let toastTimer;
+let toastTimeout;
 
 
 function showToast(
-    text
+  text
 ){
 
-    clearTimeout(
-        toastTimer
-    );
+  clearTimeout(
+    toastTimeout
+  );
 
 
-    toast.textContent =
+  toast.textContent =
     text;
 
 
-    toast
-    .classList
-    .add(
-        "show"
-    );
+  toast.classList.add(
+    "show"
+  );
 
 
-    toastTimer =
+  toastTimeout =
     setTimeout(
-        ()=>{
+      () => {
 
-            toast
-            .classList
-            .remove(
-                "show"
-            );
+        toast.classList.remove(
+          "show"
+        );
 
-        },
-        2200
+      },
+      2600
     );
 
 }
 
 
 /* =========================================================
-   COPY REQUEST
+   COPY
 ========================================================= */
 
 async function copyRequest(){
 
-    const message =
+  const request =
     buildRequest();
 
 
-    try{
+  try{
 
-        await navigator
-        .clipboard
-        .writeText(
-            message
-        );
+    await navigator
+    .clipboard
+    .writeText(
+      request
+    );
 
 
-        showToast(
+    showToast(
 
-            currentLanguage === "ar"
-            ?
-            "تم نسخ الطلب ✓"
-            :
-            currentLanguage === "fr"
-            ?
-            "Demande copiée ✓"
-            :
-            "Request copied ✓"
+      currentLanguage === "ar"
+      ?
+      "تم نسخ الطلب ✓"
+      :
+      currentLanguage === "fr"
+      ?
+      "Demande copiée ✓"
+      :
+      "Request copied ✓"
 
-        );
+    );
 
-    }
+  }
 
-    catch(error){
+  catch(error){
 
-        window.prompt(
-            "Copy:",
-            message
-        );
+    window.prompt(
+      "Copy:",
+      request
+    );
 
-    }
+  }
 
 }
 
 
 document
 .getElementById(
-    "copyOrder"
+  "copyOrder"
 )
 .addEventListener(
-    "click",
-    copyRequest
+  "click",
+  copyRequest
 );
 
 
 /* =========================================================
-   PREPARE ORDER
+   PREPARE / WHATSAPP
 ========================================================= */
 
 document
 .getElementById(
-    "prepareOrder"
+  "prepareOrder"
 )
 .addEventListener(
-    "click",
-    async()=>{
+  "click",
+  async () => {
 
-        const message =
-        buildRequest();
-
-
-        if(
-            CONFIG.whatsapp
-        ){
-
-            const url =
-            "https://wa.me/"
-            +
-            CONFIG.whatsapp
-            +
-            "?text="
-            +
-            encodeURIComponent(
-                message
-            );
+    const request =
+      buildRequest();
 
 
-            window.open(
-                url,
-                "_blank",
-                "noopener"
-            );
+    if(
+      CONFIG.whatsapp
+    ){
 
-        }
+      const url =
+        "https://wa.me/"
+        +
+        CONFIG.whatsapp
+        +
+        "?text="
+        +
+        encodeURIComponent(
+          request
+        );
 
-        else{
 
-            await copyRequest();
-
-
-            showToast(
-
-                currentLanguage === "ar"
-                ?
-                "أضف رقم WhatsApp في CONFIG — تم نسخ الطلب"
-                :
-                currentLanguage === "fr"
-                ?
-                "Ajoutez WhatsApp dans CONFIG — demande copiée"
-                :
-                "Add WhatsApp in CONFIG — request copied"
-
-            );
-
-        }
+      window.open(
+        url,
+        "_blank",
+        "noopener"
+      );
 
     }
+
+    else{
+
+      await copyRequest();
+
+
+      showToast(
+
+        currentLanguage === "ar"
+        ?
+        "تم نسخ الطلب — أضف رقم WhatsApp في CONFIG"
+        :
+        currentLanguage === "fr"
+        ?
+        "Demande copiée — ajoutez WhatsApp dans CONFIG"
+        :
+        "Request copied — add WhatsApp in CONFIG"
+
+      );
+
+    }
+
+  }
 );
 
 
@@ -6820,78 +6191,195 @@ document
 
 document
 .getElementById(
-    "shareButton"
+  "shareButton"
 )
 .addEventListener(
-    "click",
-    async()=>{
+  "click",
+  async () => {
 
-        const shareData = {
+    const data = {
 
-            title:
-            CONFIG.brand,
+      title:
+        CONFIG.brand,
 
-            text:
-            currentLanguage === "ar"
-            ?
-            "دعوات رقمية راقية للزفاف والحفلات والمناسبات."
-            :
-            currentLanguage === "fr"
-            ?
-            "Invitations digitales élégantes pour mariages et événements."
-            :
-            "Elegant digital invitations for weddings and special events.",
+      text:
 
-            url:
-            window.location.href
+        currentLanguage === "ar"
+        ?
+        "دعوات رقمية عصرية للزفاف والحفلات والمناسبات."
+        :
+        currentLanguage === "fr"
+        ?
+        "Invitations digitales modernes pour mariages et événements."
+        :
+        "Modern digital invitations for weddings and special events.",
 
-        };
+      url:
+        window.location.href
 
-
-        if(
-            navigator.share
-        ){
-
-            try{
-
-                await navigator.share(
-                    shareData
-                );
-
-            }
-
-            catch(error){}
-
-        }
-
-        else{
-
-            try{
-
-                await navigator
-                .clipboard
-                .writeText(
-                    window.location.href
-                );
+    };
 
 
-                showToast(
+    if(
+      navigator.share
+    ){
 
-                    currentLanguage === "ar"
-                    ?
-                    "تم نسخ الرابط ✓"
-                    :
-                    "Link copied ✓"
+      try{
 
-                );
+        await navigator.share(
+          data
+        );
 
-            }
+      }
 
-            catch(error){}
-
-        }
+      catch(error){}
 
     }
+
+    else{
+
+      try{
+
+        await navigator
+        .clipboard
+        .writeText(
+          window.location.href
+        );
+
+
+        showToast(
+
+          currentLanguage === "ar"
+          ?
+          "تم نسخ رابط الموقع"
+          :
+          "Link copied"
+
+        );
+
+      }
+
+      catch(error){}
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+const eventDate =
+  new Date(
+    "2027-06-18T18:00:00"
+  );
+
+
+function updateCountdown(){
+
+  const now =
+    new Date();
+
+
+  let difference =
+    eventDate -
+    now;
+
+
+  if(
+    difference < 0
+  ){
+
+    difference =
+      0;
+
+  }
+
+
+  const days =
+    Math.floor(
+      difference /
+      86400000
+    );
+
+
+  const hours =
+    Math.floor(
+      difference /
+      3600000
+    )
+    %
+    24;
+
+
+  const minutes =
+    Math.floor(
+      difference /
+      60000
+    )
+    %
+    60;
+
+
+  const seconds =
+    Math.floor(
+      difference /
+      1000
+    )
+    %
+    60;
+
+
+  document.getElementById(
+    "days"
+  ).textContent =
+    String(days)
+    .padStart(
+      2,
+      "0"
+    );
+
+
+  document.getElementById(
+    "hours"
+  ).textContent =
+    String(hours)
+    .padStart(
+      2,
+      "0"
+    );
+
+
+  document.getElementById(
+    "minutes"
+  ).textContent =
+    String(minutes)
+    .padStart(
+      2,
+      "0"
+    );
+
+
+  document.getElementById(
+    "seconds"
+  ).textContent =
+    String(seconds)
+    .padStart(
+      2,
+      "0"
+    );
+
+}
+
+
+updateCountdown();
+
+
+setInterval(
+  updateCountdown,
+  1000
 );
 
 
@@ -6899,106 +6387,104 @@ document
    SCROLL REVEAL
 ========================================================= */
 
+const reducedMotion =
+  window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+
 if(
-    "IntersectionObserver"
-    in window
-    &&
-    !window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches
+  "IntersectionObserver"
+  in window
+  &&
+  !reducedMotion
 ){
 
-    const observer =
+  const observer =
     new IntersectionObserver(
 
-        entries=>{
+      entries => {
 
-            entries.forEach(
-                entry=>{
+        entries.forEach(
+          entry => {
 
-                    if(
-                        entry.isIntersecting
-                    ){
+            if(
+              entry.isIntersecting
+            ){
 
-                        entry.target
-                        .classList
-                        .add(
-                            "visible"
-                        );
+              entry.target
+              .classList
+              .add(
+                "visible"
+              );
 
 
-                        observer
-                        .unobserve(
-                            entry.target
-                        );
+              observer.unobserve(
+                entry.target
+              );
 
-                    }
+            }
 
-                }
-            );
+          }
+        );
 
-        },
+      },
 
-        {
-
-            threshold:.08
-
-        }
+      {
+        threshold:.08
+      }
 
     );
 
 
-    document
-    .querySelectorAll(
-        ".reveal"
-    )
-    .forEach(
-        element=>{
+  document
+  .querySelectorAll(
+    ".reveal"
+  )
+  .forEach(
+    element => {
 
-            observer.observe(
-                element
-            );
+      observer.observe(
+        element
+      );
 
-        }
-    );
+    }
+  );
 
 }
 
 else{
 
-    document
-    .querySelectorAll(
-        ".reveal"
-    )
-    .forEach(
-        element=>{
+  document
+  .querySelectorAll(
+    ".reveal"
+  )
+  .forEach(
+    element => {
 
-            element
-            .classList
-            .add(
-                "visible"
-            );
+      element.classList.add(
+        "visible"
+      );
 
-        }
-    );
+    }
+  );
 
 }
 
 
 /* =========================================================
-   CURRENT YEAR
+   YEAR
 ========================================================= */
 
 document
 .getElementById(
-    "year"
+  "currentYear"
 )
 .textContent =
-new Date()
-.getFullYear();
+  new Date()
+  .getFullYear();
 
 </script>
-
 
 </body>
 </html>

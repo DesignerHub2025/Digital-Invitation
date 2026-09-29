@@ -1,0 +1,7004 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta name="theme-color" content="#251c1c">
+
+<title>VELORA INVITES — Digital Invitation Atelier</title>
+
+<meta
+name="description"
+content="Elegant digital invitations for weddings, engagements, birthdays, celebrations and special events.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   VELORA INVITES
+   QUIET LUXURY DIGITAL INVITATION STUDIO
+========================================================= */
+
+:root{
+
+    --ivory:#F8F4ED;
+    --ivory-2:#EEE7DD;
+
+    --ink:#261F1E;
+    --ink-2:#3A302D;
+
+    --wine:#713F46;
+    --wine-dark:#4C2930;
+
+    --sage:#70806B;
+    --sage-light:#DCE3D6;
+
+    --gold:#B89A67;
+    --gold-soft:#DBC8A1;
+
+    --rose:#D6A6A5;
+    --blue:#73879C;
+
+    --muted:#857A75;
+
+    --line:rgba(38,31,30,.12);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    var(--ivory);
+
+    color:
+    var(--ink);
+
+    font-family:
+    "Cairo",
+    sans-serif;
+
+    overflow-x:hidden;
+
+    -webkit-font-smoothing:
+    antialiased;
+}
+
+body.lang-en,
+body.lang-fr{
+    font-family:
+    "DM Sans",
+    sans-serif;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+button,
+a{
+    -webkit-tap-highlight-color:
+    transparent;
+}
+
+:focus-visible{
+    outline:
+    3px solid
+    var(--gold);
+    outline-offset:4px;
+}
+
+
+/* =========================================================
+   DECORATIVE BACKGROUND
+========================================================= */
+
+.page-grain{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-8;
+
+    pointer-events:none;
+
+    opacity:.55;
+
+    background-image:
+
+    radial-gradient(
+        circle at 20% 20%,
+        rgba(113,63,70,.045) 0 1px,
+        transparent 1.5px
+    );
+
+    background-size:
+    19px 19px;
+}
+
+
+.glow-one,
+.glow-two{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    z-index:-7;
+
+    pointer-events:none;
+}
+
+.glow-one{
+
+    width:420px;
+    height:420px;
+
+    top:-190px;
+    right:-180px;
+
+    background:
+    rgba(214,166,165,.18);
+}
+
+.glow-two{
+
+    width:430px;
+    height:430px;
+
+    bottom:-190px;
+    left:-180px;
+
+    background:
+    rgba(112,128,107,.13);
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.page{
+
+    width:
+    min(
+        100%,
+        1360px
+    );
+
+    margin:auto;
+
+    padding:
+    0 28px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+
+    min-height:94px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    border-bottom:
+    1px solid
+    var(--line);
+}
+
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+}
+
+
+.brand-mark{
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    position:relative;
+
+    display:grid;
+
+    place-items:center;
+
+    border:
+    1px solid
+    var(--gold-soft);
+
+    background:
+    rgba(255,255,255,.48);
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:23px;
+
+    font-style:italic;
+
+    font-weight:600;
+}
+
+
+.brand-mark::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:5px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(184,154,103,.35);
+}
+
+
+.brand-copy{
+    line-height:1.15;
+}
+
+
+.brand-title{
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:24px;
+
+    font-weight:600;
+
+    letter-spacing:.04em;
+}
+
+
+.brand-sub{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:
+    var(--muted);
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+}
+
+
+.header-nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:27px;
+}
+
+
+.header-nav a{
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    transition:.2s;
+}
+
+
+.header-nav a:hover{
+    color:var(--wine);
+}
+
+
+.header-actions{
+
+    display:flex;
+
+    gap:8px;
+}
+
+
+.round-button{
+
+    width:44px;
+    height:44px;
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    border:
+    1px solid
+    var(--line);
+
+    background:
+    rgba(255,255,255,.55);
+
+    color:
+    var(--ink);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    transition:.25s;
+}
+
+
+.round-button:hover{
+
+    background:
+    var(--ink);
+
+    color:white;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:
+    calc(
+        100vh - 94px
+    );
+
+    padding:
+    55px 0 80px;
+
+    display:grid;
+
+    grid-template-columns:
+    minmax(0,.9fr)
+    minmax(440px,1.1fr);
+
+    gap:
+    clamp(
+        35px,
+        6vw,
+        90px
+    );
+
+    align-items:center;
+}
+
+
+.hero-copy{
+    position:relative;
+    z-index:3;
+}
+
+
+.hero-kicker{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:
+    var(--wine);
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+}
+
+
+.hero-kicker::before{
+
+    content:"";
+
+    width:42px;
+    height:1px;
+
+    background:
+    var(--gold);
+}
+
+
+.hero-title{
+
+    margin-top:24px;
+
+    font-family:
+    "Cormorant Garamond",
+    "Cairo",
+    serif;
+
+    font-size:
+    clamp(
+        66px,
+        7.8vw,
+        112px
+    );
+
+    font-weight:500;
+
+    line-height:.88;
+
+    letter-spacing:-.045em;
+}
+
+
+body.lang-ar
+.hero-title{
+
+    font-family:
+    "Cairo",
+    sans-serif;
+
+    font-size:
+    clamp(
+        47px,
+        5.8vw,
+        77px
+    );
+
+    font-weight:800;
+
+    line-height:1.35;
+}
+
+
+.hero-title span{
+    display:block;
+}
+
+
+.hero-title
+.italic{
+
+    font-style:italic;
+
+    color:
+    var(--wine);
+}
+
+
+body.lang-ar
+.hero-title
+.italic{
+
+    font-style:normal;
+}
+
+
+.hero-description{
+
+    max-width:520px;
+
+    margin-top:27px;
+
+    color:
+    var(--muted);
+
+    font-size:14px;
+
+    line-height:2;
+}
+
+
+.hero-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:29px;
+}
+
+
+.button{
+
+    min-height:56px;
+
+    padding:
+    12px 22px;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    border-radius:999px;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    transition:.25s;
+}
+
+
+.button-dark{
+
+    background:
+    var(--ink);
+
+    color:white;
+}
+
+
+.button-dark:hover{
+
+    background:
+    var(--wine-dark);
+
+    transform:
+    translateY(-3px);
+}
+
+
+.button-outline{
+
+    border:
+    1px solid
+    rgba(113,63,70,.25);
+
+    color:
+    var(--wine);
+
+    background:
+    rgba(255,255,255,.28);
+}
+
+
+.button-outline:hover{
+
+    background:
+    white;
+
+    transform:
+    translateY(-3px);
+}
+
+
+.hero-note{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-top:27px;
+}
+
+
+.note-chip{
+
+    padding:
+    7px 11px;
+
+    border-radius:999px;
+
+    border:
+    1px solid
+    var(--line);
+
+    color:
+    var(--muted);
+
+    font-size:9px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   HERO EXPERIENCE — ENVELOPE
+========================================================= */
+
+.invitation-experience{
+
+    position:relative;
+
+    min-height:610px;
+
+    display:grid;
+
+    place-items:center;
+
+    overflow:hidden;
+
+    border-radius:
+    120px
+    18px
+    120px
+    18px;
+
+    background:
+
+    radial-gradient(
+        circle at 30% 20%,
+        rgba(255,255,255,.72),
+        transparent 35%
+    ),
+
+    linear-gradient(
+        145deg,
+        #EAE0D4,
+        #D8C4B8
+    );
+
+    isolation:isolate;
+
+    box-shadow:
+    0 35px 80px
+    rgba(63,45,41,.13);
+}
+
+
+.experience-ring{
+
+    position:absolute;
+
+    width:480px;
+    height:480px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(113,63,70,.13);
+}
+
+
+.experience-ring::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:46px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(184,154,103,.18);
+}
+
+
+.experience-copy-top{
+
+    position:absolute;
+
+    top:26px;
+    left:30px;
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:.15em;
+
+    color:
+    rgba(38,31,30,.5);
+}
+
+
+.experience-copy-side{
+
+    position:absolute;
+
+    top:50%;
+    right:20px;
+
+    transform:
+    translateY(-50%);
+
+    writing-mode:
+    vertical-rl;
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size:7px;
+
+    font-weight:700;
+
+    letter-spacing:.2em;
+
+    color:
+    rgba(38,31,30,.45);
+}
+
+
+/* envelope */
+
+.envelope-scene{
+
+    width:
+    min(
+        82%,
+        440px
+    );
+
+    height:420px;
+
+    position:relative;
+
+    perspective:1200px;
+
+    z-index:3;
+}
+
+
+.envelope{
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    bottom:50px;
+
+    height:245px;
+
+    background:
+    #C9A99A;
+
+    border-radius:
+    9px;
+
+    box-shadow:
+    0 25px 45px
+    rgba(61,42,39,.16);
+
+    overflow:visible;
+}
+
+
+.envelope::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        32deg,
+        #B98E80 0 49%,
+        transparent 50%
+    ),
+
+    linear-gradient(
+        -32deg,
+        #D6B7AA 0 49%,
+        transparent 50%
+    );
+
+    border-radius:9px;
+
+    z-index:3;
+}
+
+
+.envelope-flap{
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:145px;
+
+    background:
+    #D5B8AC;
+
+    clip-path:
+    polygon(
+        0 0,
+        100% 0,
+        50% 100%
+    );
+
+    transform-origin:
+    top center;
+
+    transform:
+    rotateX(0deg);
+
+    z-index:5;
+
+    transition:
+    transform .8s
+    cubic-bezier(.2,.7,.2,1);
+}
+
+
+.invite-paper{
+
+    position:absolute;
+
+    width:82%;
+
+    height:355px;
+
+    left:9%;
+
+    bottom:28px;
+
+    background:
+    #FAF7F1;
+
+    border-radius:
+    4px;
+
+    box-shadow:
+    0 15px 40px
+    rgba(55,40,37,.13);
+
+    z-index:2;
+
+    transform:
+    translateY(88px);
+
+    transition:
+    transform 1s
+    cubic-bezier(.2,.8,.2,1);
+
+    padding:
+    39px 26px;
+
+    text-align:center;
+
+    overflow:hidden;
+}
+
+
+.invite-paper::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:190px;
+    height:190px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(184,154,103,.3);
+
+    top:-105px;
+    left:-70px;
+}
+
+
+.invite-paper::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(113,63,70,.13);
+
+    bottom:-90px;
+    right:-55px;
+}
+
+
+.envelope-scene.is-open
+.envelope-flap{
+
+    transform:
+    rotateX(180deg);
+
+    z-index:1;
+}
+
+
+.envelope-scene.is-open
+.invite-paper{
+
+    transform:
+    translateY(-108px);
+
+    z-index:6;
+}
+
+
+.invite-mini{
+
+    color:
+    var(--gold);
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+}
+
+
+.invite-names{
+
+    margin-top:23px;
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:45px;
+
+    line-height:.88;
+
+    font-weight:500;
+
+    font-style:italic;
+
+    color:
+    var(--wine);
+}
+
+
+.invite-divider{
+
+    width:45px;
+    height:1px;
+
+    margin:
+    25px auto;
+
+    background:
+    var(--gold);
+}
+
+
+.invite-date{
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    letter-spacing:.15em;
+}
+
+
+.invite-location{
+
+    margin-top:9px;
+
+    color:
+    var(--muted);
+
+    font-size:10px;
+}
+
+
+.wax-seal{
+
+    position:absolute;
+
+    left:50%;
+    bottom:-27px;
+
+    transform:
+    translateX(-50%);
+
+    width:61px;
+    height:61px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(
+        circle at 35% 30%,
+        #8F5860,
+        #60343B
+    );
+
+    color:
+    #E6D0B0;
+
+    display:grid;
+
+    place-items:center;
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:22px;
+
+    z-index:8;
+
+    border:
+    4px solid
+    rgba(255,255,255,.16);
+
+    box-shadow:
+    0 9px 20px
+    rgba(55,30,35,.25);
+}
+
+
+.open-invite{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:20px;
+
+    transform:
+    translateX(-50%);
+
+    border:0;
+
+    background:none;
+
+    color:
+    var(--ink);
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:.1em;
+
+    z-index:12;
+}
+
+
+.open-invite::after{
+
+    content:"";
+
+    display:block;
+
+    width:35px;
+    height:1px;
+
+    margin:
+    7px auto 0;
+
+    background:
+    var(--wine);
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.marquee{
+
+    margin-inline:
+    calc(
+        (100vw - 100%) / -2
+    );
+
+    overflow:hidden;
+
+    border-top:
+    1px solid
+    var(--line);
+
+    border-bottom:
+    1px solid
+    var(--line);
+
+    background:
+    rgba(255,255,255,.25);
+}
+
+
+.marquee-track{
+
+    width:max-content;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:29px;
+
+    padding:
+    14px 0;
+
+    animation:
+    marqueeMove
+    28s linear
+    infinite;
+}
+
+
+.marquee-track span{
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    font-style:italic;
+
+    white-space:nowrap;
+}
+
+
+.marquee-track i{
+
+    width:5px;
+    height:5px;
+
+    background:
+    var(--gold);
+
+    transform:
+    rotate(45deg);
+}
+
+
+@keyframes marqueeMove{
+
+    to{
+        transform:
+        translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+.section{
+
+    padding:
+    100px 0;
+}
+
+
+.section-intro{
+
+    display:grid;
+
+    grid-template-columns:
+    .55fr
+    1.45fr;
+
+    gap:45px;
+
+    align-items:start;
+}
+
+
+.section-number{
+
+    color:
+    var(--wine);
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:.15em;
+}
+
+
+.section-title{
+
+    font-family:
+    "Cormorant Garamond",
+    "Cairo",
+    serif;
+
+    font-size:
+    clamp(
+        46px,
+        5.5vw,
+        75px
+    );
+
+    font-weight:500;
+
+    line-height:.95;
+
+    letter-spacing:-.035em;
+}
+
+
+body.lang-ar
+.section-title{
+
+    font-family:
+    "Cairo",
+    sans-serif;
+
+    font-weight:800;
+
+    font-size:
+    clamp(
+        35px,
+        4.8vw,
+        59px
+    );
+
+    line-height:1.4;
+}
+
+
+/* =========================================================
+   PORTFOLIO
+========================================================= */
+
+.portfolio-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    gap:30px;
+}
+
+
+.portfolio-header-copy{
+
+    max-width:380px;
+
+    color:
+    var(--muted);
+
+    font-size:12px;
+
+    line-height:1.9;
+}
+
+
+.filters{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-top:34px;
+}
+
+
+.filter-button{
+
+    min-height:38px;
+
+    padding:
+    8px 15px;
+
+    border-radius:999px;
+
+    border:
+    1px solid
+    var(--line);
+
+    background:
+    rgba(255,255,255,.45);
+
+    color:
+    var(--muted);
+
+    font-size:9px;
+
+    font-weight:800;
+
+    transition:.2s;
+}
+
+
+.filter-button.active,
+.filter-button:hover{
+
+    background:
+    var(--ink);
+
+    color:white;
+
+    border-color:
+    var(--ink);
+}
+
+
+.portfolio-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        12,
+        1fr
+    );
+
+    gap:14px;
+
+    margin-top:29px;
+}
+
+
+.work-card{
+
+    grid-column:
+    span 4;
+
+    min-height:470px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:23px;
+
+    cursor:pointer;
+
+    transition:
+    transform .3s,
+    opacity .3s;
+
+    isolation:isolate;
+}
+
+
+.work-card:hover{
+
+    transform:
+    translateY(-7px);
+}
+
+
+.work-card.hidden{
+
+    display:none;
+}
+
+
+.work-card.large{
+
+    grid-column:
+    span 8;
+}
+
+
+.work-content{
+
+    position:absolute;
+
+    inset:0;
+
+    padding:27px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+}
+
+
+.work-meta{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:.1em;
+}
+
+
+.work-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    gap:20px;
+}
+
+
+.work-bottom h3{
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:
+    clamp(
+        29px,
+        3vw,
+        43px
+    );
+
+    font-weight:500;
+
+    line-height:.95;
+}
+
+
+.work-bottom p{
+
+    margin-top:7px;
+
+    font-size:9px;
+
+    opacity:.68;
+}
+
+
+.work-open{
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    currentColor;
+
+    display:grid;
+
+    place-items:center;
+
+    flex:0 0 48px;
+
+    font-size:19px;
+}
+
+
+/* work 1 */
+
+.work-pearl{
+
+    color:
+    #594D47;
+
+    background:
+
+    radial-gradient(
+        circle at 80% 15%,
+        rgba(255,255,255,.9),
+        transparent 22%
+    ),
+
+    linear-gradient(
+        145deg,
+        #E9DDD0,
+        #F8F4ED
+    );
+}
+
+
+.work-pearl::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:310px;
+    height:310px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(184,154,103,.28);
+
+    top:65px;
+    left:50%;
+
+    transform:
+    translateX(-50%);
+}
+
+
+.work-pearl::after{
+
+    content:"A & L";
+
+    position:absolute;
+
+    left:50%;
+    top:40%;
+
+    transform:
+    translate(-50%,-50%);
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:68px;
+
+    font-style:italic;
+
+    color:
+    var(--wine);
+}
+
+
+/* work botanical */
+
+.work-botanical{
+
+    color:white;
+
+    background:
+
+    radial-gradient(
+        circle at 80% 30%,
+        #73846D,
+        transparent 45%
+    ),
+
+    linear-gradient(
+        145deg,
+        #36463A,
+        #62705D
+    );
+}
+
+
+.work-botanical::before,
+.work-botanical::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:330px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.24);
+
+    border-radius:
+    100% 0 100% 0;
+
+    transform:
+    rotate(33deg);
+}
+
+
+.work-botanical::before{
+
+    top:-90px;
+    right:-20px;
+}
+
+
+.work-botanical::after{
+
+    bottom:-120px;
+    left:-10px;
+
+    transform:
+    rotate(-27deg);
+}
+
+
+/* work midnight */
+
+.work-midnight{
+
+    color:
+    #F7E9C7;
+
+    background:
+
+    radial-gradient(
+        circle at 30% 20%,
+        rgba(184,154,103,.17),
+        transparent 35%
+    ),
+
+    #171A20;
+}
+
+
+.work-midnight::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:50px;
+
+    border:
+    1px solid
+    rgba(219,200,161,.35);
+}
+
+
+.work-midnight::after{
+
+    content:"SAVE THE DATE";
+
+    position:absolute;
+
+    left:50%;
+    top:48%;
+
+    transform:
+    translate(-50%,-50%);
+
+    text-align:center;
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:45px;
+
+    letter-spacing:.07em;
+}
+
+
+/* Rose */
+
+.work-rose{
+
+    color:
+    #5E3942;
+
+    background:
+
+    radial-gradient(
+        circle at 50% -10%,
+        #F6D7D4,
+        transparent 45%
+    ),
+
+    linear-gradient(
+        160deg,
+        #E8C4C1,
+        #F5E4DE
+    );
+}
+
+
+.work-rose::before{
+
+    content:"18";
+
+    position:absolute;
+
+    left:50%;
+    top:45%;
+
+    transform:
+    translate(-50%,-50%);
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:150px;
+
+    color:
+    rgba(113,63,70,.16);
+}
+
+
+/* sky */
+
+.work-sky{
+
+    color:
+    #35516C;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #D8E7F0,
+        #F4F0E7
+    );
+}
+
+
+.work-sky::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.7);
+
+    top:80px;
+    left:50%;
+
+    transform:
+    translateX(-50%);
+}
+
+
+.work-sky::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    top:155px;
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+    font-size:50px;
+
+    color:
+    var(--blue);
+}
+
+
+/* corporate */
+
+.work-minimal{
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #282826,
+        #43433D
+    );
+}
+
+
+.work-minimal::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(255,255,255,.14);
+
+    right:-100px;
+    top:-90px;
+}
+
+
+.work-minimal::after{
+
+    content:"EVENT 26";
+
+    position:absolute;
+
+    top:42%;
+    left:30px;
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size:46px;
+
+    font-weight:700;
+
+    letter-spacing:-.05em;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-area{
+
+    margin-inline:
+    calc(
+        (100vw - 100%) / -2
+    );
+
+    background:
+    var(--ink);
+
+    color:white;
+
+    padding:
+    105px
+    max(
+        28px,
+        calc(
+            (100vw - 1304px) / 2
+        )
+    );
+}
+
+
+.services-area
+.section-number{
+
+    color:
+    var(--gold-soft);
+}
+
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        3,
+        1fr
+    );
+
+    margin-top:58px;
+
+    border-top:
+    1px solid
+    rgba(255,255,255,.13);
+}
+
+
+.service{
+
+    min-height:285px;
+
+    padding:29px 25px;
+
+    border-inline-end:
+    1px solid
+    rgba(255,255,255,.11);
+
+    transition:.25s;
+}
+
+
+.service:nth-child(3n){
+    border-inline-end:0;
+}
+
+
+.service:nth-child(n+4){
+
+    border-top:
+    1px solid
+    rgba(255,255,255,.11);
+}
+
+
+.service:hover{
+
+    background:
+    rgba(255,255,255,.035);
+}
+
+
+.service-index{
+
+    color:
+    var(--gold-soft);
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size:9px;
+
+    font-weight:800;
+}
+
+
+.service-symbol{
+
+    margin-top:34px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(255,255,255,.2);
+
+    display:grid;
+
+    place-items:center;
+
+    color:
+    var(--gold-soft);
+
+    font-size:18px;
+}
+
+
+.service h3{
+
+    margin-top:20px;
+
+    font-size:17px;
+}
+
+
+.service p{
+
+    margin-top:9px;
+
+    color:
+    #A79F9A;
+
+    font-size:11px;
+
+    line-height:1.9;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    gap:40px;
+
+    margin-bottom:42px;
+}
+
+
+.process-header p{
+
+    max-width:400px;
+
+    color:
+    var(--muted);
+
+    font-size:12px;
+
+    line-height:1.9;
+}
+
+
+.process-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        4,
+        1fr
+    );
+
+    gap:10px;
+}
+
+
+.process-step{
+
+    position:relative;
+
+    min-height:215px;
+
+    border:
+    1px solid
+    var(--line);
+
+    padding:23px;
+
+    border-radius:17px;
+
+    background:
+    rgba(255,255,255,.42);
+
+    overflow:hidden;
+}
+
+
+.process-step::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(113,63,70,.12);
+
+    bottom:-45px;
+    right:-40px;
+}
+
+
+.process-step small{
+
+    color:
+    var(--wine);
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:.08em;
+}
+
+
+.process-step h3{
+
+    margin-top:47px;
+
+    font-size:17px;
+}
+
+
+.process-step p{
+
+    margin-top:8px;
+
+    color:
+    var(--muted);
+
+    font-size:10px;
+
+    line-height:1.85;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta{
+
+    margin:
+    25px 0
+    85px;
+
+    min-height:330px;
+
+    padding:45px;
+
+    border-radius:28px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    color:white;
+
+    background:
+
+    radial-gradient(
+        circle at 90% 15%,
+        rgba(219,200,161,.22),
+        transparent 30%
+    ),
+
+    var(--wine-dark);
+
+    display:grid;
+
+    grid-template-columns:
+    1fr auto;
+
+    gap:40px;
+
+    align-items:center;
+}
+
+
+.cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(255,255,255,.13);
+
+    right:-90px;
+    top:-100px;
+}
+
+
+.cta::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:190px;
+    height:190px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(255,255,255,.13);
+
+    right:-10px;
+    top:-40px;
+}
+
+
+.cta-copy{
+    position:relative;
+    z-index:2;
+}
+
+
+.cta h2{
+
+    max-width:690px;
+
+    font-family:
+    "Cormorant Garamond",
+    "Cairo",
+    serif;
+
+    font-size:
+    clamp(
+        43px,
+        5.5vw,
+        75px
+    );
+
+    font-weight:500;
+
+    line-height:.95;
+}
+
+
+body.lang-ar
+.cta h2{
+
+    font-family:
+    "Cairo",
+    sans-serif;
+
+    font-size:
+    clamp(
+        33px,
+        4.8vw,
+        58px
+    );
+
+    font-weight:800;
+
+    line-height:1.4;
+}
+
+
+.cta p{
+
+    margin-top:15px;
+
+    max-width:540px;
+
+    color:
+    rgba(255,255,255,.67);
+
+    font-size:11px;
+
+    line-height:1.9;
+}
+
+
+.cta-button{
+
+    position:relative;
+
+    z-index:3;
+
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    background:
+    var(--ivory);
+
+    color:
+    var(--wine-dark);
+
+    display:grid;
+
+    place-items:center;
+
+    text-align:center;
+
+    padding:23px;
+
+    border:0;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+
+.cta-button:hover{
+
+    transform:
+    rotate(5deg)
+    scale(1.04);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    min-height:110px;
+
+    border-top:
+    1px solid
+    var(--line);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:
+    24px 0
+    33px;
+}
+
+
+.footer-brand{
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:24px;
+}
+
+
+.footer p{
+
+    color:
+    var(--muted);
+
+    font-size:8px;
+
+    margin-top:3px;
+}
+
+
+.footer-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:17px;
+
+    color:
+    var(--muted);
+
+    font-size:8px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   PORTFOLIO PREVIEW MODAL
+========================================================= */
+
+.preview-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:100;
+
+    display:none;
+
+    background:
+    rgba(25,19,19,.88);
+
+    backdrop-filter:
+    blur(12px);
+
+    padding:
+    20px;
+
+    overflow:auto;
+}
+
+
+.preview-modal.open{
+
+    display:grid;
+
+    place-items:center;
+}
+
+
+.preview-shell{
+
+    width:
+    min(
+        100%,
+        1040px
+    );
+
+    min-height:
+    min(
+        720px,
+        calc(100vh - 40px)
+    );
+
+    border-radius:27px;
+
+    background:
+    var(--ivory);
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:
+    0 40px 100px
+    rgba(0,0,0,.35);
+}
+
+
+.preview-close{
+
+    position:absolute;
+
+    top:17px;
+    right:17px;
+
+    z-index:10;
+
+    width:43px;
+    height:43px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(38,31,30,.15);
+
+    background:
+    rgba(248,244,237,.85);
+
+    color:
+    var(--ink);
+
+    font-size:19px;
+}
+
+
+.preview-stage{
+
+    min-height:720px;
+
+    display:grid;
+
+    place-items:center;
+
+    text-align:center;
+
+    padding:60px 25px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+.preview-inner{
+
+    width:
+    min(
+        100%,
+        550px
+    );
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+.preview-category{
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:.2em;
+
+    text-transform:uppercase;
+}
+
+
+.preview-title{
+
+    margin-top:35px;
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:
+    clamp(
+        62px,
+        8vw,
+        100px
+    );
+
+    font-weight:500;
+
+    font-style:italic;
+
+    line-height:.83;
+}
+
+
+.preview-date{
+
+    margin-top:35px;
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:.16em;
+}
+
+
+.preview-line{
+
+    width:50px;
+    height:1px;
+
+    margin:
+    27px auto;
+
+    background:
+    currentColor;
+
+    opacity:.45;
+}
+
+
+.preview-description{
+
+    max-width:380px;
+
+    margin:auto;
+
+    font-size:12px;
+
+    line-height:1.9;
+
+    opacity:.68;
+}
+
+
+.preview-rsvp{
+
+    display:inline-flex;
+
+    margin-top:30px;
+
+    padding:
+    11px 18px;
+
+    border:
+    1px solid
+    currentColor;
+
+    border-radius:999px;
+
+    font-size:9px;
+
+    font-weight:800;
+}
+
+
+/* modal themes */
+
+.preview-stage.pearl{
+
+    background:
+    #F6EFE6;
+
+    color:
+    #6B4347;
+}
+
+
+.preview-stage.pearl::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    rgba(184,154,103,.35);
+}
+
+
+.preview-stage.botanical{
+
+    background:
+    #445342;
+
+    color:
+    #F4EEE3;
+}
+
+
+.preview-stage.botanical::before,
+.preview-stage.botanical::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:290px;
+    height:520px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.19);
+
+    border-radius:
+    100% 0 100% 0;
+}
+
+
+.preview-stage.botanical::before{
+
+    top:-180px;
+    right:-20px;
+
+    transform:
+    rotate(32deg);
+}
+
+
+.preview-stage.botanical::after{
+
+    left:-30px;
+    bottom:-210px;
+
+    transform:
+    rotate(-28deg);
+}
+
+
+.preview-stage.midnight{
+
+    background:
+    #171A20;
+
+    color:
+    #E8D7AD;
+}
+
+
+.preview-stage.midnight::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:55px;
+
+    border:
+    1px solid
+    rgba(232,215,173,.28);
+}
+
+
+.preview-stage.rose{
+
+    background:
+    linear-gradient(
+        160deg,
+        #E6BBB9,
+        #F5E5DF
+    );
+
+    color:
+    #713F46;
+}
+
+
+.preview-stage.sky{
+
+    background:
+    linear-gradient(
+        180deg,
+        #D8E7F0,
+        #F5F1EA
+    );
+
+    color:
+    #435C70;
+}
+
+
+.preview-stage.minimal{
+
+    background:
+    #282826;
+
+    color:white;
+}
+
+
+/* =========================================================
+   ORDER MODAL
+========================================================= */
+
+.order-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:110;
+
+    display:none;
+
+    padding:20px;
+
+    background:
+    rgba(25,19,19,.88);
+
+    backdrop-filter:
+    blur(12px);
+
+    overflow:auto;
+}
+
+
+.order-modal.open{
+
+    display:grid;
+
+    place-items:center;
+}
+
+
+.order-panel{
+
+    width:
+    min(
+        100%,
+        650px
+    );
+
+    background:
+    var(--ivory);
+
+    border-radius:27px;
+
+    padding:
+    31px;
+
+    position:relative;
+}
+
+
+.order-close{
+
+    position:absolute;
+
+    top:18px;
+    right:18px;
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    border:
+    1px solid
+    var(--line);
+
+    background:white;
+
+    font-size:18px;
+}
+
+
+.order-kicker{
+
+    color:
+    var(--wine);
+
+    font-family:
+    "DM Sans",
+    sans-serif;
+
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:.15em;
+}
+
+
+.order-panel h2{
+
+    margin-top:9px;
+
+    font-family:
+    "Cormorant Garamond",
+    "Cairo",
+    serif;
+
+    font-size:43px;
+
+    font-weight:500;
+}
+
+
+body.lang-ar
+.order-panel h2{
+
+    font-family:
+    "Cairo",
+    sans-serif;
+
+    font-size:31px;
+
+    font-weight:800;
+}
+
+
+.order-intro{
+
+    margin-top:8px;
+
+    color:
+    var(--muted);
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    max-width:500px;
+}
+
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:13px;
+
+    margin-top:26px;
+}
+
+
+.field.full{
+    grid-column:1/-1;
+}
+
+
+.field label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    color:
+    var(--muted);
+}
+
+
+.field input,
+.field select,
+.field textarea{
+
+    width:100%;
+
+    border:
+    1px solid
+    var(--line);
+
+    background:white;
+
+    color:
+    var(--ink);
+
+    border-radius:12px;
+
+    padding:
+    12px 13px;
+
+    outline:0;
+}
+
+
+.field textarea{
+
+    min-height:105px;
+
+    resize:vertical;
+}
+
+
+.order-actions{
+
+    display:flex;
+
+    gap:9px;
+
+    margin-top:20px;
+}
+
+
+.order-actions button{
+
+    flex:1;
+
+    min-height:50px;
+
+    border-radius:999px;
+
+    border:0;
+
+    font-size:10px;
+
+    font-weight:800;
+}
+
+
+.prepare-order{
+
+    background:
+    var(--ink);
+
+    color:white;
+}
+
+
+.copy-order{
+
+    background:
+    var(--ivory-2);
+
+    color:
+    var(--ink);
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+
+    position:fixed;
+
+    z-index:150;
+
+    left:50%;
+
+    bottom:28px;
+
+    transform:
+    translate(-50%,15px);
+
+    background:
+    var(--ink);
+
+    color:white;
+
+    padding:
+    11px 17px;
+
+    border-radius:999px;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.25s;
+}
+
+
+.toast.show{
+
+    opacity:1;
+
+    transform:
+    translate(-50%,0);
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+    translateY(20px);
+
+    transition:
+    .65s ease;
+}
+
+
+.reveal.visible{
+
+    opacity:1;
+
+    transform:none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .header-nav{
+        display:none;
+    }
+
+
+    .hero{
+
+        grid-template-columns:
+        1fr;
+
+        min-height:auto;
+    }
+
+
+    .hero-copy{
+
+        text-align:center;
+    }
+
+
+    .hero-kicker,
+    .hero-actions,
+    .hero-note{
+
+        justify-content:center;
+    }
+
+
+    .hero-description{
+
+        margin-inline:auto;
+    }
+
+
+    .section-intro{
+
+        grid-template-columns:
+        1fr;
+
+        gap:14px;
+    }
+
+
+    .services-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+
+    .service:nth-child(3n){
+
+        border-inline-end:
+        1px solid
+        rgba(255,255,255,.11);
+    }
+
+
+    .service:nth-child(2n){
+
+        border-inline-end:0;
+    }
+
+
+    .process-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:760px){
+
+    .page{
+        padding:0 14px;
+    }
+
+
+    .header{
+        min-height:80px;
+    }
+
+
+    .brand-mark{
+
+        width:42px;
+        height:42px;
+    }
+
+
+    .brand-title{
+        font-size:20px;
+    }
+
+
+    .brand-sub{
+        font-size:6px;
+    }
+
+
+    .round-button{
+
+        width:40px;
+        height:40px;
+    }
+
+
+    .hero{
+
+        padding:
+        40px 0
+        55px;
+
+        gap:35px;
+    }
+
+
+    .hero-title{
+
+        font-size:
+        clamp(
+            58px,
+            18vw,
+            90px
+        );
+    }
+
+
+    body.lang-ar
+    .hero-title{
+
+        font-size:
+        clamp(
+            39px,
+            11vw,
+            58px
+        );
+    }
+
+
+    .hero-description{
+
+        font-size:12px;
+    }
+
+
+    .hero-actions{
+
+        width:100%;
+    }
+
+
+    .hero-actions
+    .button{
+
+        flex:1;
+
+        min-width:135px;
+
+        padding:
+        10px;
+    }
+
+
+    .invitation-experience{
+
+        min-height:510px;
+
+        border-radius:
+        70px 15px
+        70px 15px;
+    }
+
+
+    .envelope-scene{
+
+        width:88%;
+
+        transform:
+        scale(.87);
+    }
+
+
+    .experience-ring{
+
+        width:340px;
+        height:340px;
+    }
+
+
+    .portfolio-header{
+
+        display:block;
+    }
+
+
+    .portfolio-header-copy{
+
+        margin-top:13px;
+    }
+
+
+    .work-card,
+    .work-card.large{
+
+        grid-column:
+        span 6;
+
+        min-height:410px;
+    }
+
+
+    .services-grid{
+
+        grid-template-columns:
+        1fr;
+    }
+
+
+    .service{
+
+        min-height:auto;
+
+        padding:
+        25px 8px;
+
+        border-inline-end:0 !important;
+
+        border-bottom:
+        1px solid
+        rgba(255,255,255,.11);
+    }
+
+
+    .service:nth-child(n+4){
+
+        border-top:0;
+    }
+
+
+    .process-header{
+
+        display:block;
+    }
+
+
+    .process-header p{
+
+        margin-top:12px;
+    }
+
+
+    .cta{
+
+        grid-template-columns:
+        1fr;
+
+        padding:30px;
+    }
+
+
+    .cta-button{
+
+        width:135px;
+        height:135px;
+    }
+
+
+    .footer{
+
+        padding-bottom:45px;
+
+        align-items:flex-start;
+    }
+
+
+    .footer-meta{
+
+        flex-direction:column;
+
+        gap:3px;
+
+        text-align:end;
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .brand-sub{
+        display:none;
+    }
+
+
+    .work-card,
+    .work-card.large{
+
+        grid-column:
+        span 12;
+
+        min-height:430px;
+    }
+
+
+    .process-grid{
+
+        grid-template-columns:
+        1fr;
+    }
+
+
+    .process-step{
+
+        min-height:150px;
+    }
+
+
+    .form-grid{
+
+        grid-template-columns:
+        1fr;
+    }
+
+
+    .field.full{
+
+        grid-column:auto;
+    }
+
+
+    .order-actions{
+
+        flex-direction:column;
+    }
+
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+        transition:none !important;
+    }
+
+
+    html{
+        scroll-behavior:auto;
+    }
+
+
+    .reveal{
+
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="lang-ar">
+
+
+<div class="page-grain"></div>
+<div class="glow-one"></div>
+<div class="glow-two"></div>
+
+
+<div class="page">
+
+
+<!-- =====================================================
+HEADER
+===================================================== -->
+
+<header class="header">
+
+
+<a
+class="brand"
+href="#top"
+>
+
+
+<span class="brand-mark">
+
+V
+
+</span>
+
+
+<span class="brand-copy">
+
+
+<span
+class="brand-title"
+data-brand
+>
+
+VELORA INVITES
+
+</span>
+
+
+<span
+class="brand-sub"
+
+data-ar="دعوات رقمية للمناسبات"
+
+data-en="DIGITAL INVITATION ATELIER"
+
+data-fr="ATELIER D'INVITATIONS DIGITALES"
+>
+
+دعوات رقمية للمناسبات
+
+</span>
+
+
+</span>
+
+
+</a>
+
+
+
+<nav class="header-nav">
+
+
+<a
+href="#work"
+
+data-ar="الأعمال"
+data-en="Portfolio"
+data-fr="Réalisations"
+>
+
+الأعمال
+
+</a>
+
+
+<a
+href="#services"
+
+data-ar="الخدمات"
+data-en="Services"
+data-fr="Services"
+>
+
+الخدمات
+
+</a>
+
+
+<a
+href="#process"
+
+data-ar="طريقة العمل"
+data-en="Process"
+data-fr="Méthode"
+>
+
+طريقة العمل
+
+</a>
+
+
+</nav>
+
+
+
+<div class="header-actions">
+
+
+<button
+class="round-button"
+id="languageButton"
+type="button"
+>
+
+AR
+
+</button>
+
+
+<button
+class="round-button"
+id="shareButton"
+type="button"
+aria-label="Share"
+>
+
+↗
+
+</button>
+
+
+</div>
+
+
+</header>
+
+
+
+<!-- =====================================================
+HERO
+===================================================== -->
+
+<section
+class="hero"
+id="top"
+>
+
+
+<div class="hero-copy">
+
+
+<div
+class="hero-kicker"
+
+data-ar="THE FIRST MOMENT OF YOUR EVENT"
+
+data-en="THE FIRST MOMENT OF YOUR EVENT"
+
+data-fr="LE PREMIER MOMENT DE VOTRE ÉVÉNEMENT"
+>
+
+THE FIRST MOMENT OF YOUR EVENT
+
+</div>
+
+
+
+<h1 class="hero-title">
+
+
+<span
+data-ar="دعوتك ليست"
+data-en="NOT JUST"
+data-fr="BIEN PLUS"
+>
+
+دعوتك ليست
+
+</span>
+
+
+<span
+class="italic"
+
+data-ar="مجرد رابط."
+data-en="AN INVITATION."
+data-fr="QU'UNE INVITATION."
+>
+
+مجرد رابط.
+
+</span>
+
+
+<span
+data-ar="إنها أول انطباع."
+data-en="AN EXPERIENCE."
+data-fr="UNE EXPÉRIENCE."
+>
+
+إنها أول انطباع.
+
+</span>
+
+
+</h1>
+
+
+
+<p
+class="hero-description"
+
+data-ar="نصمم دعوات رقمية راقية للزفاف، الخطوبة، أعياد الميلاد والحفلات والمناسبات الخاصة. تجربة تفتح على الهاتف وتجمع التصميم، التفاصيل، الموقع، العد التنازلي وRSVP في مساحة واحدة."
+
+data-en="Elegant digital invitations for weddings, engagements, birthdays, celebrations and special events — combining design, event details, location, countdown and RSVP in one refined experience."
+
+data-fr="Des invitations digitales élégantes pour mariages, fiançailles, anniversaires et événements — réunissant design, informations, localisation, compte à rebours et RSVP."
+>
+
+نصمم دعوات رقمية راقية للزفاف،
+الخطوبة، أعياد الميلاد والحفلات والمناسبات الخاصة.
+تجربة تفتح على الهاتف وتجمع التصميم،
+التفاصيل، الموقع، العد التنازلي وRSVP
+في مساحة واحدة.
+
+</p>
+
+
+
+<div class="hero-actions">
+
+
+<button
+class="button button-dark open-order"
+type="button"
+>
+
+
+<span
+data-ar="صمّم دعوتك"
+data-en="CREATE YOUR INVITATION"
+data-fr="CRÉER VOTRE INVITATION"
+>
+
+صمّم دعوتك
+
+</span>
+
+
+<span>
+
+→
+
+</span>
+
+
+</button>
+
+
+
+<a
+class="button button-outline"
+href="#work"
+>
+
+
+<span
+data-ar="شاهد الأعمال"
+data-en="VIEW THE COLLECTION"
+data-fr="VOIR LA COLLECTION"
+>
+
+شاهد الأعمال
+
+</span>
+
+
+<span>
+
+↓
+
+</span>
+
+
+</a>
+
+
+</div>
+
+
+
+<div class="hero-note">
+
+
+<span
+class="note-chip"
+data-ar="زفاف"
+data-en="Weddings"
+data-fr="Mariages"
+>
+
+زفاف
+
+</span>
+
+
+<span
+class="note-chip"
+data-ar="خطوبة"
+data-en="Engagements"
+data-fr="Fiançailles"
+>
+
+خطوبة
+
+</span>
+
+
+<span
+class="note-chip"
+data-ar="أعياد ميلاد"
+data-en="Birthdays"
+data-fr="Anniversaires"
+>
+
+أعياد ميلاد
+
+</span>
+
+
+<span
+class="note-chip"
+data-ar="حفلات ومناسبات"
+data-en="Events"
+data-fr="Événements"
+>
+
+حفلات ومناسبات
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+INTERACTIVE ENVELOPE
+===================================================== -->
+
+<div class="invitation-experience">
+
+
+<div class="experience-ring"></div>
+
+
+<div
+class="experience-copy-top"
+dir="ltr"
+>
+
+DIGITAL INVITATION / 001
+
+</div>
+
+
+<div
+class="experience-copy-side"
+dir="ltr"
+>
+
+DESIGNED TO BE REMEMBERED
+
+</div>
+
+
+<div
+class="envelope-scene"
+id="envelopeScene"
+>
+
+
+<div class="envelope">
+
+
+<div class="envelope-flap"></div>
+
+
+<div class="invite-paper">
+
+
+<div class="invite-mini">
+
+YOU ARE INVITED
+
+</div>
+
+
+<div class="invite-names">
+
+Lina
+<br>
+&
+<br>
+Adam
+
+</div>
+
+
+<div class="invite-divider"></div>
+
+
+<div class="invite-date">
+
+18 · 10 · 2026
+
+</div>
+
+
+<div class="invite-location">
+
+An evening to remember
+
+</div>
+
+
+</div>
+
+
+<div class="wax-seal">
+
+V
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<button
+class="open-invite"
+id="openEnvelope"
+type="button"
+
+data-ar="افتح الدعوة"
+
+data-en="OPEN THE INVITATION"
+
+data-fr="OUVRIR L'INVITATION"
+>
+
+افتح الدعوة
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+MARQUEE
+===================================================== -->
+
+</div>
+
+
+<div class="marquee">
+
+
+<div class="marquee-track">
+
+
+<span>WEDDINGS</span><i></i>
+
+<span>ENGAGEMENTS</span><i></i>
+
+<span>BIRTHDAYS</span><i></i>
+
+<span>BABY EVENTS</span><i></i>
+
+<span>SPECIAL OCCASIONS</span><i></i>
+
+<span>DIGITAL RSVP</span><i></i>
+
+<span>SAVE THE DATE</span><i></i>
+
+
+<span>WEDDINGS</span><i></i>
+
+<span>ENGAGEMENTS</span><i></i>
+
+<span>BIRTHDAYS</span><i></i>
+
+<span>BABY EVENTS</span><i></i>
+
+<span>SPECIAL OCCASIONS</span><i></i>
+
+<span>DIGITAL RSVP</span><i></i>
+
+<span>SAVE THE DATE</span><i></i>
+
+
+</div>
+
+
+</div>
+
+
+<div class="page">
+
+
+<!-- =====================================================
+PORTFOLIO
+===================================================== -->
+
+<section
+class="section"
+id="work"
+>
+
+
+<div class="portfolio-header reveal">
+
+
+<div>
+
+
+<div
+class="section-number"
+dir="ltr"
+>
+
+01 / SELECTED WORK
+
+</div>
+
+
+<h2
+class="section-title"
+
+data-ar="كل مناسبة لها شخصيتها."
+
+data-en="EVERY EVENT HAS A PERSONALITY."
+
+data-fr="CHAQUE ÉVÉNEMENT A SON UNIVERS."
+>
+
+كل مناسبة
+لها شخصيتها.
+
+</h2>
+
+
+</div>
+
+
+
+<p
+class="portfolio-header-copy"
+
+data-ar="اضغط على أي نموذج لفتحه ومعاينته كما يمكن أن يراه ضيوف المناسبة."
+
+data-en="Open any concept to experience the invitation as your guests could see it."
+
+data-fr="Ouvrez chaque concept pour découvrir l'expérience telle que vos invités pourraient la voir."
+>
+
+اضغط على أي نموذج لفتحه
+ومعاينته كما يمكن أن يراه ضيوف المناسبة.
+
+</p>
+
+
+</div>
+
+
+
+<div class="filters">
+
+
+<button
+class="filter-button active"
+data-filter="all"
+type="button"
+
+data-ar="الكل"
+data-en="All"
+data-fr="Tout"
+>
+
+الكل
+
+</button>
+
+
+<button
+class="filter-button"
+data-filter="wedding"
+type="button"
+
+data-ar="زفاف"
+data-en="Wedding"
+data-fr="Mariage"
+>
+
+زفاف
+
+</button>
+
+
+<button
+class="filter-button"
+data-filter="engagement"
+type="button"
+
+data-ar="خطوبة"
+data-en="Engagement"
+data-fr="Fiançailles"
+>
+
+خطوبة
+
+</button>
+
+
+<button
+class="filter-button"
+data-filter="birthday"
+type="button"
+
+data-ar="عيد ميلاد"
+data-en="Birthday"
+data-fr="Anniversaire"
+>
+
+عيد ميلاد
+
+</button>
+
+
+<button
+class="filter-button"
+data-filter="event"
+type="button"
+
+data-ar="مناسبات"
+data-en="Events"
+data-fr="Événements"
+>
+
+مناسبات
+
+</button>
+
+
+</div>
+
+
+
+<div class="portfolio-grid">
+
+
+<!-- 1 -->
+
+<article
+class="work-card large work-pearl reveal"
+data-category="wedding"
+data-preview="pearl"
+>
+
+
+<div class="work-content">
+
+
+<div class="work-meta">
+
+<span>
+
+01 / WEDDING
+
+</span>
+
+<span>
+
+PEARL
+
+</span>
+
+</div>
+
+
+<div class="work-bottom">
+
+
+<div>
+
+
+<h3>
+
+Lina & Adam
+
+</h3>
+
+
+<p
+data-ar="زفاف · أناقة هادئة"
+data-en="Wedding · Quiet luxury"
+data-fr="Mariage · Élégance intemporelle"
+>
+
+زفاف · أناقة هادئة
+
+</p>
+
+
+</div>
+
+
+<span class="work-open">
+
+↗
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- 2 -->
+
+<article
+class="work-card work-botanical reveal"
+data-category="engagement"
+data-preview="botanical"
+>
+
+
+<div class="work-content">
+
+
+<div class="work-meta">
+
+<span>
+
+02 / ENGAGEMENT
+
+</span>
+
+<span>
+
+SAGE
+
+</span>
+
+</div>
+
+
+<div class="work-bottom">
+
+
+<div>
+
+
+<h3>
+
+Yasmine
+<br>
+& Rayane
+
+</h3>
+
+
+<p
+data-ar="خطوبة · نباتي"
+data-en="Engagement · Botanical"
+data-fr="Fiançailles · Botanique"
+>
+
+خطوبة · نباتي
+
+</p>
+
+
+</div>
+
+
+<span class="work-open">
+
+↗
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- 3 -->
+
+<article
+class="work-card work-midnight reveal"
+data-category="event"
+data-preview="midnight"
+>
+
+
+<div class="work-content">
+
+
+<div class="work-meta">
+
+<span>
+
+03 / DINNER
+
+</span>
+
+<span>
+
+MIDNIGHT
+
+</span>
+
+</div>
+
+
+<div class="work-bottom">
+
+
+<div>
+
+
+<h3>
+
+The
+Evening
+
+</h3>
+
+
+<p
+data-ar="حفل خاص · أسود وذهبي"
+data-en="Private event · Midnight gold"
+data-fr="Soirée privée · Noir & or"
+>
+
+حفل خاص · أسود وذهبي
+
+</p>
+
+
+</div>
+
+
+<span class="work-open">
+
+↗
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- 4 -->
+
+<article
+class="work-card work-rose reveal"
+data-category="birthday"
+data-preview="rose"
+>
+
+
+<div class="work-content">
+
+
+<div class="work-meta">
+
+<span>
+
+04 / BIRTHDAY
+
+</span>
+
+<span>
+
+ROSE
+
+</span>
+
+</div>
+
+
+<div class="work-bottom">
+
+
+<div>
+
+
+<h3>
+
+Inès
+Turns 18
+
+</h3>
+
+
+<p
+data-ar="عيد ميلاد · Rose"
+data-en="Birthday · Soft rose"
+data-fr="Anniversaire · Rose poudré"
+>
+
+عيد ميلاد · Rose
+
+</p>
+
+
+</div>
+
+
+<span class="work-open">
+
+↗
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- 5 -->
+
+<article
+class="work-card work-sky reveal"
+data-category="event"
+data-preview="sky"
+>
+
+
+<div class="work-content">
+
+
+<div class="work-meta">
+
+<span>
+
+05 / BABY EVENT
+
+</span>
+
+<span>
+
+SKY
+
+</span>
+
+</div>
+
+
+<div class="work-bottom">
+
+
+<div>
+
+
+<h3>
+
+A Little
+Star
+
+</h3>
+
+
+<p
+data-ar="مناسبة عائلية · سمائي"
+data-en="Baby event · Sky"
+data-fr="Baby event · Ciel"
+>
+
+مناسبة عائلية · سمائي
+
+</p>
+
+
+</div>
+
+
+<span class="work-open">
+
+↗
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+
+<!-- 6 -->
+
+<article
+class="work-card large work-minimal reveal"
+data-category="event"
+data-preview="minimal"
+>
+
+
+<div class="work-content">
+
+
+<div class="work-meta">
+
+<span>
+
+06 / EVENT
+
+</span>
+
+<span>
+
+MONO
+
+</span>
+
+</div>
+
+
+<div class="work-bottom">
+
+
+<div>
+
+
+<h3>
+
+Private
+Gathering
+
+</h3>
+
+
+<p
+data-ar="مناسبة خاصة · Minimal"
+data-en="Special event · Minimal"
+data-fr="Événement · Minimal"
+>
+
+مناسبة خاصة · Minimal
+
+</p>
+
+
+</div>
+
+
+<span class="work-open">
+
+↗
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+</article>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+SERVICES
+===================================================== -->
+
+<section
+class="services-area"
+id="services"
+>
+
+
+<div class="section-intro reveal">
+
+
+<div
+class="section-number"
+dir="ltr"
+>
+
+02 / EXPERIENCE
+
+</div>
+
+
+<h2
+class="section-title"
+
+data-ar="أكثر من تصميم جميل."
+
+data-en="MORE THAN A BEAUTIFUL INVITATION."
+
+data-fr="PLUS QU'UNE BELLE INVITATION."
+>
+
+أكثر من
+تصميم جميل.
+
+</h2>
+
+
+</div>
+
+
+
+<div class="services-grid">
+
+
+<article class="service reveal">
+
+
+<span class="service-index">
+
+01
+
+</span>
+
+
+<div class="service-symbol">
+
+✦
+
+</div>
+
+
+<h3
+data-ar="تصميم حسب هوية المناسبة"
+data-en="Bespoke Design"
+data-fr="Design sur mesure"
+>
+
+تصميم حسب هوية المناسبة
+
+</h3>
+
+
+<p
+data-ar="ألوان، خطوط وتكوين بصري مخصص لنوع المناسبة والأسلوب الذي تختارونه."
+
+data-en="A visual direction built around the event, its mood, colors and desired style."
+
+data-fr="Une direction visuelle adaptée à l'événement, son ambiance, ses couleurs et votre style."
+>
+
+ألوان، خطوط وتكوين بصري
+مخصص لنوع المناسبة
+والأسلوب الذي تختارونه.
+
+</p>
+
+
+</article>
+
+
+
+<article class="service reveal">
+
+
+<span class="service-index">
+
+02
+
+</span>
+
+
+<div class="service-symbol">
+
+⌖
+
+</div>
+
+
+<h3
+data-ar="الموقع على الخريطة"
+data-en="Location & Maps"
+data-fr="Localisation & Maps"
+>
+
+الموقع على الخريطة
+
+</h3>
+
+
+<p
+data-ar="زر مباشر يمكن للضيف من خلاله فتح موقع القاعة أو مكان المناسبة."
+
+data-en="Guests can open the venue location directly from the invitation."
+
+data-fr="Vos invités peuvent ouvrir directement la localisation du lieu."
+>
+
+زر مباشر يمكن للضيف
+من خلاله فتح موقع القاعة
+أو مكان المناسبة.
+
+</p>
+
+
+</article>
+
+
+
+<article class="service reveal">
+
+
+<span class="service-index">
+
+03
+
+</span>
+
+
+<div class="service-symbol">
+
+◷
+
+</div>
+
+
+<h3
+data-ar="عد تنازلي"
+data-en="Countdown"
+data-fr="Compte à rebours"
+>
+
+عد تنازلي
+
+</h3>
+
+
+<p
+data-ar="تجربة ديناميكية تعرض الوقت المتبقي حتى موعد المناسبة."
+
+data-en="A dynamic countdown leading guests toward the event date."
+
+data-fr="Un compte à rebours dynamique jusqu'au jour de l'événement."
+>
+
+تجربة ديناميكية
+تعرض الوقت المتبقي
+حتى موعد المناسبة.
+
+</p>
+
+
+</article>
+
+
+
+<article class="service reveal">
+
+
+<span class="service-index">
+
+04
+
+</span>
+
+
+<div class="service-symbol">
+
+✓
+
+</div>
+
+
+<h3>
+
+RSVP
+
+</h3>
+
+
+<p
+data-ar="إضافة خيار تأكيد الحضور بطريقة مرتبة وسهلة للضيف."
+
+data-en="A clean and easy way for guests to confirm attendance."
+
+data-fr="Une manière simple et élégante de confirmer la présence."
+>
+
+إضافة خيار تأكيد الحضور
+بطريقة مرتبة وسهلة للضيف.
+
+</p>
+
+
+</article>
+
+
+
+<article class="service reveal">
+
+
+<span class="service-index">
+
+05
+
+</span>
+
+
+<div class="service-symbol">
+
+▦
+
+</div>
+
+
+<h3
+data-ar="صور وقصة المناسبة"
+data-en="Story & Gallery"
+data-fr="Histoire & Galerie"
+>
+
+صور وقصة المناسبة
+
+</h3>
+
+
+<p
+data-ar="يمكن إضافة الصور، قصة قصيرة، برنامج الحفل أو أي تفاصيل ترغبون في مشاركتها."
+
+data-en="Add photographs, a short story, event schedule or any details you want guests to discover."
+
+data-fr="Ajoutez photos, histoire, programme ou informations utiles à vos invités."
+>
+
+يمكن إضافة الصور،
+قصة قصيرة، برنامج الحفل
+أو أي تفاصيل ترغبون
+في مشاركتها.
+
+</p>
+
+
+</article>
+
+
+
+<article class="service reveal">
+
+
+<span class="service-index">
+
+06
+
+</span>
+
+
+<div class="service-symbol">
+
+↗
+
+</div>
+
+
+<h3
+data-ar="رابط خاص بالمناسبة"
+data-en="Personal Event Link"
+data-fr="Lien personnalisé"
+>
+
+رابط خاص بالمناسبة
+
+</h3>
+
+
+<p
+data-ar="دعوة رقمية سهلة المشاركة عبر WhatsApp وInstagram وQR Code."
+
+data-en="A shareable digital experience for WhatsApp, Instagram and QR codes."
+
+data-fr="Une expérience digitale facile à partager via WhatsApp, Instagram et QR Code."
+>
+
+دعوة رقمية سهلة المشاركة
+عبر WhatsApp وInstagram
+وQR Code.
+
+</p>
+
+
+</article>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+PROCESS
+===================================================== -->
+
+<section
+class="section"
+id="process"
+>
+
+
+<div class="process-header reveal">
+
+
+<div>
+
+
+<div
+class="section-number"
+dir="ltr"
+>
+
+03 / PROCESS
+
+</div>
+
+
+<h2
+class="section-title"
+
+data-ar="من فكرتكم إلى دعوة جاهزة للمشاركة."
+
+data-en="FROM YOUR IDEA TO THEIR SCREEN."
+
+data-fr="DE VOTRE IDÉE À LEUR ÉCRAN."
+>
+
+من فكرتكم
+إلى دعوة جاهزة للمشاركة.
+
+</h2>
+
+
+</div>
+
+
+
+<p
+data-ar="عملية بسيطة ومباشرة؛ أنتم تعطوننا تفاصيل المناسبة والاتجاه الذي تحبونه، ونحن نبني التجربة الرقمية."
+
+data-en="A simple process: you share the event details and desired mood, and we build the digital experience."
+
+data-fr="Un processus simple : vous partagez les informations et l'ambiance souhaitée, puis nous créons l'expérience digitale."
+>
+
+عملية بسيطة ومباشرة؛
+أنتم تعطوننا تفاصيل المناسبة
+والاتجاه الذي تحبونه،
+ونحن نبني التجربة الرقمية.
+
+</p>
+
+
+</div>
+
+
+
+<div class="process-grid">
+
+
+<article class="process-step reveal">
+
+
+<small>
+
+01 / BRIEF
+
+</small>
+
+
+<h3
+data-ar="نستقبل التفاصيل"
+data-en="Tell us the story"
+data-fr="Partagez les détails"
+>
+
+نستقبل التفاصيل
+
+</h3>
+
+
+<p
+data-ar="نوع المناسبة، الأسماء، التاريخ، المكان والأسلوب المطلوب."
+
+data-en="Event type, names, date, venue and desired visual direction."
+
+data-fr="Type d'événement, noms, date, lieu et style souhaité."
+>
+
+نوع المناسبة، الأسماء،
+التاريخ، المكان
+والأسلوب المطلوب.
+
+</p>
+
+
+</article>
+
+
+
+<article class="process-step reveal">
+
+
+<small>
+
+02 / ART DIRECTION
+
+</small>
+
+
+<h3
+data-ar="نبني الهوية"
+data-en="Set the mood"
+data-fr="Définir l'univers"
+>
+
+نبني الهوية
+
+</h3>
+
+
+<p
+data-ar="نحدد الألوان والخطوط والعناصر التي ستعطي المناسبة طابعها الخاص."
+
+data-en="Colors, typography and details are shaped around the event."
+
+data-fr="Couleurs, typographie et détails sont définis selon l'univers choisi."
+>
+
+نحدد الألوان والخطوط
+والعناصر التي ستعطي
+المناسبة طابعها الخاص.
+
+</p>
+
+
+</article>
+
+
+
+<article class="process-step reveal">
+
+
+<small>
+
+03 / DESIGN
+
+</small>
+
+
+<h3
+data-ar="نصمم التجربة"
+data-en="Build the invitation"
+data-fr="Créer l'invitation"
+>
+
+نصمم التجربة
+
+</h3>
+
+
+<p
+data-ar="نحوّل المحتوى إلى صفحة دعوة رقمية جذابة وسهلة الاستخدام على الهاتف."
+
+data-en="The content becomes an elegant mobile-first digital invitation."
+
+data-fr="Le contenu devient une invitation digitale élégante pensée pour mobile."
+>
+
+نحوّل المحتوى إلى صفحة
+دعوة رقمية جذابة
+وسهلة الاستخدام على الهاتف.
+
+</p>
+
+
+</article>
+
+
+
+<article class="process-step reveal">
+
+
+<small>
+
+04 / SHARE
+
+</small>
+
+
+<h3
+data-ar="تصبح جاهزة"
+data-en="Ready to share"
+data-fr="Prête à partager"
+>
+
+تصبح جاهزة
+
+</h3>
+
+
+<p
+data-ar="تحصلون على الرابط النهائي لمشاركته مباشرة مع ضيوفكم."
+
+data-en="Receive the final link and share the experience with your guests."
+
+data-fr="Recevez le lien final et partagez-le directement avec vos invités."
+>
+
+تحصلون على الرابط النهائي
+لمشاركته مباشرة
+مع ضيوفكم.
+
+</p>
+
+
+</article>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+CTA
+===================================================== -->
+
+<section class="cta reveal">
+
+
+<div class="cta-copy">
+
+
+<h2
+data-ar="لنجعل أول لحظة من مناسبتكم تستحق أن تُتذكّر."
+
+data-en="MAKE THE FIRST MOMENT WORTH REMEMBERING."
+
+data-fr="FAITES DU PREMIER MOMENT UN SOUVENIR."
+>
+
+لنجعل أول لحظة
+من مناسبتكم
+تستحق أن تُتذكّر.
+
+</h2>
+
+
+<p
+data-ar="ابدؤوا بإرسال نوع المناسبة والتاريخ والأسلوب الذي تحبونه، وسنحوّل الفكرة إلى تجربة رقمية خاصة بكم."
+
+data-en="Start with the event type, date and style you love. We will turn the idea into a digital experience made for your occasion."
+
+data-fr="Commencez par le type d'événement, la date et le style souhaité. Nous transformerons l'idée en expérience digitale."
+>
+
+ابدؤوا بإرسال نوع المناسبة،
+التاريخ والأسلوب الذي تحبونه،
+وسنحوّل الفكرة
+إلى تجربة رقمية خاصة بكم.
+
+</p>
+
+
+</div>
+
+
+
+<button
+class="cta-button open-order"
+type="button"
+
+data-ar="ابدأ طلبك"
+data-en="START YOUR PROJECT"
+data-fr="DÉMARRER LE PROJET"
+>
+
+ابدأ طلبك
+
+</button>
+
+
+</section>
+
+
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+
+<div>
+
+
+<div
+class="footer-brand"
+data-brand
+>
+
+VELORA INVITES
+
+</div>
+
+
+<p
+data-ar="Digital Invitations · Weddings · Events"
+data-en="Digital Invitations · Weddings · Events"
+data-fr="Invitations digitales · Mariages · Événements"
+>
+
+Digital Invitations · Weddings · Events
+
+</p>
+
+
+</div>
+
+
+
+<div class="footer-meta">
+
+
+<span>
+
+WEDDINGS
+
+</span>
+
+
+<span>
+
+EVENTS
+
+</span>
+
+
+<span>
+
+RSVP
+
+</span>
+
+
+<span>
+
+© <b id="year">2026</b>
+
+</span>
+
+
+</div>
+
+
+</footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+PORTFOLIO PREVIEW
+===================================================== -->
+
+<div
+class="preview-modal"
+id="previewModal"
+>
+
+
+<div class="preview-shell">
+
+
+<button
+class="preview-close"
+id="previewClose"
+type="button"
+>
+
+×
+
+
+</button>
+
+
+
+<div
+class="preview-stage pearl"
+id="previewStage"
+>
+
+
+<div class="preview-inner">
+
+
+<div
+class="preview-category"
+id="previewCategory"
+>
+
+WEDDING INVITATION
+
+</div>
+
+
+<div
+class="preview-title"
+id="previewTitle"
+>
+
+Lina & Adam
+
+</div>
+
+
+<div
+class="preview-date"
+id="previewDate"
+>
+
+18 · 10 · 2026
+
+</div>
+
+
+<div class="preview-line"></div>
+
+
+<p
+class="preview-description"
+id="previewDescription"
+>
+
+Together with their families,
+Lina and Adam invite you
+to celebrate their wedding.
+
+</p>
+
+
+<div
+class="preview-rsvp"
+>
+
+RSVP
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+ORDER MODAL
+===================================================== -->
+
+<div
+class="order-modal"
+id="orderModal"
+>
+
+
+<div class="order-panel">
+
+
+<button
+class="order-close"
+id="orderClose"
+type="button"
+>
+
+×
+
+</button>
+
+
+
+<div
+class="order-kicker"
+dir="ltr"
+>
+
+START YOUR INVITATION
+
+</div>
+
+
+
+<h2
+data-ar="أخبرنا عن مناسبتك."
+data-en="Tell us about your event."
+data-fr="Parlez-nous de votre événement."
+>
+
+أخبرنا عن مناسبتك.
+
+</h2>
+
+
+<p
+class="order-intro"
+
+data-ar="أدخل المعلومات الأساسية وسنجهز لك رسالة مرتبة يمكنك إرسالها لنا مباشرة."
+
+data-en="Add the essential details and we will prepare a clear project request."
+
+data-fr="Ajoutez les informations principales et nous préparerons une demande claire."
+>
+
+أدخل المعلومات الأساسية
+وسنجهز لك رسالة مرتبة
+يمكنك إرسالها لنا مباشرة.
+
+</p>
+
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+
+<label
+for="eventType"
+
+data-ar="نوع المناسبة"
+data-en="Event type"
+data-fr="Type d'événement"
+>
+
+نوع المناسبة
+
+</label>
+
+
+<select id="eventType">
+
+
+<option
+value="wedding"
+
+data-ar-option="زفاف"
+data-en-option="Wedding"
+data-fr-option="Mariage"
+>
+
+زفاف
+
+</option>
+
+
+<option
+value="engagement"
+
+data-ar-option="خطوبة"
+data-en-option="Engagement"
+data-fr-option="Fiançailles"
+>
+
+خطوبة
+
+</option>
+
+
+<option
+value="birthday"
+
+data-ar-option="عيد ميلاد"
+data-en-option="Birthday"
+data-fr-option="Anniversaire"
+>
+
+عيد ميلاد
+
+</option>
+
+
+<option
+value="event"
+
+data-ar-option="مناسبة أو حفل"
+data-en-option="Special event"
+data-fr-option="Événement"
+>
+
+مناسبة أو حفل
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+<div class="field">
+
+
+<label
+for="eventDate"
+
+data-ar="التاريخ"
+data-en="Date"
+data-fr="Date"
+>
+
+التاريخ
+
+</label>
+
+
+<input
+type="date"
+id="eventDate"
+>
+
+
+</div>
+
+
+
+<div class="field full">
+
+
+<label
+for="eventNames"
+
+data-ar="الأسماء أو عنوان المناسبة"
+data-en="Names / Event title"
+data-fr="Noms / Titre"
+>
+
+الأسماء أو عنوان المناسبة
+
+</label>
+
+
+<input
+type="text"
+id="eventNames"
+placeholder="Lina & Adam"
+>
+
+
+</div>
+
+
+
+<div class="field">
+
+
+<label
+for="eventStyle"
+
+data-ar="الأسلوب"
+data-en="Style"
+data-fr="Style"
+>
+
+الأسلوب
+
+</label>
+
+
+<select id="eventStyle">
+
+
+<option>
+
+Quiet Luxury
+
+</option>
+
+
+<option>
+
+Classic
+
+</option>
+
+
+<option>
+
+Botanical
+
+</option>
+
+
+<option>
+
+Romantic
+
+</option>
+
+
+<option>
+
+Minimal
+
+</option>
+
+
+<option>
+
+Modern
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+<div class="field">
+
+
+<label
+for="eventGuests"
+
+data-ar="عدد الضيوف التقريبي"
+data-en="Approx. guests"
+data-fr="Nombre d'invités"
+>
+
+عدد الضيوف التقريبي
+
+</label>
+
+
+<input
+type="number"
+min="1"
+id="eventGuests"
+placeholder="100"
+>
+
+
+</div>
+
+
+
+<div class="field full">
+
+
+<label
+for="eventNotes"
+
+data-ar="تفاصيل إضافية"
+data-en="Additional details"
+data-fr="Détails supplémentaires"
+>
+
+تفاصيل إضافية
+
+</label>
+
+
+<textarea
+id="eventNotes"
+
+data-ar-placeholder="مثلاً: نريد خريطة للمكان، RSVP، عد تنازلي..."
+
+data-en-placeholder="For example: location map, RSVP, countdown..."
+
+data-fr-placeholder="Ex. localisation, RSVP, compte à rebours..."
+></textarea>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="order-actions">
+
+
+<button
+class="prepare-order"
+id="prepareOrder"
+type="button"
+
+data-ar="جهّز الطلب"
+data-en="PREPARE REQUEST"
+data-fr="PRÉPARER LA DEMANDE"
+>
+
+جهّز الطلب
+
+</button>
+
+
+<button
+class="copy-order"
+id="copyOrder"
+type="button"
+
+data-ar="نسخ الطلب"
+data-en="COPY REQUEST"
+data-fr="COPIER"
+>
+
+نسخ الطلب
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- TOAST -->
+
+<div
+class="toast"
+id="toast"
+>
+
+تم النسخ ✓
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   BASIC CONFIGURATION
+
+   ضع رقم WhatsApp لاحقاً بهذه الصيغة:
+   "213XXXXXXXXX"
+
+   إذا تركته فارغاً، زر الطلب سيقوم بنسخ
+   الرسالة بدلاً من فتح WhatsApp.
+========================================================= */
+
+const CONFIG = {
+
+    brand:
+    "VELORA INVITES",
+
+    whatsapp:
+    ""
+
+};
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+document
+.querySelectorAll(
+    "[data-brand]"
+)
+.forEach(
+    element=>{
+
+        element.textContent =
+        CONFIG.brand;
+
+    }
+);
+
+
+/* =========================================================
+   LANGUAGE SYSTEM
+
+   Button shows CURRENT language:
+   AR -> EN -> FR -> AR
+========================================================= */
+
+const languages = [
+    "ar",
+    "en",
+    "fr"
+];
+
+
+let currentLanguage =
+"ar";
+
+
+const languageButton =
+document.getElementById(
+    "languageButton"
+);
+
+
+const translated =
+document.querySelectorAll(
+    "[data-ar]"
+);
+
+
+function setLanguage(
+    language
+){
+
+    currentLanguage =
+    language;
+
+
+    document.documentElement.lang =
+    language;
+
+
+    document.documentElement.dir =
+    language === "ar"
+    ?
+    "rtl"
+    :
+    "ltr";
+
+
+    document.body.classList.remove(
+        "lang-ar",
+        "lang-en",
+        "lang-fr"
+    );
+
+
+    document.body.classList.add(
+        "lang-" + language
+    );
+
+
+    translated.forEach(
+        element=>{
+
+            const text =
+            element.dataset[
+                language
+            ];
+
+
+            if(text){
+
+                element.textContent =
+                text;
+
+            }
+
+        }
+    );
+
+
+    /* translate select options */
+
+    document
+    .querySelectorAll(
+        "#eventType option"
+    )
+    .forEach(
+        option=>{
+
+            const text =
+            option.dataset[
+                language + "Option"
+            ];
+
+
+            if(text){
+
+                option.textContent =
+                text;
+
+            }
+
+        }
+    );
+
+
+    /* textarea placeholder */
+
+    const notes =
+    document.getElementById(
+        "eventNotes"
+    );
+
+
+    const placeholder =
+    notes.dataset[
+        language + "Placeholder"
+    ];
+
+
+    if(placeholder){
+
+        notes.placeholder =
+        placeholder;
+
+    }
+
+
+    languageButton.textContent =
+    language.toUpperCase();
+
+
+    try{
+
+        localStorage.setItem(
+            "velora-language",
+            language
+        );
+
+    }
+
+    catch(error){}
+
+}
+
+
+languageButton.addEventListener(
+    "click",
+    ()=>{
+
+        const index =
+        languages.indexOf(
+            currentLanguage
+        );
+
+
+        const next =
+        languages[
+            (
+                index + 1
+            )
+            %
+            languages.length
+        ];
+
+
+        setLanguage(
+            next
+        );
+
+    }
+);
+
+
+/* restore language */
+
+let storedLanguage =
+"ar";
+
+
+try{
+
+    const stored =
+    localStorage.getItem(
+        "velora-language"
+    );
+
+
+    if(
+        languages.includes(
+            stored
+        )
+    ){
+
+        storedLanguage =
+        stored;
+
+    }
+
+}
+
+catch(error){}
+
+
+setLanguage(
+    storedLanguage
+);
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+const envelopeScene =
+document.getElementById(
+    "envelopeScene"
+);
+
+
+const openEnvelope =
+document.getElementById(
+    "openEnvelope"
+);
+
+
+openEnvelope.addEventListener(
+    "click",
+    ()=>{
+
+        envelopeScene
+        .classList
+        .toggle(
+            "is-open"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   PORTFOLIO FILTERS
+========================================================= */
+
+const filterButtons =
+document.querySelectorAll(
+    ".filter-button"
+);
+
+
+const workCards =
+document.querySelectorAll(
+    ".work-card"
+);
+
+
+filterButtons.forEach(
+    button=>{
+
+        button.addEventListener(
+            "click",
+            ()=>{
+
+                filterButtons
+                .forEach(
+                    item=>{
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                button
+                .classList
+                .add(
+                    "active"
+                );
+
+
+                const filter =
+                button.dataset.filter;
+
+
+                workCards.forEach(
+                    card=>{
+
+                        const show =
+                        filter === "all"
+                        ||
+                        card.dataset.category === filter;
+
+
+                        card.classList.toggle(
+                            "hidden",
+                            !show
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   PORTFOLIO PREVIEW DATA
+========================================================= */
+
+const previewData = {
+
+    pearl:{
+
+        theme:
+        "pearl",
+
+        category:
+        "WEDDING INVITATION",
+
+        title:
+        "Lina & Adam",
+
+        date:
+        "18 · 10 · 2026",
+
+        description:
+        "Together with their families, Lina and Adam invite you to celebrate an evening of love, joy and unforgettable memories."
+
+    },
+
+
+    botanical:{
+
+        theme:
+        "botanical",
+
+        category:
+        "ENGAGEMENT",
+
+        title:
+        "Yasmine & Rayane",
+
+        date:
+        "05 · 06 · 2026",
+
+        description:
+        "A botanical invitation inspired by natural textures, soft details and an intimate celebration."
+
+    },
+
+
+    midnight:{
+
+        theme:
+        "midnight",
+
+        category:
+        "PRIVATE EVENT",
+
+        title:
+        "The Evening",
+
+        date:
+        "SATURDAY · 8 PM",
+
+        description:
+        "An elegant night designed around deep tones, warm gold accents and refined simplicity."
+
+    },
+
+
+    rose:{
+
+        theme:
+        "rose",
+
+        category:
+        "BIRTHDAY",
+
+        title:
+        "Inès Turns 18",
+
+        date:
+        "21 · 11 · 2026",
+
+        description:
+        "A soft and youthful digital experience created for an unforgettable birthday celebration."
+
+    },
+
+
+    sky:{
+
+        theme:
+        "sky",
+
+        category:
+        "BABY EVENT",
+
+        title:
+        "A Little Star",
+
+        date:
+        "COMING SOON",
+
+        description:
+        "A gentle invitation experience filled with light, softness and little moments of joy."
+
+    },
+
+
+    minimal:{
+
+        theme:
+        "minimal",
+
+        category:
+        "SPECIAL EVENT",
+
+        title:
+        "Private Gathering",
+
+        date:
+        "BY INVITATION",
+
+        description:
+        "A bold minimal invitation designed for private dinners, launches and modern celebrations."
+
+    }
+
+};
+
+
+/* =========================================================
+   PREVIEW MODAL
+========================================================= */
+
+const previewModal =
+document.getElementById(
+    "previewModal"
+);
+
+
+const previewStage =
+document.getElementById(
+    "previewStage"
+);
+
+
+const previewCategory =
+document.getElementById(
+    "previewCategory"
+);
+
+
+const previewTitle =
+document.getElementById(
+    "previewTitle"
+);
+
+
+const previewDate =
+document.getElementById(
+    "previewDate"
+);
+
+
+const previewDescription =
+document.getElementById(
+    "previewDescription"
+);
+
+
+workCards.forEach(
+    card=>{
+
+        card.addEventListener(
+            "click",
+            ()=>{
+
+                const data =
+                previewData[
+                    card.dataset.preview
+                ];
+
+
+                previewStage.className =
+                "preview-stage " +
+                data.theme;
+
+
+                previewCategory.textContent =
+                data.category;
+
+
+                previewTitle.textContent =
+                data.title;
+
+
+                previewDate.textContent =
+                data.date;
+
+
+                previewDescription.textContent =
+                data.description;
+
+
+                previewModal
+                .classList
+                .add(
+                    "open"
+                );
+
+
+                document.body.style.overflow =
+                "hidden";
+
+            }
+        );
+
+    }
+);
+
+
+function closePreview(){
+
+    previewModal
+    .classList
+    .remove(
+        "open"
+    );
+
+
+    document.body.style.overflow =
+    "";
+
+}
+
+
+document
+.getElementById(
+    "previewClose"
+)
+.addEventListener(
+    "click",
+    closePreview
+);
+
+
+previewModal.addEventListener(
+    "click",
+    event=>{
+
+        if(
+            event.target ===
+            previewModal
+        ){
+
+            closePreview();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ORDER MODAL
+========================================================= */
+
+const orderModal =
+document.getElementById(
+    "orderModal"
+);
+
+
+document
+.querySelectorAll(
+    ".open-order"
+)
+.forEach(
+    button=>{
+
+        button.addEventListener(
+            "click",
+            ()=>{
+
+                orderModal
+                .classList
+                .add(
+                    "open"
+                );
+
+
+                document.body.style.overflow =
+                "hidden";
+
+            }
+        );
+
+    }
+);
+
+
+function closeOrder(){
+
+    orderModal
+    .classList
+    .remove(
+        "open"
+    );
+
+
+    document.body.style.overflow =
+    "";
+
+}
+
+
+document
+.getElementById(
+    "orderClose"
+)
+.addEventListener(
+    "click",
+    closeOrder
+);
+
+
+orderModal.addEventListener(
+    "click",
+    event=>{
+
+        if(
+            event.target ===
+            orderModal
+        ){
+
+            closeOrder();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   BUILD CLIENT REQUEST
+========================================================= */
+
+function buildRequest(){
+
+    const typeSelect =
+    document.getElementById(
+        "eventType"
+    );
+
+
+    const typeText =
+    typeSelect.options[
+        typeSelect.selectedIndex
+    ].text;
+
+
+    const date =
+    document.getElementById(
+        "eventDate"
+    ).value;
+
+
+    const names =
+    document.getElementById(
+        "eventNames"
+    ).value.trim();
+
+
+    const style =
+    document.getElementById(
+        "eventStyle"
+    ).value;
+
+
+    const guests =
+    document.getElementById(
+        "eventGuests"
+    ).value;
+
+
+    const notes =
+    document.getElementById(
+        "eventNotes"
+    ).value.trim();
+
+
+    if(
+        currentLanguage === "ar"
+    ){
+
+        return `
+مرحباً، أود طلب تصميم دعوة رقمية.
+
+المناسبة: ${typeText}
+الأسماء / عنوان المناسبة: ${names || "غير محدد"}
+التاريخ: ${date || "غير محدد"}
+الأسلوب: ${style}
+عدد الضيوف التقريبي: ${guests || "غير محدد"}
+تفاصيل إضافية: ${notes || "لا توجد"}
+
+شكراً.
+        `.trim();
+
+    }
+
+
+    if(
+        currentLanguage === "fr"
+    ){
+
+        return `
+Bonjour, je souhaite demander la création d'une invitation digitale.
+
+Événement : ${typeText}
+Noms / titre : ${names || "Non précisé"}
+Date : ${date || "Non précisée"}
+Style : ${style}
+Nombre approximatif d'invités : ${guests || "Non précisé"}
+Détails : ${notes || "Aucun"}
+
+Merci.
+        `.trim();
+
+    }
+
+
+    return `
+Hello, I would like to request a digital invitation design.
+
+Event: ${typeText}
+Names / Event title: ${names || "Not specified"}
+Date: ${date || "Not specified"}
+Style: ${style}
+Approx. guests: ${guests || "Not specified"}
+Additional details: ${notes || "None"}
+
+Thank you.
+    `.trim();
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+const toast =
+document.getElementById(
+    "toast"
+);
+
+
+let toastTimer;
+
+
+function showToast(
+    text
+){
+
+    clearTimeout(
+        toastTimer
+    );
+
+
+    toast.textContent =
+    text;
+
+
+    toast
+    .classList
+    .add(
+        "show"
+    );
+
+
+    toastTimer =
+    setTimeout(
+        ()=>{
+
+            toast
+            .classList
+            .remove(
+                "show"
+            );
+
+        },
+        2200
+    );
+
+}
+
+
+/* =========================================================
+   COPY REQUEST
+========================================================= */
+
+async function copyRequest(){
+
+    const message =
+    buildRequest();
+
+
+    try{
+
+        await navigator
+        .clipboard
+        .writeText(
+            message
+        );
+
+
+        showToast(
+
+            currentLanguage === "ar"
+            ?
+            "تم نسخ الطلب ✓"
+            :
+            currentLanguage === "fr"
+            ?
+            "Demande copiée ✓"
+            :
+            "Request copied ✓"
+
+        );
+
+    }
+
+    catch(error){
+
+        window.prompt(
+            "Copy:",
+            message
+        );
+
+    }
+
+}
+
+
+document
+.getElementById(
+    "copyOrder"
+)
+.addEventListener(
+    "click",
+    copyRequest
+);
+
+
+/* =========================================================
+   PREPARE ORDER
+========================================================= */
+
+document
+.getElementById(
+    "prepareOrder"
+)
+.addEventListener(
+    "click",
+    async()=>{
+
+        const message =
+        buildRequest();
+
+
+        if(
+            CONFIG.whatsapp
+        ){
+
+            const url =
+            "https://wa.me/"
+            +
+            CONFIG.whatsapp
+            +
+            "?text="
+            +
+            encodeURIComponent(
+                message
+            );
+
+
+            window.open(
+                url,
+                "_blank",
+                "noopener"
+            );
+
+        }
+
+        else{
+
+            await copyRequest();
+
+
+            showToast(
+
+                currentLanguage === "ar"
+                ?
+                "أضف رقم WhatsApp في CONFIG — تم نسخ الطلب"
+                :
+                currentLanguage === "fr"
+                ?
+                "Ajoutez WhatsApp dans CONFIG — demande copiée"
+                :
+                "Add WhatsApp in CONFIG — request copied"
+
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SHARE
+========================================================= */
+
+document
+.getElementById(
+    "shareButton"
+)
+.addEventListener(
+    "click",
+    async()=>{
+
+        const shareData = {
+
+            title:
+            CONFIG.brand,
+
+            text:
+            currentLanguage === "ar"
+            ?
+            "دعوات رقمية راقية للزفاف والحفلات والمناسبات."
+            :
+            currentLanguage === "fr"
+            ?
+            "Invitations digitales élégantes pour mariages et événements."
+            :
+            "Elegant digital invitations for weddings and special events.",
+
+            url:
+            window.location.href
+
+        };
+
+
+        if(
+            navigator.share
+        ){
+
+            try{
+
+                await navigator.share(
+                    shareData
+                );
+
+            }
+
+            catch(error){}
+
+        }
+
+        else{
+
+            try{
+
+                await navigator
+                .clipboard
+                .writeText(
+                    window.location.href
+                );
+
+
+                showToast(
+
+                    currentLanguage === "ar"
+                    ?
+                    "تم نسخ الرابط ✓"
+                    :
+                    "Link copied ✓"
+
+                );
+
+            }
+
+            catch(error){}
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+if(
+    "IntersectionObserver"
+    in window
+    &&
+    !window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches
+){
+
+    const observer =
+    new IntersectionObserver(
+
+        entries=>{
+
+            entries.forEach(
+                entry=>{
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target
+                        .classList
+                        .add(
+                            "visible"
+                        );
+
+
+                        observer
+                        .unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+
+            threshold:.08
+
+        }
+
+    );
+
+
+    document
+    .querySelectorAll(
+        ".reveal"
+    )
+    .forEach(
+        element=>{
+
+            observer.observe(
+                element
+            );
+
+        }
+    );
+
+}
+
+else{
+
+    document
+    .querySelectorAll(
+        ".reveal"
+    )
+    .forEach(
+        element=>{
+
+            element
+            .classList
+            .add(
+                "visible"
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CURRENT YEAR
+========================================================= */
+
+document
+.getElementById(
+    "year"
+)
+.textContent =
+new Date()
+.getFullYear();
+
+</script>
+
+
+</body>
+</html>
